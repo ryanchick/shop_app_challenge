@@ -1,0 +1,22 @@
+.product-container{
+	padding: 20px;
+}
+
+.sidebar{
+	height: 100em;
+	background-color:darkblue;
+}
+
+.product-card{
+	margin:10px;
+}
+
+.category-list{
+	font-size:16px;
+}
+
+.active{
+	font-weight:bold;
+	/*background-color:red;*/
+	color:white;
+}
