@@ -1,0 +1,59 @@
+<section class="product-view" role="product-view">
+	<div class="container">
+		<div class="row">
+
+			<div class="col-xs-2 sidebar">
+				<ul class="category-list">
+
+					<li ng-repeat='category in ctrl.categories' ng-click='ctrl.currCtgry = category' ng-class='{active : category == ctrl.currCtgry}'>
+						{{category}}
+					</li>
+					
+				</ul>
+			</div>
+			<div class="col-xs-10 container">
+				<form class="form-inline">
+				    <div class="form-group">
+				      	<label for="search">Search:</label>
+				      	<input ng-model='ctrl.search' type="text" class="form-control" id="search" placeholder="Product Name">
+				    </div>
+			    </form>
+				<div class="row">
+					<!-- TODO #3: SHOW PRODUCTS -->
+					<div class="col-xs-12 col-sm-4" ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' ng-click='ctrl.toProductPage(product.productId)'>
+						<div id="product-card" class="product-card">
+							<div class="product-buy">
+								<div class="table-view">
+									<div class="table-cell">
+										<i class="fa fa-shopping-cart"></i>
+									</div>
+								</div>
+							</div>
+							<!-- SET PRODUCT IMAGE -->
+							<div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
+							</div>
+
+							<div class="product-info">
+								<div class="product-name">
+									<!-- SET PRODUCT NAME -->
+									{{product.name}}
+									
+									
+								</div>
+								<div class="product-brand">
+									<!-- SET PRODUCT Description -->
+									<em>{{product.description}}</em>
+								</div>
+								<div class="product-cost">
+									<!-- SET PRODUCT PRICE WITH FILTER -->
+									{{product.price | currency}}
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<section>

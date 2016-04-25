@@ -63,6 +63,11 @@
 				url:'/categories/:categoryName',
 				controller: 'CategoryCtrl as ctrl',
 				templateUrl: 'site/partials/categories.html',
+				resolve:{
+					products:function(productSrv){
+						return productSrv.getProducts();
+					}
+				}
 			})
 
 			.state('product',{
