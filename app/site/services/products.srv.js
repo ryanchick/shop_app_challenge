@@ -4,10 +4,13 @@
     .module('shopApp')
     .service('productSrv',ProductService);
 
+
+
   function ProductService($state,api){
     var self = this;
     //public variables
     self.products = [];
+    loadProducts();
 
     //public functions
     self.getProduct = getProduct;
@@ -17,6 +20,8 @@
     self.updateProductList = updateProductList;
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
+    self.loadProducts = loadProducts;
+
 
     function getProducts(){
       return api.request('/products',{},'GET')
@@ -32,6 +37,9 @@
       })
     }
 
+
+
+
     function addProduct(product){
       api.request('/products',product,'POST')
       .then(function(res){
@@ -39,10 +47,11 @@
         if(res.status === 200){
           //product was added successfully
           self.products.push(res.data.product);
-          $state.go('admin.dash');
+          // $state.go('admin.dash');
         }
       })
     }
+
 
     function updateProduct(product,productId){
       api.request('/products/'+productId,product,'PUT')
@@ -69,6 +78,7 @@
       })
     }
 
+
     function getProduct(productId){
       return api.request('/products/'+productId,{},'GET');
     }
@@ -93,5 +103,65 @@
         }
       }
     }
+
+
+
+
+
+    function loadProducts(){
+      console.log('load')
+      getProducts()
+      .then(function(products){
+        console.log(products)
+        if(products.length == 0){
+          console.log(PRODUCT_DATA.length)
+          for(var i = 0;i < PRODUCT_DATA.length;i++){
+            addProduct(PRODUCT_DATA[i]);
+          }
+        }
+      })
+    }
   }
 })();
+
+var PRODUCT_DATA = [{
+  name:'Item1',
+  image:'http://www.online-image-editor.com//styles/2014/images/example_image.png',
+  description:'Desc1',
+  category:'Food',
+  price:'10.00',
+  quantity:'5',
+  status:'1'
+  },{
+  name:'Item2',
+  image:'http://www.online-image-editor.com//styles/2014/images/example_image.png',
+  description:'Desc2',
+  category:'Food',
+  price:'10.00',
+  quantity:'5',
+  status:'1'
+  },{
+  name:'Item3',
+  image:'http://www.online-image-editor.com//styles/2014/images/example_image.png',
+  description:'Desc3',
+  category:'Food',
+  price:'10.00',
+  quantity:'5',
+  status:'1'
+  },{
+  name:'Item4',
+  image:'http://www.online-image-editor.com//styles/2014/images/example_image.png',
+  description:'Desc4',
+  category:'Living',
+  price:'10.00',
+  quantity:'5',
+  status:'1'
+  },{
+  name:'Item5',
+  image:'http://www.online-image-editor.com//styles/2014/images/example_image.png',
+  description:'Desc5',
+  category:'Living',
+  price:'10.00',
+  quantity:'5',
+  status:'1'
+}]
