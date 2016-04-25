@@ -56,8 +56,35 @@
 			.state('auth',{
 				url:'/auth',
 				templateUrl:'site/partials/auth-main.html',
-				controller:'AuthCtrl as ctrl',
+				controller:'AuthCtrl as ctrl',	
+			})
+
+			.state('categories',{
+				url:'/categories/:categoryName',
+				controller: 'CategoryCtrl as ctrl',
+				templateUrl: 'site/partials/categories.html',
+			})
+
+			.state('product',{
+				url:'/products/:productName',
+				controller: 'ProductCtrl as ctrl',
+				templateUrl: 'site/partials/product.html',
+
+			})
+
+			.state('checkout',{
+				url:'/checkout',
+				controller: 'CheckoutCtrl as ctrl',
+				templateUrl: 'site/partials/checkout.html',
+
+			})
+
+			.state('confirmation',{
+				url:'/confirmation',
+				controller: 'ConfirmationCtrl as ctrl',
+				templateUrl: 'site/partials/confirmation.html',
 			});
+
 
 			$httpProvider.interceptors.push(function(){
 		       return {
