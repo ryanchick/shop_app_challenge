@@ -6,11 +6,12 @@
 
 	angular
 		.module('shopApp')
-		.config(function($stateProvider, $httpProvider,$urlRouterProvider){
+		.config(function($stateProvider,$httpProvider,$urlRouterProvider){
 			
 			$urlRouterProvider.otherwise('/');
 
 			$stateProvider
+			
 			.state('shop',{
 				url:'/',
 				templateUrl:'site/partials/shop-main.html',
