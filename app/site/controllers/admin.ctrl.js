@@ -11,6 +11,7 @@
     adminVm.is_products = false;
 
     //check if logged in
+
     if(localStorage.authToken == undefined || localStorage.authToken == null){
       $state.go('auth');
     }
