@@ -4,8 +4,6 @@
     .module('shopApp')
     .service('productSrv',ProductService);
 
-
-
   function ProductService($state,api){
     var self = this;
     //public variables
@@ -28,7 +26,6 @@
     self.deleteProduct = deleteProduct;
     self.loadProducts = loadProducts;
 
-
     function getProducts(){
       return api.request('/products',{},'GET')
       .then(function(res){
@@ -43,9 +40,6 @@
       })
     }
 
-
-
-
     function addProduct(product){
       console.log('addSrv')
       api.request('/products',product,'POST')
@@ -58,7 +52,6 @@
         }
       })
     }
-
 
     function updateProduct(product,productId){
       api.request('/products/'+productId,product,'PUT')
@@ -87,9 +80,8 @@
       })
     }
 
-
     function getProduct(productId){
-      return api.request('/products/'+productId,{},'GET');
+      return api.request('/products/'+ productId,{},'GET');
     }
 
     function updateProductList(product,productId){
@@ -113,6 +105,8 @@
       }
     }
 
+<<<<<<< HEAD
+=======
     // function deleteAllProducts(){
     //   console.log(self.products)
     //   for(var i = 1;i <= 5;i++)
@@ -130,6 +124,7 @@
 
 
 
+>>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
@@ -179,7 +174,11 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
+<<<<<<< HEAD
+  "name": "Retreat Configure Wing Shelter - Warm Grey/Sunset",
+=======
   "name": "Retreat Configure Wing Shelter",
+>>>>>>> NatashaThirlwell/master
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
   "category": "accommodation",
@@ -455,6 +454,14 @@ var PRODUCT_DATA = [{
   "price": "425.00",
   "quantity": "10",
   "status": "1"
+}, {
+  name: "Ghost Powerkid 20 Bicycle - Youths",
+  image: "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
+  description: "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
+  category: "Transportation",
+  price: "425.00",
+  quantity: "10",
+  status: "1"
 }, {
   "name": "Viva Juliett Classic City Bike",
   "image": "http://images.mec.ca/fluid/customers/c822/5042-007/generated/5042-007_MLL07_view1_720x720.jpg",
