@@ -13,13 +13,12 @@
 
     <p>{{ctrl.product.description}}</p>
 
-    <h3>$ {{ctrl.product.price}}</h3>
+    <h3>{{ctrl.product.price | currency}}</h3>
 
     <form class="form-inline">
       
       <div class="btnmargin">
-        <select class="form-control input-lg"placeholder="Quantity">
-            <option>Quantity</option>
+        <select class="form-control input-lg" placeholder="Quantity">
             <option>1</option>
             <option>2</option>
             <option>3</option>
