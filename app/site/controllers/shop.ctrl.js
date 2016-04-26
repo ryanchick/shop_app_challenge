@@ -8,6 +8,7 @@
 
 		//TODO #3 Capture resolved products for view
 		shopVm.products;
+		shopVm.openCart() = openCart();
 
 		//watch for any changes to model data
 		$scope.$watch(function(){
@@ -15,6 +16,11 @@
 		}, function (newValue) {
 		    shopVm.products = productSrv.products;
 		});
+
+		function openCart(){
+			
+
+		}
 	}
 
 })();
