@@ -16,7 +16,11 @@
 		});
 
 	function goTocheckout() {
+<<<<<<< HEAD
 		$state.go('checkout')		
+=======
+		$location.path('/checkout/')	
+>>>>>>> NatashaThirlwell/master
 	}
 	}
 

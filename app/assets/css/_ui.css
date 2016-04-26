@@ -68,6 +68,10 @@ nav .right-nav{
 	vertical-align: top;
 }
 
+nav .search{
+	margin-top: 10px;
+}
+
 nav .fa-shopping-cart{
 	margin-right:10px;
 	font-size:2rem;
