@@ -107,25 +107,6 @@
       }
     }
 
-    function addtoCart(product,quantity)
-    {
-      cart.push();
-    }
-
-    // function deleteAllProducts(){
-    //   console.log(self.products)
-    //   for(var i = 1;i <= 5;i++)
-    //   api.request('/products/'+i,{},'DEL')
-    //   .then(function(res){
-    //     console.log(res);
-    //     if(res.status === 200){
-    //       //product was deleted successfully
-    //       self.removeProduct(i);
-    //       // self.getProducts();
-    //     }
-    //   })
-    // }
-
     function loadProducts(){
       console.log('load')
       getProducts()
@@ -176,7 +157,10 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
   "name": "Retreat Configure Wing Shelter",
