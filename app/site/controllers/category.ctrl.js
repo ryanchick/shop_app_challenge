@@ -17,6 +17,7 @@
 		catVm.search = '';
 
 		catVm.currCtgry = 'food';
+		getCategory();
 		console.log($stateParams.categoryName)
 
 		//public methods
@@ -44,6 +45,15 @@
 			}
 			console.log(newCats)
 			return newCats;
+		}
+
+		function getCategory(){
+			for(var i = 0;i<productSrv.categories.length;i++)
+			{
+				if($stateParams.categoryName == productSrv.categories[i].category){
+					catVm.currCtgry = $stateParams.categoryName;
+				}
+			}
 		}
 	}
 })();
