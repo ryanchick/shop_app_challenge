@@ -41,13 +41,14 @@
 
 
     function addProduct(product){
+      console.log('addSrv')
       api.request('/products',product,'POST')
       .then(function(res){
         console.log(res);
         if(res.status === 200){
           //product was added successfully
           self.products.push(res.data.product);
-          // $state.go('admin.dash');
+          $state.go('admin.dash');
         }
       })
     }
@@ -60,6 +61,7 @@
         if(res.status === 200){
           //product was updated successfully
           self.updateProductList(product,productId);
+          $state.go('admin.dash');
 
         }
       })
@@ -72,6 +74,7 @@
         if(res.status === 200){
           //product was deleted successfully
           self.removeProduct(productId);
+          self.getProducts();
           $state.go('admin.dash');
 
         }

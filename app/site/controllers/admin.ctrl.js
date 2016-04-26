@@ -8,11 +8,18 @@
   function AdminCtrl($scope,$state,productSrv){
     var adminVm = this;
     adminVm.productSrv = productSrv;
+    adminVm.is_products = false;
 
     //check if logged in
- //   if(localStorage.authToken == undefined || localStorage.authToken == null){
- //     $state.go('auth');
- //   }
+
+    if(localStorage.authToken == undefined || localStorage.authToken == null){
+      $state.go('auth');
+    }
+
+    adminVm.products = productSrv.products;
+    if(adminVm.products.length > 0 ){
+      adminVm.is_products = true;
+    }
 
     //watch for updates to products object
     $scope.$watch(function(){

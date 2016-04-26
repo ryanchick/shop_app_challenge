@@ -27,6 +27,7 @@
 			//make api call
 			api.request('/users/login',payload,'POST')
 			.then(function(res){
+				console.log('res')
 				console.log(res);
 				//success callback
 				//success code
