@@ -62,12 +62,12 @@ nav .left-nav{
 	vertical-align: top;
 }
 
-nav img .logo{
+/*nav img .logo{
 	max-width: 17px;
 	max-height: 19px;
 	margin-top: 7px;
 	margin-left: 20px;
-}
+}*/
 
 nav .right-nav{
 	float:right;
@@ -76,7 +76,7 @@ nav .right-nav{
 }
 
 nav .search{
-	margin-top: 10px;
+	margin-top: 1vw;
 }
 
 nav .fa-shopping-cart{
