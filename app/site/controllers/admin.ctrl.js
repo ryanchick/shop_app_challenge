@@ -10,9 +10,9 @@
     adminVm.productSrv = productSrv;
 
     //check if logged in
-    if(localStorage.authToken == undefined || localStorage.authToken == null){
-      $state.go('auth');
-    }
+//    if(localStorage.authToken == undefined || localStorage.authToken == null){
+//      $state.go('auth');
+//    }
 
     adminVm.products = productSrv.products;
     if(adminVm.products.length > 0 ){
