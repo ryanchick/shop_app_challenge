@@ -38,7 +38,8 @@
 
 			.state('admin.dash',{
 				url:'/dashboard',
-				templateUrl:'site/partials/admin-dash.html'
+				templateUrl:'site/partials/admin-dash.html',
+				controller:'AdminCtrl as ctrl'
 			})
 
 			.state('admin.add_product',{
