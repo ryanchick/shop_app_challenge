@@ -1,0 +1,19 @@
+<div>
+	<ul class="left-nav">
+			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+	</ul>
+</div>
+
+<div>
+	<span>
+		<img src="">
+		<p>{{ctrl.product.name}}</p>
+		<form>
+			<input type="number" name="quantity"></input>
+		</form>
+		<p>{{price}}</p>
+		<button class="delete"></button>
+	</span>
+</div>
+
+<button type="button" class="btn btn-default btn-lg" ng-click="ctrl.checkout()">Checkout</button>

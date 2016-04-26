@@ -81,8 +81,8 @@ Top-content
 */
 .top-content{
 	width:100%;
-	height:calc(70% - 110px);
-	background:url('../img/burn.jpg');
+	height:calc(80%);
+	background:url('http://a.abcnews.go.com/images/Entertainment/Burning_Man_Swar_33x16_1600.jpg');
 	background-size:cover;
 	background-position:center center;
 	text-align: center;
