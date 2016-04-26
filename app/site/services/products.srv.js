@@ -63,7 +63,6 @@
           //product was updated successfully
           self.updateProductList(product,productId);
           $state.go('admin.dash');
-
         }
       })
     }
@@ -106,6 +105,23 @@
         }
       }
     }
+
+
+    // function deleteAllProducts(){
+    //   console.log(self.products)
+    //   for(var i = 1;i <= 5;i++)
+    //   api.request('/products/'+i,{},'DEL')
+    //   .then(function(res){
+    //     console.log(res);
+    //     if(res.status === 200){
+    //       //product was deleted successfully
+    //       self.removeProduct(i);
+    //       // self.getProducts();
+    //       // $state.go('admin.dash');
+    //     }
+    //   })
+    // }
+
 
     function loadProducts(){
       console.log('load')
@@ -158,7 +174,10 @@ var PRODUCT_DATA = [{
 }, {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
 =======
