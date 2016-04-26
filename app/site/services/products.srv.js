@@ -8,6 +8,15 @@
     var self = this;
     //public variables
     self.products = [];
+    self.cart = []
+    console.log(localStorage.cart)
+    if(localStorage.cart  != undefined)
+    {
+      self.cart = JSON.parse(localStorage.cart);
+      console.log('selfcart')
+      console.log(self.cart)    
+    }
+  
     
     loadProducts();
 
@@ -19,6 +28,8 @@
     self.updateProductList = updateProductList;
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
+    self.addtoCart = addtoCart;
+    self.removeCart = removeCart;
     self.loadProducts = loadProducts;
 
     function getProducts(){
@@ -75,7 +86,7 @@
     }
 
     function getProduct(productId){
-      return api.request('/products/'+ productId,{},'GET');
+      return api.request('/products/'+productId,{},'GET');
     }
 
     function updateProductList(product,productId){
@@ -99,27 +110,33 @@
       }
     }
 
-    // function deleteAllProducts(){
-    //   console.log(self.products)
-    //   for(var i = 1;i <= 5;i++)
-    //   api.request('/products/'+i,{},'DEL')
-    //   .then(function(res){
-    //     console.log(res);
-    //     if(res.status === 200){
-    //       //product was deleted successfully
-    //       self.removeProduct(i);
-    //       // self.getProducts();
-    //       // $state.go('admin.dash');
-    //     }
-    //   })
-    // }
+    function addtoCart(product,quantity){
+      console.log('SvcAdd')
+      var newProduct = {
+        product:product,
+        quantity:quantity
+      }
+      self.cart.push(newProduct)
+      console.log(self.cart)
+      localStorage.cart = JSON.stringify(self.cart);
+    }
 
+<<<<<<< HEAD
+=======
+    function removeCart(index)
+    {
+      console.log('srvremove' + index)
+      self.cart.splice(index,1);
+      localStorage.cart = JSON.stringify(self.cart);
+    }
+
+>>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
       .then(function(products){
         console.log(products)
-        if(products.length == 1){
+        if(products.length < 20){
           console.log(PRODUCT_DATA.length)
           for(var i = 0;i < PRODUCT_DATA.length;i++){
             addProduct(PRODUCT_DATA[i]);
@@ -179,7 +196,7 @@ var PRODUCT_DATA = [{
   "quantity": "2",
   "status": "1"
 }, {
-  "name": "Navigator Semi-Rectangular Down Sleeping Bag v7",
+  "name": "Semi-Rectangular Down Sleeping Bag v7",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51213_navigator_v7_b90.jpg",
   "description": "Natural duck down fill is an excellent insulator, and packs down small, making the Navigator Sleeping Bag lightweight and extremely compressible. An ideal bag for multi-day backpacking, camping and trips in colder climates.",
   "category": "accommodation",
@@ -187,7 +204,7 @@ var PRODUCT_DATA = [{
   "quantity": "3",
   "status": "1"
 }, {
-  "name": "Pipsqueak Kids' Rectangular Insulated Sleeping Bag v5",
+  "name": "Rectangular Insulated Sleeping Bag v5",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51209_pipsqueak_v5_a_h47.jpg",
   "description": "Ideal for warmer climates, the Pipsqueak is a rectangular sleeping bag for Kids'.",
   "category": "accommodation",
@@ -316,7 +333,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Stainless Steel Double Wall Curved Drink Bottle",
+  "name": "Stainless Steel Drink Bottle",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61373_bottlessdblwallcurved_h31.jpg",
   "description": "Double wall stainless steel drink bottle keeps drinks cool for extended periods, perfect for juice and water",
   "category": "accessories",
@@ -337,7 +354,7 @@ var PRODUCT_DATA = [{
   "image": "https://img0.etsystatic.com/000/0/5288709/il_570xN.203258642.jpg",
   "description": "Handmade Materials: leather, dye, elastic, sealant, paint",
   "category": "clothing",
-  "price": "50.77 CA",
+  "price": "50.77",
   "quantity": "10",
   "status": "1"
 }, {
@@ -382,7 +399,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Power Pak Pudding™ - Chocolate",
+  "name": "Power Pak Pudding - Chocolate",
   "image": "http://www.gnc.com/graphics/product_images/pGNC1-10067049t300x300.jpg",
   "description": "Ready-to-eat Power Pak Pudding will satisfy your sweet tooth and hunger while providing great nutrition. This delectable snack contains the highest quality protein from real milk protein isolate, as well as ultra-healthy soy protein isolate. It also is a great source of calcium, with a full 50% of Daily Value per single serving. Better yet, Power Pak Pudding is completely free from fattening high fructose corn syrup and unhealthy hydrogenated oils.",
   "category": "food",
@@ -440,7 +457,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  name: "Ghost Powerkid 20 Bicycle - Youths",
+  name: "Ghost Powerkid 20 Bicycle",
   image: "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
   description: "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
   category: "Transportation",

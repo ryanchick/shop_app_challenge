@@ -1,1 +1,15 @@
 <shop-navbar></shop-navbar>
+
+<div class="container">
+<ul>
+	<li>
+	<div ng-repeat='item in ctrl.cart'>
+		<img style="" ng-src='{{item.product.image}}'>Name: {{item.product.name}}
+		{{item.product.price|currency}}
+		Quantity: {{item.quantity}}
+		Total: {{item.quantity * item.product.price||currency}}
+		<button class="btn btn-danger" ng-click='ctrl.removeCart($index)'>Delete</button>
+	</div></li>
+	{{ctrl.total}}
+</ul>
+</div>

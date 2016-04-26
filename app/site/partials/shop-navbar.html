@@ -21,17 +21,45 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	 <!-- Brand Name -->
-	      <a class="navbar-brand">Store</a>
+		      <!-- <span><img class="logo" src="assets/img/icon.png"></span> -->
+		      <span class="navbar-brand">Spartan</span>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	     	</ul>
+
 	     	<ul class="nav navbar-nav navbar-right">
-		     	<li><form class="navbar-right form-inline"><div class="form-group">
-		     <!-- Search bar -->
-					<input ng-model='ctrl.productSearch' type="text" class="form-control" placeholder=""></div>
-					<a class="btn search-btn"><img src="assets/img/icon-search@2x.png"></a>
-				</form></li>
+	     		<div class="form-group">
+	     			<form class="navbar-right form-inline">
+	     				<div class="input-group">
+						<input 
+							ng-model="ctrl.productSearch" 
+							type="text" 
+							class="form-control" placeholder="Search">
+						<span class="input-group-btn">
+							<button class="btn search-btn" type="button">
+								<img src="assets/img/icon-search@2x.png">
+							</button>
+						</span>
+						</div>
+					</form>
+				</div>
+				</li>
+
+    <!--       <div class="">
+            <form> -->
+             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
+              <div class="form-container">
+ -->          <!--       <input 
+                  type="text" 
+                  class="form-control"  
+                  placeholder="Search for a brand or item" 
+                  ng-model="ctrl.search">
+                <a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
+              </div>
+            </form>
+          </div> -->
+
 			<!-- Cart Icon -->
 		        <li><div ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
 	    	</ul>

@@ -7,7 +7,7 @@
 		var cartVm = this;
 		cartVm.state = $state;
 		cartVm.products;
-		cartVm.goTocheckout = goTocheckout
+		cartVm.goTocheckout = goTocheckout;
 
 		$scope.$watch(function(){
 	    	return productSrv.products;
@@ -15,13 +15,10 @@
 		    shopVm.products = productSrv.products;
 		});
 
-	function goTocheckout() {
-		$state.go('checkout')		
+		function goTocheckout() {
+			$state.go('checkout');		
+		}
 	}
-	}
-
-
-
 
 })();
 
