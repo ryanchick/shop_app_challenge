@@ -121,8 +121,7 @@
       localStorage.cart = JSON.stringify(self.cart);
     }
 
-<<<<<<< HEAD
-=======
+
     function removeCart(index)
     {
       console.log('srvremove' + index)
@@ -130,7 +129,6 @@
       localStorage.cart = JSON.stringify(self.cart);
     }
 
->>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
