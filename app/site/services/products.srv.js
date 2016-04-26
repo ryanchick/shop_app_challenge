@@ -147,7 +147,7 @@ var PRODUCT_DATA = [{
   "name": "Retreat 320 6 Person Module Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87155_retreat320_a_h43.jpg",
   "description": "The Retreat 320 6 PersonModule Tent delivers the perfect balance of durable construction, space and comfort. You’ll want to spend the entire summer in this tent: the living space isn’t just big, it’s HUGE, with three fully enclosed rooms and a back vestibule for storing gear. Spend the days hiking, biking and kayaking with the family, returning every night to sleep in comfort.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "1499.98",
   "quantity": "10",
   "status": "1"
@@ -155,7 +155,7 @@ var PRODUCT_DATA = [{
   "name": "Retreat 80 3 Person Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87152_retreat80_tent_a_h41_1.jpg",
   "description": "The Retreat 80 is the perfect weekend getaway tent for couples who want comfort and space to store their gear. Both front and rear vestibules offer storage for packs and other gear, while the unique top-arching pole maximizes interior living space and head-room. This tent is waterproof, durable and easy to pitch, with great air-flow, quick-zip windows and insect-proof mesh for extra comfort.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "239.99",
   "quantity": "5",
   "status": "1"
@@ -163,7 +163,7 @@ var PRODUCT_DATA = [{
   "name": "Boreas 3 Person Tent v2",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/0/50155_boreastent_v2_a_102.jpg",
   "description": "The Boreas is not your normal tent. The strong pole configuration uses a multitude of intersecting triangles to create a truly unique geodesic design - the more triangular elements in a pole structure, the sturdier and stronger the tent is for its weight. The Boreas' design is so unique we've registered it in New Zealand and Australia. Trust the Boreas to be your refuge when youre off exploring the back country, whether youre carrying it with you into the wilderness for ultimate four-season hiking freedom, or setting it up as a base while you explore the surrounding country. At just 3.98kg the Boreas won't slow you down on your adventures",
-  "category": "accommodation",
+  "category": "camping",
   "price": "479.98",
   "quantity": "7",
   "status": "1"
@@ -171,7 +171,7 @@ var PRODUCT_DATA = [{
   "name": "Emergency Shelter Red",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61214_EmergShel_403.png",
   "description": "Lightweight, waterproof emergency shelter. Ideal for hiking, water collection or signalling.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "9.99",
   "quantity": "1",
   "status": "1"
@@ -179,7 +179,7 @@ var PRODUCT_DATA = [{
   "name": "Retreat Configure Wing Shelter",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
-  "category": "accommodation",
+  "category": "camping",
   "price": " 99.98",
   "quantity": "1",
   "status": "1"
@@ -187,7 +187,7 @@ var PRODUCT_DATA = [{
   "name": "Cabana Double Air Bed With Pump",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/2/82033_cabanaairbed_901.png",
   "description": "With minimum fuss, you can add a little luxury to your camping adventures with the Cabana Airbed. The easy-fit electric pump makes short work of inflation and deflation and the push button valve control allows you to find your perfect comfort level.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "271.98",
   "quantity": "2",
   "status": "1"
@@ -195,7 +195,7 @@ var PRODUCT_DATA = [{
   "name": "Semi-Rectangular Down Sleeping Bag v7",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51213_navigator_v7_b90.jpg",
   "description": "Natural duck down fill is an excellent insulator, and packs down small, making the Navigator Sleeping Bag lightweight and extremely compressible. An ideal bag for multi-day backpacking, camping and trips in colder climates.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "279.99",
   "quantity": "3",
   "status": "1"
@@ -203,7 +203,7 @@ var PRODUCT_DATA = [{
   "name": "Rectangular Insulated Sleeping Bag v5",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51209_pipsqueak_v5_a_h47.jpg",
   "description": "Ideal for warmer climates, the Pipsqueak is a rectangular sleeping bag for Kids'.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "111.98",
   "quantity": "4",
   "status": "1"
@@ -211,7 +211,7 @@ var PRODUCT_DATA = [{
   "name": "Maison Folding Campbed v2",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/2/82047_maisoncampbedv2_b_997.jpg",
   "description": "After a busy day exploring you’ll have a great sleep on the Maison Folding Campbed v2. This sturdy, portable campbed is easy to set up, with a load capacity of 100kgs and it has a detachable pocket to hold your phone, torch and other essentials. Whether you’re looking to relax in camp, or need a spare bed at home for visitors, this campbed will give you a comfortable night’s sleep.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "80.00",
   "quantity": "10",
   "status": "1"
@@ -219,7 +219,7 @@ var PRODUCT_DATA = [{
   "name": "Retreat Hammock",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/4/84197_retreathammock_632.jpg",
   "description": "Folding, portable hammock for home and camping. Side mesh book pocket for extra storage.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "119.99",
   "quantity": "10",
   "status": "1"
@@ -227,7 +227,7 @@ var PRODUCT_DATA = [{
   "name": "Mosquito Net Untreated",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/0/50156_mosquitonetsingle_000.jpg",
   "description": "Lightweight, transportable insect protection, easily suspended with ample coverage for single beds",
-  "category": "accommodation",
+  "category": "camping",
   "price": "24.99",
   "quantity": "10",
   "status": "1"
@@ -235,7 +235,7 @@ var PRODUCT_DATA = [{
   "name": "Retreat Self Inflating Mat Camp 50mm",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51248_retreatsimat50_a_781.jpg",
   "description": "Comfort is king with our self-inflating Retreat 50mm mat. It's designed for three season campsite and car camping, with 50mm of thickness, a soft brushed polyester surface and a corrugated texture designed for anti-slip comfort. It also features snap domes that allow connection to another compatible mat, easily turning it from a single to a double.",
-  "category": "accommodation",
+  "category": "camping",
   "price": "159.98",
   "quantity": "10",
   "status": "1"
