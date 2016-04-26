@@ -19,15 +19,13 @@
 
 		//public methods
 		catVm.toProductPage = toProductPage;
-		console.log('products')
-		// console.log(productSrv.getProducts())
 
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
 		}
 
 		function getCategories(){
-			var newCats = ['All'];
+			var newCats = [];
 			var exist = false;
 			for(var i = 0; i < catVm.products.length;i++)
 			{

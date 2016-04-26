@@ -10,6 +10,11 @@
     var self = this;
     //public variables
     self.products = [];
+    self.cart = []
+    if(localStorage.cart)
+    {
+      self.cart = localStorage.cart;
+    }
     
     loadProducts();
 
