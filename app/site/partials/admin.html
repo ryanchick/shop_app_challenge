@@ -1,3 +1,4 @@
+
 <section id="admin" class="clearfix">
 	<aside class="nav-panel">
 		<h3>Admin Panel</h3>
@@ -9,6 +10,17 @@
 	</aside>
 
 	<article class="main-content">
+	    <form class="navbar-right form-inline">
+	    <!--     <div class="form-group">  	        
+				<h3 id="refine">Refine Search</h3>
+			</div> -->
+		    <div class="form-group">  	        
+				<input ng-model='ctrl.productSearch' type="text" class="form-control" placeholder="Refine search" >	
+			</div>
+			<a class="btn search-btn">
+				<img id="small" src="assets/img/zoom.png">
+			</a>
+		</form>
 		<div ui-view=""></div>
 	</article>
 </section>

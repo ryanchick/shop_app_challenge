@@ -1,0 +1,41 @@
+<shop-navbar></shop-navbar>
+<div class="container-fluid" id="top">
+
+  <div class="row">
+
+    <div class="productImg col-xs-5" id="products">
+      <img class="movie-poster" src="{{ctrl.product.image}}">
+    </div>
+
+    <div class="col-xs-7" id="info">
+
+    <h1>{{ctrl.product.name}}</h1>
+
+    <p>{{ctrl.product.description}}</p>
+
+    <h3>{{ctrl.product.price | currency}}</h3>
+
+    <form class="form-inline">
+      
+<!--       <div class="btnmargin">
+        <select class="form-control input-lg" placeholder="Quantity">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+      </div> -->
+      Quantity: <input class="form-control" ng-model='ctrl.quantity'></input>
+
+      <div class="btnmargin">
+        <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart()'>Add to Cart</button>
+      </div>
+
+    </form>
+
+    </div>
+
+  </div>
+
+</div>

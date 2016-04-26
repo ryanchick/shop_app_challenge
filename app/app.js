@@ -2,15 +2,16 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router']);
+		.module('shopApp',['ui.router', 'ui.bootstrap']);
 
 	angular
 		.module('shopApp')
-		.config(function($stateProvider, $httpProvider,$urlRouterProvider){
+		.config(function($stateProvider,$httpProvider,$urlRouterProvider){
 			
 			$urlRouterProvider.otherwise('/');
 
 			$stateProvider
+			
 			.state('shop',{
 				url:'/',
 				templateUrl:'site/partials/shop-main.html',
@@ -38,7 +39,7 @@
 			.state('admin.dash',{
 				url:'/dashboard',
 				templateUrl:'site/partials/admin-dash.html',
-				controller:'AdminCtrl as ctrl',
+				controller:'AdminCtrl as ctrl'
 			})
 
 			.state('admin.add_product',{
@@ -71,7 +72,7 @@
 			})
 
 			.state('product',{
-				url:'/products/:productName',
+				url:'/products/:productId',
 				controller: 'ProductCtrl as ctrl',
 				templateUrl: 'site/partials/product.html',
 

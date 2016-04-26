@@ -1,0 +1,78 @@
+<shop-navbar></shop-navbar>
+
+<div class="container">
+
+	<div class="cart-list panel panel-default">
+		<div class="panel-heading"ng-click='ctrl.selected = 1'><h4 ng-click='ctrl.selected = 1'>Cart:</h4></div>
+		<ul class="panel-body" ng-show='ctrl.selected == 1'>
+			<li ng-repeat='item in ctrl.cart'>
+			<div>
+				<img style="" ng-src='{{item.product.image}}'>Name: {{item.product.name}}
+				{{item.product.price|currency}}
+				Quantity: {{item.quantity}}
+				Total: {{item.quantity * item.product.price||currency}}
+				<button class="btn btn-danger" ng-click='ctrl.removeCart($index)'>Delete</button>
+			</div></li>
+			<h3>Subtotal:{{ctrl.total|currency}}</h3>
+			<h3>Total:{{ctrl.total * 1.13|currency}}</h3>
+			<button class="btn btn-success" ng-click='ctrl.selected = 2'>Confirm</button>
+		</ul>
+	</div>
+
+	<div class="ship-form panel panel-default">
+		<div class="panel-heading"ng-click='ctrl.selected = 2'>
+			<h4>Shipping and Billing Info</h4>
+		</div>
+		<div class="panel-body" ng-show='ctrl.selected == 2'>
+			<form>
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" class="form-control"	name="name" placeholder="name" ng-model='ctrl.name' required></input>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" class="form-control"	name="email" placeholder="email" ng-model='ctrl.email' required></input>
+				</div>
+				<div class="form-group">
+					<label for="name">Address Line 1:</label>
+					<input type="text" class="form-control"	name="name" placeholder="Street address , company name" ng-model='ctrl.name' required></input>
+				</div>
+				<div class="form-group">
+					<label for="name">City:</label>
+					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.name' required></input>
+				</div>
+				<div class="form-group">
+					<label for="name">State/Province/Region:</label>
+					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.name' required></input>
+				</div>
+				<div class="form-group">
+					<label for="name">Postal Code/ZIP: </label>
+					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.name' required></input>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div class="payment-form panel panel-default">
+		<div class="panel-heading"ng-click='ctrl.selected = 3'>
+			<h4>Payment Info</h4>
+		</div>
+		<div class="panel-body" ng-show='ctrl.selected == 3'>
+			<form>
+				<div class="form-group">
+					<label for="name">Your credit cards</label>
+					<input type="text" class="form-control"	name="visa - master" placeholder="name" ng-model='ctrl.name' required></input>
+				</div>
+				<div class="form-group">
+					<label for="email">Name on card</label>
+					<input type="email" class="form-control"	name="name" placeholder="email" ng-model='ctrl.email' required></input>
+				</div>
+				<div class="form-group">
+					<label for="name">Expires on</label>
+					<input type="datetime-local" class="form-control"	name="name" placeholder="Street address , company name" ng-model='ctrl.name' required></input>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,27 @@
+<div ng-controller='CartCtrl as ctrl'>
+	<ul class="left-nav">
+			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+	</ul>
+
+	<div ng-show='ctrl.cart.length <= 0'>
+		<h3>There are no items in your cart!</h3>
+	</div>
+
+	<ul ng-show='ctrl.cart.length > 0'>
+		<li ng-repeat='item in ctrl.cart'>
+			<div>
+				<img style="" ng-src='{{item.product.image}}'>
+				Name: {{item.product.name}}
+				
+				Price:{{item.product.price|currency}}
+				
+				Quantity: {{item.quantity}}
+				
+				Total: {{item.quantity * item.product.price||currency}}
+				<button class="btn btn-danger" ng-click='ctrl.removeCart($index)'>Delete</button>
+			</div>
+		</li>
+	</ul>
+	<h3>Subtotal:{{ctrl.total|currency}}</h3>
+	<button type="button" class="btn btn-default btn-lg" ng-click="ctrl.goTocheckout()">Checkout</button>
+</div>

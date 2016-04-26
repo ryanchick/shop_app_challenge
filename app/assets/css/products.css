@@ -1,0 +1,29 @@
+#products {
+     text-align: center;
+}
+
+#top {
+	margin-top: 100px;
+}
+
+#top .movie-poster{
+	max-width: 25vw;
+}
+
+.btnmargin {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#info {
+	padding-right: 100px;
+}
+
+h1 {
+	margin-top: 0px;
+}
+
+#info button{
+	color: #ff6d37;
+	
+}

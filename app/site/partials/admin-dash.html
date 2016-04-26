@@ -1,5 +1,4 @@
 <h3>Products</h3>
-
 <div ng-hide="ctrl.is_products">
 	<p>
 		You have no products
@@ -15,7 +14,8 @@
 			<th>Quantity</th>
 			<th>&nbsp;</th>
 		</tr>
-		<tr ng-repeat="product in ctrl.products">
+		<tr ng-repeat="product in ctrl.products |
+                 filter: ctrl.productSearch">
 			<td>{{product.category}}</td>
 			<td>{{product.name}}</td>
 			<td>{{product.price}}</td>
