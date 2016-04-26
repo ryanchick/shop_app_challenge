@@ -64,6 +64,20 @@
 #admin .product-frm input, #admin .product-frm textarea, #admin .product-frm select{
 	width:100%;
 }
+
 #admin .product-frm select{
 	font-size:1rem;
+}
+
+#small {
+	width: 25px;
+	height: 25px;
+}
+
+.navbar-right {
+	/*margin-right: 350px;*/
+}
+
+#refine {
+	color: black;
 }

@@ -12,24 +12,32 @@
 		console.log(checkVm.cart)
 		checkVm.total = 0;
 		updateTotal();
+
+
+	
+
 		checkVm.selected = 2;
 
 		// checkVm.addtoCart = addtoCart;
 		checkVm.checkProducts = checkProducts;
 		checkVm.removeCart = removeCart;
+
 		// checkVm.product = productSrv.getProduct(1);
 
 		function checkProducts(){
 			productSrv.getProducts();
 		}
 
-		
 
+	
+	
 		function removeCart(index){
 			console.log('remove' + index)
 			productSrv.removeCart(index);
 			checkVm.cart = productSrv.cart;
+
 			updateTotal();
+
 		}
 
 		function updateTotal(){

@@ -8,6 +8,7 @@
 		cartVm.state = $state;
 		cartVm.products;
 		cartVm.goTocheckout = goTocheckout;
+
 		cartVm.cart = productSrv.cart;
 		cartVm.total = 0;
 		updateTotal();
