@@ -17,7 +17,7 @@
 
     <form class="form-inline">
       
-      <div class="btnmargin">
+<!--       <div class="btnmargin">
         <select class="form-control input-lg" placeholder="Quantity">
             <option>1</option>
             <option>2</option>
@@ -25,10 +25,11 @@
             <option>4</option>
             <option>5</option>
         </select>
-      </div>
+      </div> -->
+      Quantity: <input class="form-control" ng-model='ctrl.quantity'></input>
 
       <div class="btnmargin">
-        <button type="submit" class="btn btn-danger btn-lg">Add to Cart</button>
+        <button type="submit" class="btn btn-danger btn-lg" ng-click='ctrl.addtoCart()'>Add to Cart</button>
       </div>
 
     </form>

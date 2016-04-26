@@ -44,6 +44,7 @@
 		productVm.addProduct = addProduct;
 		productVm.updateProduct = updateProduct;
 		productVm.deleteProduct = deleteProduct;
+		productVm.addtoCart = addtoCart;
 
 		function addProduct(){
 			//TODO #2
@@ -81,7 +82,7 @@
 		}
 
 		function addtoCart(){
-			productSrv.addtoCart(productVm.product)
+			productSrv.addtoCart(productVm.product,productVm.quantity)
 		}
 	}
 

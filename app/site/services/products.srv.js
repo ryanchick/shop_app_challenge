@@ -9,9 +9,12 @@
     //public variables
     self.products = [];
     self.cart = []
-    if(localStorage.cart)
+    console.log(localStorage.cart)
+    if(localStorage.cart  != undefined)
     {
-      self.cart = localStorage.cart;
+      self.cart = JSON.parse(localStorage.cart);
+      console.log('selfcart')
+      console.log(self.cart)    
     }
   
     
@@ -26,6 +29,7 @@
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
     self.addtoCart = addtoCart;
+    self.removeCart = removeCart;
     self.loadProducts = loadProducts;
 
     function getProducts(){
@@ -106,7 +110,23 @@
       }
     }
 
-    function
+    function addtoCart(product,quantity){
+      console.log('SvcAdd')
+      var newProduct = {
+        product:product,
+        quantity:quantity
+      }
+      self.cart.push(newProduct)
+      console.log(self.cart)
+      localStorage.cart = JSON.stringify(self.cart);
+    }
+
+    function removeCart(index)
+    {
+      console.log('srvremove' + index)
+      self.cart.splice(index,1);
+      localStorage.cart = JSON.stringify(self.cart);
+    }
 
     function loadProducts(){
       console.log('load')
