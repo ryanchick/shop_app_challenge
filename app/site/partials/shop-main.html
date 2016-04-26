@@ -1,0 +1,119 @@
+<shop-navbar></shop-navbar>
+
+<section class="top-content" id="mainimage" role="topbanner">
+
+	<div class="content-wrapper">
+		<div class="table-view">
+			<div class="table-cell">
+				<div class="content">		
+					<h1>
+						Spartan supplier
+					</h1>
+					<h3>
+						Buy and Sell hardcore items from the most interesting shop in the world
+					</h3>
+
+          <div class="">
+            <form>
+             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
+              <div class="form-container">
+ -->                <input 
+                  type="text" 
+                  class="form-control"  
+                  placeholder="Search for a brand or item" 
+                  ng-model="ctrl.search">
+                <a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section ng-click="ctrl.goToCategories()" class="product-view" role="product-view">
+	<div class="content-wrapper">
+		<div class="row">
+			<!-- TODO #3: SHOW PRODUCTS -->
+			<div class="col-xs-12 col-md-4">
+			   <div id="product-card" class="product-card">
+		
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('/assets/img/bu2.jpg');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							<h1>Living</h1>			
+						</div>
+						<div class="product-brand">
+							<!-- SET PRODUCT Description -->
+							<em>Single - Shared room - Carpet</em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							<p>300</p>	
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<div id="product-card" class="product-card">
+		
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('/assets/img/bu3.jpg');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							<h1>Food</h1>		
+						</div>
+						<div class="product-brand">
+							<!-- SET PRODUCT Description -->
+							<em>3 meals plan</em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							<p>100</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<div id="product-card" class="product-card">
+		
+					<!-- SET PRODUCT IMAGE -->
+					<div class="product-img" style="background:url('/assets/img/bu1.jpg');background-size:cover;background-position:center center">
+					</div>
+
+					<div class="product-info">
+						<div class="product-name">
+							<!-- SET PRODUCT NAME -->
+							<h1>Transportation</h1>
+											
+						</div>
+						<div class="product-brand">
+							<!-- SET PRODUCT Description -->
+							<em>bicycle rental</em>
+						</div>
+						<div class="product-cost">
+							<!-- SET PRODUCT PRICE WITH FILTER -->
+							<p>20</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
