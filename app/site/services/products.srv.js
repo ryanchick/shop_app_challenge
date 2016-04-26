@@ -56,7 +56,6 @@
           //product was updated successfully
           self.updateProductList(product,productId);
           $state.go('admin.dash');
-
         }
       })
     }
@@ -115,7 +114,10 @@
     //   })
     // }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
