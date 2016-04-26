@@ -62,6 +62,13 @@ nav .left-nav{
 	vertical-align: top;
 }
 
+nav img .logo{
+	max-width: 17px;
+	max-height: 19px;
+	margin-top: 7px;
+	margin-left: 20px;
+}
+
 nav .right-nav{
 	float:right;
 	margin:0px 70px 0px 0px;
@@ -88,6 +95,7 @@ Top-content
 	height:80%;
 	background:url('http://a.abcnews.go.com/images/Entertainment/Burning_Man_Swar_33x16_1600.jpg');
 	background-size:cover;
+	overflow: hidden;
 	background-position:center center;
 	text-align: center;
 }
@@ -99,14 +107,18 @@ Top-content
 .top-content h1{
 	color:white;
 	font-size:4rem;
+	padding-top: 3.75vw;
+	margin-bottom: 2.5vw;
 }
 
 .top-content h3{
 	color:white;
 	font-size:2rem;
-	margin:10px 0px;
+	padding-top: 2.5vw;
+	margin-top:4.167vw;
 	letter-spacing:0.05rem;
 	font-weight:100 !important;
+
 }
 
 .top-content .content{
