@@ -114,10 +114,6 @@
     //   })
     // }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
