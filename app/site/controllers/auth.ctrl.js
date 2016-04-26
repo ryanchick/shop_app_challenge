@@ -10,9 +10,9 @@
 		authVm.email;
 		authVm.auth_btn = 'Continue';
 
-		if(localStorage.authToken){
-			$state.go('admin');
-		}
+//		if(localStorage.authToken){
+//			$state.go('admin');
+//		}
 
 		//public functions
 		authVm.login = login;
