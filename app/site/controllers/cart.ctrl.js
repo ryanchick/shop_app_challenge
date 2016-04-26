@@ -16,7 +16,7 @@
 		});
 
 	function goTocheckout() {
-		$state.go('checkout')		
+		$location.path('/checkout/')	
 	}
 	}
 
