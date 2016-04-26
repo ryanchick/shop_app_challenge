@@ -142,7 +142,6 @@
 })();
 
 var PRODUCT_DATA = [{
-<<<<<<< Updated upstream
   "name": "Retreat 320 6 Person Module Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87155_retreat320_a_h43.jpg",
   "description": "The Retreat 320 6 PersonModule Tent delivers the perfect balance of durable construction, space and comfort. You’ll want to spend the entire summer in this tent: the living space isn’t just big, it’s HUGE, with three fully enclosed rooms and a back vestibule for storing gear. Spend the days hiking, biking and kayaking with the family, returning every night to sleep in comfort.",
@@ -150,15 +149,6 @@ var PRODUCT_DATA = [{
   "price": "1499.98",
   "quantity": "10",
   "status": "1"
-=======
-  name: "Retreat 320 6 Person Module Tent - Dark Navy/Cloud",
-  image: "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87155_retreat320_a_h43.jpg",
-  description: "The Retreat 320 6 PersonModule Tent delivers the perfect balance of durable construction, space and comfort. You’ll want to spend the entire summer in this tent: the living space isn’t just big, it’s HUGE, with three fully enclosed rooms and a back vestibule for storing gear. Spend the days hiking, biking and kayaking with the family, returning every night to sleep in comfort.",
-  category: "accommodation",
-  price: "1499.98",
-  quantity: "10",
-  status: "1"
->>>>>>> Stashed changes
 }, {
   "name": "Retreat 80 3 Person Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87152_retreat80_tent_a_h41_1.jpg",
