@@ -13,6 +13,7 @@
 		updateTotal();
 		console.log(cartVm.cart)
 
+		cartVm.removeCart = removeCart;
 		// $scope.$watch(function(){
 	 //    	return productSrv.products;
 		// }, function (newValue) {

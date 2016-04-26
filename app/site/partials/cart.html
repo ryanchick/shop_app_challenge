@@ -3,11 +3,11 @@
 			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
 	</ul>
 
-	<div ng-show='ctrl.cart.length > 0'>
+	<div ng-show='ctrl.cart.length <= 0'>
 		<h3>There are no items in your cart!</h3>
 	</div>
 
-	<ul>
+	<ul ng-show='ctrl.cart.length > 0'>
 		<li ng-repeat='item in ctrl.cart'>
 			<div>
 				<img style="" ng-src='{{item.product.image}}'>
