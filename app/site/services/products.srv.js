@@ -13,6 +13,7 @@
     {
       self.cart = localStorage.cart;
     }
+  
     
     loadProducts();
 
@@ -24,6 +25,7 @@
     self.updateProductList = updateProductList;
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
+    self.addtoCart = addtoCart;
     self.loadProducts = loadProducts;
 
     function getProducts(){
@@ -81,7 +83,7 @@
     }
 
     function getProduct(productId){
-      return api.request('/products/'+ productId,{},'GET');
+      return api.request('/products/'+productId,{},'GET');
     }
 
     function updateProductList(product,productId){
@@ -105,8 +107,17 @@
       }
     }
 
-<<<<<<< HEAD
-=======
+    function addtoCart(productId,quantity)
+    {
+      console.log('addCart')
+      return api.request('/products/'+ productId,{},'GET')
+        .then(function(res){
+          console.log(res)
+          return res;
+      });
+    }
+
+
     // function deleteAllProducts(){
     //   console.log(self.products)
     //   for(var i = 1;i <= 5;i++)
@@ -122,9 +133,6 @@
     //   })
     // }
 
-
-
->>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
@@ -174,11 +182,8 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
-<<<<<<< HEAD
-  "name": "Retreat Configure Wing Shelter - Warm Grey/Sunset",
-=======
+
   "name": "Retreat Configure Wing Shelter",
->>>>>>> NatashaThirlwell/master
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
   "category": "accommodation",

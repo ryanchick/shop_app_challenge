@@ -23,8 +23,6 @@
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
 		}
-<<<<<<< HEAD
-=======
 
 		function getCategories(){
 			var newCats = [];
@@ -45,7 +43,6 @@
 			console.log(newCats)
 			return newCats;
 		}
->>>>>>> NatashaThirlwell/master
 	}
 })();
 
