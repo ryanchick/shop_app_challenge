@@ -88,6 +88,10 @@ Top-content
 	text-align: center;
 }
 
+#mainimage {
+	height:calc(50%);
+}
+
 .top-content h1{
 	color:white;
 	font-size:4rem;
