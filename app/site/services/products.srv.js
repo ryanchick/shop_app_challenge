@@ -106,7 +106,10 @@
       }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
     // function deleteAllProducts(){
     //   console.log(self.products)
     //   for(var i = 1;i <= 5;i++)
@@ -122,7 +125,14 @@
     //   })
     // }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> NatashaThirlwell/master
+>>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
@@ -175,7 +185,10 @@ var PRODUCT_DATA = [{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
 =======
