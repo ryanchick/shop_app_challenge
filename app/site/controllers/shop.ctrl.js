@@ -10,6 +10,7 @@
 		//TODO #3 Capture resolved products for view
 		shopVm.products;
 		shopVm.openCart = openCart;
+		shopVm.goToCategories = goToCategories;
 
 		//watch for any changes to model data
 		$scope.$watch(function(){
@@ -21,6 +22,10 @@
 		function openCart(){
 			
 
+		}
+
+		function goToCategories(){
+			$state.go('categories')
 		}
 	}
 
