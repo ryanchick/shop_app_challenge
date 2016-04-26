@@ -16,7 +16,7 @@
 		</div>
 		<div>
 			<label>Description</label>
-			<textarea type="text" name="name" ng-model="ctrl.description" required></textarea>
+			<textarea type="text" name="description" ng-model="ctrl.description" required></textarea>
 		</div>
 		<div>
 			<label>Category</label>
@@ -32,7 +32,7 @@
 			<input type="number" name="quantity" ng-model="ctrl.quantity" required>
 		</div>
 		<div>
-			<button type="submit">Add Product</button>
+			<button type="submit">{{ctrl.product_add_btn}}</button>
 		</div>
 	</form>
 </article>

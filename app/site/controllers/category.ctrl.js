@@ -28,7 +28,7 @@
 	}
 })();
 
-var CATEGORIES = ['Food','Living','Transportation'];
+var CATEGORIES = ['Food','Living','Transportation','Shirts','Pants','Shoes','Outerwear','Accessories'];
 
 var PRODUCT_DATA = 
 [{

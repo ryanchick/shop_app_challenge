@@ -15,6 +15,7 @@
 			{label:'Accessories',value:'accessories'},
 		];
 		productVm.product = {};
+		productVm.product_add_btn = 'Add Product'
 		productVm.product_update_btn = 'Update Product';
 		productVm.product_delete_btn = 'Remove Product';
 		
@@ -43,19 +44,35 @@
 			//TODO #2
 			//create product object, pass to product service
 			//Update text in button
-			
+			console.log('add')
+			var newProduct = {
+				name:productVm.name,
+				image:productVm.image,
+				description:productVm.description,
+				category:productVm.category,
+				price:productVm.price,
+				quantity:productVm.quantity,
+				status:1
+			}
+			console.log(newProduct)
+			productSrv.addProduct(newProduct);
+			productVm.product_add_btn = 'Product Added';
 		}
 
 		function updateProduct(){
 			//TODO #2
 			//create product object, pass to product service
 			//Update text in button
+			productSrv.updateProduct(productVm.product,$stateParams.productId)
+
 		}
 
 		function deleteProduct(){
 			//TODO #2
 			//remove product, pass to product service
 			//update text in button
+			productSrv.deleteProduct($stateParams.productId)
+			alert('Product Deleted')
 		}
 	}
 
