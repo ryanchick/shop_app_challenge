@@ -165,7 +165,10 @@ var PRODUCT_DATA = [{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
 =======

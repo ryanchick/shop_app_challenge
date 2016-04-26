@@ -18,7 +18,11 @@
 	function goTocheckout() {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$state.go('checkout')		
+=======
+		$location.path('/checkout/')	
+>>>>>>> NatashaThirlwell/master
 =======
 		$location.path('/checkout/')	
 >>>>>>> NatashaThirlwell/master
