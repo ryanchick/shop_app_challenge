@@ -14,7 +14,11 @@
 			{label:'Outerwear',value:'outerwear'},
 			{label:'Accessories',value:'accessories'},
 		];
-		productVm.product = {};
+
+		productVm.product = productSrv.getProduct($stateParams.productId);
+		console.log(productVm.product);
+		console.log($stateParams.productId);
+
 		productVm.product_add_btn = 'Add Product'
 		productVm.product_update_btn = 'Update Product';
 		productVm.product_delete_btn = 'Remove Product';
