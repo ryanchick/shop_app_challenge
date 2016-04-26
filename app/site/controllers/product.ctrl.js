@@ -15,6 +15,7 @@
 			{label:'Accessories',value:'accessories'},
 		];
 
+		productVm.quantity = 1;
 		productVm.product = productSrv.getProduct($stateParams.productId);
 		console.log(productVm.product);
 		console.log($stateParams.productId);
@@ -43,6 +44,7 @@
 		productVm.addProduct = addProduct;
 		productVm.updateProduct = updateProduct;
 		productVm.deleteProduct = deleteProduct;
+		productVm.addtoCart = addtoCart;
 
 		function addProduct(){
 			//TODO #2
@@ -77,6 +79,10 @@
 			//update text in button
 			productSrv.deleteProduct($stateParams.productId)
 			alert('Product Deleted')
+		}
+
+		function addtoCart(){
+			productSrv.addtoCart(productVm.product,productVm.quantity)
 		}
 	}
 
