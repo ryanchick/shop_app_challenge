@@ -25,6 +25,8 @@
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
 		}
+<<<<<<< HEAD
+=======
 
 		function getCategories(){
 			var newCats = ['All'];
@@ -45,10 +47,11 @@
 			console.log(newCats)
 			return newCats;
 		}
+>>>>>>> NatashaThirlwell/master
 	}
 })();
 
-var CATEGORIES = ['Food','Living','Transportation','Shirts','Pants','Shoes','Outerwear','Accessories'];
+var CATEGORIES = ['Food','Living','Transportation'];
 
 var PRODUCT_DATA = 
 [{

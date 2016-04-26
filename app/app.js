@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router']);
+		.module('shopApp',['ui.router', 'ui.bootstrap']);
 
 	angular
 		.module('shopApp')
@@ -72,7 +72,7 @@
 			})
 
 			.state('product',{
-				url:'/products/:productName',
+				url:'/products/:productId',
 				controller: 'ProductCtrl as ctrl',
 				templateUrl: 'site/partials/product.html',
 

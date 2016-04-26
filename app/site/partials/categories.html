@@ -9,7 +9,7 @@
 					<li ng-repeat='category in ctrl.categories' ng-click='ctrl.currCtgry = category' ng-class='{active : category == ctrl.currCtgry}'>
 						{{category}}
 					</li>
-					
+										
 				</ul>
 			</div>
 			<div class="col-sm-10 col-xs-12 container">
@@ -37,9 +37,7 @@
 							<div class="product-info">
 								<div class="product-name">
 									<!-- SET PRODUCT NAME -->
-									{{product.name}}
-									
-									
+									{{product.name}}				
 								</div>
 								<div class="product-brand">
 									<!-- SET PRODUCT Description -->
@@ -48,7 +46,6 @@
 								<div class="product-cost">
 									<!-- SET PRODUCT PRICE WITH FILTER -->
 									{{product.price | currency}}
-									
 								</div>
 							</div>
 						</div>
