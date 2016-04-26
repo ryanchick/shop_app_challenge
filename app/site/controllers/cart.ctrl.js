@@ -8,14 +8,7 @@
 		cartVm.state = $state;
 		cartVm.products;
 		cartVm.goTocheckout = goTocheckout;
-<<<<<<< HEAD
 
-		$scope.$watch(function(){
-	    	return productSrv.products;
-		}, function (newValue) {
-		    shopVm.products = productSrv.products;
-		});
-=======
 		cartVm.cart = productSrv.cart;
 		cartVm.total = 0;
 		updateTotal();
@@ -40,7 +33,6 @@
 				cartVm.total += cartVm.cart[i].quantity * cartVm.cart[i].product.price;
 			}
 		}
->>>>>>> NatashaThirlwell/master
 
 		function goTocheckout() {
 			$state.go('checkout');		
