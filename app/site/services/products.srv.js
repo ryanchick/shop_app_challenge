@@ -107,14 +107,9 @@
       }
     }
 
-    function addtoCart(productId,quantity)
+    function addtoCart(product,quantity)
     {
-      console.log('addCart')
-      return api.request('/products/'+ productId,{},'GET')
-        .then(function(res){
-          console.log(res)
-          return res;
-      });
+      cart.push();
     }
 
 
