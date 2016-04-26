@@ -7,7 +7,7 @@
 		var cartVm = this;
 		cartVm.state = $state;
 		cartVm.products;
-		cartVm.goTocheckout = goTocheckout
+		cartVm.goTocheckout = goTocheckout;
 
 		$scope.$watch(function(){
 	    	return productSrv.products;
@@ -15,25 +15,10 @@
 		    shopVm.products = productSrv.products;
 		});
 
-	function goTocheckout() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-		$state.go('checkout')		
-=======
-		$location.path('/checkout/')	
->>>>>>> NatashaThirlwell/master
-=======
-		$location.path('/checkout/')	
->>>>>>> NatashaThirlwell/master
-=======
-		$location.path('/checkout/')	
->>>>>>> NatashaThirlwell/master
+		function goTocheckout() {
+			$state.go('checkout');		
+		}
 	}
-	}
-
-
-
 
 })();
 
