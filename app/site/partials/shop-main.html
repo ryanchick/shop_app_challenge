@@ -1,18 +1,18 @@
 <nav>
-  <div class="content-wrapper">
-    <ul class="left-nav">
-      <li><img src="assets/img/logo.png"></li>
-    </ul>
-    <ul class="right-nav">
-      <li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
-    </ul>
-  </div>
+	<div class="content-wrapper">
+		<ul class="left-nav">
+			<li><img src="assets/img/logo.png"></li>
+		</ul>
+		<ul class="right-nav" ng-click="openCart()">
+			<li><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></li>
+		</ul>
+	</div>
 </nav>
 
 <button ng-click="ctrl.state.go('admin.add_product')"></button>
 
 <section class="top-content" role="topbanner">
- 
+
 	<div class="content-wrapper">
 		<div class="table-view">
 			<div class="table-cell">
@@ -26,9 +26,13 @@
 
           <div class="">
             <form>
-              <!-- TO DO #3: ENABLE PRODUCT SEARCH -->
+             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
               <div class="form-container">
-                <input type="text" class="form-control"  placeholder="Search for a brand or item" >
+ -->                <input 
+                  type="text" 
+                  class="form-control"  
+                  placeholder="Search for a brand or item" 
+                  ng-model="ctrl.search">
                 <a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
               </div>
             </form>
@@ -44,7 +48,7 @@
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
 			<div class="col-xs-12 col-md-4">
-				<div id="product-card" class="product-card">
+			   <div id="product-card" class="product-card">
 		
 					<!-- SET PRODUCT IMAGE -->
 					<div class="product-img" style="background:url('/assets/img/');background-size:cover;background-position:center center">
@@ -120,4 +124,6 @@
 
 		</div>
 	</div>
-<section>
+</section>
+
+

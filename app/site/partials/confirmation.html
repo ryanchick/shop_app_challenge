@@ -1,0 +1,20 @@
+<div class="message conatiner">
+	<h1>Hey {{ctrl.name}}!</h1>
+	<p>Your order has succesfully been submited, listed below you will find your confirmation number as well as a summary of your purchase. 
+	We've also sent you an invoice to {{ctrl.email}}. </p>
+</div>
+
+<div class="orderSummary container">
+	<h2>Order Summary</h2>
+	<div class="cfrmNumber">
+		<h1>{{ctrl.cfrmNumber}}</h1>
+	</div>
+	<div class="order">
+		<h2>Your Order</h2>
+		<ul>
+			<li>{{product}}</li>
+		</ul>
+		
+	</div>
+	
+</div>
