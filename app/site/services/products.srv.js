@@ -10,14 +10,13 @@
     self.products = [];
     self.cart = []
     console.log(localStorage.cart)
-    if(localStorage.cart  != undefined)
+    if(localStorage.cart != undefined)
     {
       self.cart = JSON.parse(localStorage.cart);
       console.log('selfcart')
       console.log(self.cart)    
     }
   
-    
     loadProducts();
 
     //public functions
