@@ -107,7 +107,10 @@
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
     // function deleteAllProducts(){
@@ -126,9 +129,12 @@
     // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 
 >>>>>>> NatashaThirlwell/master
@@ -186,7 +192,10 @@ var PRODUCT_DATA = [{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
 =======
