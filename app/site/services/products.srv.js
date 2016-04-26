@@ -8,16 +8,16 @@
     var self = this;
     //public variables
     self.products = [];
-    self.cart = []
+    self.cart = [];
+    self.categories = CATEGORY_DATA;
     console.log(localStorage.cart)
-    if(localStorage.cart  != undefined)
+    if(localStorage.cart != undefined)
     {
       self.cart = JSON.parse(localStorage.cart);
       console.log('selfcart')
       console.log(self.cart)    
     }
   
-    
     loadProducts();
 
     //public functions
@@ -143,6 +143,32 @@
     }
   }
 })();
+
+var CATEGORY_DATA = [{
+  category:'camping',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+},{
+  category:'food',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+},{
+  category:'accessories',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+},{
+  category:'clothing',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+},{
+  category:'pharmaceutical',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+},{
+  category:'transportation',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'/assets/img/bu2.jpg'
+}]
 
 var PRODUCT_DATA = [{
   "name": "Retreat 320 6 Person Module Tent",

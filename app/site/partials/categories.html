@@ -8,12 +8,12 @@
 					<h4 class="category-header">Categories</h4>
 					<li ng-repeat='category in ctrl.categories' ng-click='ctrl.currCtgry = category' ng-class='{active : category == ctrl.currCtgry}'>
 					<img ng-src='{{"assets/img/" + category + ".png"}}'>
-						{{category}}
+						{{category | titleCaseFilter}}
 					</li>
 										
 				</ul>
 			</div>
-			<div class="col-sm-10 col-xs-12 container">
+			<div id="products" class="col-sm-10 col-xs-12 container">
 				<form class="form-inline">
 				    <div class="form-group">
 				      	<label for="search">Search:</label>
@@ -32,7 +32,8 @@
 								</div>
 							</div>
 							<!-- SET PRODUCT IMAGE -->
-							<div class="product-img" style="background:url('{{product.image}}');background-size:cover;background-position:center center">
+							<div class="product-img">
+								<img class="productImg" src="{{product.image}}">
 							</div>
 
 							<div class="product-info">
