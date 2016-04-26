@@ -4,7 +4,7 @@
 
 .sidebar{
 	height: 100em;
-	background-color:darkblue;
+	background-color:white;
 }
 
 .product-card{
@@ -18,5 +18,29 @@
 .active{
 	font-weight:bold;
 	/*background-color:red;*/
-	color:white;
+	color:#ff6d37;
 }
+.category-header{
+	text-decoration: underline;
+}
+
+#shop-navbar{
+	margin-bottom:0px;
+}
+
+#shop-navbar .search-btn{
+	display:inline-block;
+	background:#ff6d37;
+}
+#shop-navbar .search-btn img{
+	width:17px;
+/*	margin-left:5px;
+	margin-top:-19px;*/
+}
+
+#shop-navbar ul li{
+	display:inline-block;
+	margin-right:20px;
+}
+
+
