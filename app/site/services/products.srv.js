@@ -112,7 +112,6 @@
       cart.push();
     }
 
-
     // function deleteAllProducts(){
     //   console.log(self.products)
     //   for(var i = 1;i <= 5;i++)
@@ -123,7 +122,6 @@
     //       //product was deleted successfully
     //       self.removeProduct(i);
     //       // self.getProducts();
-    //       // $state.go('admin.dash');
     //     }
     //   })
     // }
@@ -177,7 +175,10 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
   "name": "Retreat Configure Wing Shelter",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
