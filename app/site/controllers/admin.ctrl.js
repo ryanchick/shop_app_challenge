@@ -8,38 +8,41 @@
   function AdminCtrl($scope,$state,productSrv){
     var adminVm = this;
     adminVm.productSrv = productSrv;
+    adminVm.is_products = false;
 
     //check if logged in
-//    if(localStorage.authToken == undefined || localStorage.authToken == null){
-//      $state.go('auth');
-//    }
 
-//     adminVm.products = productSrv.products;
-//     if(adminVm.products.length > 0 ){
-//     }
+    if(localStorage.authToken == undefined || localStorage.authToken == null){
+      $state.go('auth');
+    }
 
-//     //watch for updates to products object
-//     $scope.$watch(function(){
-//         return productSrv.products;
-//     }, function (newValue) {
-//       if(productSrv.products.length > 0){
-//           adminVm.products = productSrv.products;
-//           adminVm.is_products = true;
-//       }
-//     });
+    adminVm.products = productSrv.products;
+    if(adminVm.products.length > 0 ){
+      adminVm.is_products = true;
+    }
 
-//     //public functions
-//     adminVm.editProduct = editProduct;
-//     adminVm.logout = logout;
+    //watch for updates to products object
+    $scope.$watch(function(){
+        return productSrv.products;
+    }, function (newValue) {
+      if(productSrv.products.length > 0){
+          adminVm.products = productSrv.products;
+          adminVm.is_products = true;
+      }
+    });
 
-//     function editProduct(product){
-//       $state.go('admin.edit_product',{productId:product.id});
-//     }
+    //public functions
+    adminVm.editProduct = editProduct;
+    adminVm.logout = logout;
 
-//     function logout(){
-//       localStorage.removeItem('authToken');
-//       $state.go('auth');
-//     }
+    function editProduct(product){
+      $state.go('admin.edit_product',{productId:product.id});
+    }
 
-//   }
-// })();
+    function logout(){
+      localStorage.removeItem('authToken');
+      $state.go('auth');
+    }
+
+  }
+})();

@@ -26,6 +26,13 @@
 
 #shop-navbar{
 	margin-bottom:0px;
+	background:#FFF;
+	color:#ff6d37;
+}
+
+#shop-navbar .navbar-brand{
+	margin-left:30px;
+	color: #ff6d37;
 }
 
 #shop-navbar .search-btn{

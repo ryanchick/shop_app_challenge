@@ -9,7 +9,7 @@
 
 		//TODO #3 Capture resolved products for view
 		shopVm.products;
-		shopVm.openCart() = openCart();
+		shopVm.openCart = openCart;
 
 		//watch for any changes to model data
 		$scope.$watch(function(){
