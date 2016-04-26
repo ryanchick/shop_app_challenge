@@ -21,7 +21,7 @@
 			    </form>
 				<div class="row">
 					<!-- TODO #3: SHOW PRODUCTS -->
-					<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' ng-click='ctrl.toProductPage(product.productId)'>
+					<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' ng-click='ctrl.toProductPage(product.id)'>
 						<div id="product-card" class="product-card">
 							<div class="product-buy">
 								<div class="table-view">

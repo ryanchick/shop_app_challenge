@@ -160,7 +160,7 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
-  "name": "Retreat Configure Wing Shelter - Warm Grey/Sunset,"
+  "name": "Retreat Configure Wing Shelter - Warm Grey/Sunset",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
   "category": "accommodation",
@@ -330,7 +330,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Purple leather mask Swirly"
+  "name": "Purple leather mask Swirly",
   "image": "https://img0.etsystatic.com/000/0/5288709/il_570xN.203258642.jpg",
   "description": "Handmade Materials: leather, dye, elastic, sealant, paint",
   "category": "clothing",
@@ -426,16 +426,16 @@ var PRODUCT_DATA = [{
   "description": "A nice compilation of components and the bonus track is the Nexus 7-speed internal hub from Shimano®. The internal hub allows you to switch gears anytime (stopped or moving) and requires much less maintenance than a bike with an external drivetrain. The Nexus 7 gives you extra gears to drop into when you're going up hills or carrying a 5kg sack of apples. Revo shifters have a simple, fluid action and a large indicator to show you what gear you're currently in. The Mixed Tape will sound fine for anyone with a relatively flat 9 to 5 commute, who rides through cross town traffic, and mixes in the occasional rolling country road.<",
   "category": "transportation",
   "price": "695.00",
-  "quantity": "10",5
-  "status": "1"
-}, {
-  "name": "Ghost Powerkid 20 Bicycle - Youths",
-  "image": "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
-  "description": "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
-  "category": "transportation",
-  "price": "425.00",
   "quantity": "10",
   "status": "1"
+}, {
+  name: "Ghost Powerkid 20 Bicycle - Youths",
+  image: "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
+  description: "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
+  category: "Transportation",
+  price: "425.00",
+  quantity: "10",
+  status: "1"
 }, {
   "name": "Viva Juliett Classic City Bike",
   "image": "http://images.mec.ca/fluid/customers/c822/5042-007/generated/5042-007_MLL07_view1_720x720.jpg",
