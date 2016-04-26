@@ -23,12 +23,10 @@
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
 		}
-
-
 	}
 })();
 
-var CATEGORIES = ['Food','Living','Transportation','Shirts','Pants','Shoes','Outerwear','Accessories'];
+var CATEGORIES = ['Food','Living','Transportation'];
 
 var PRODUCT_DATA = 
 [{
