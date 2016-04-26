@@ -106,57 +106,12 @@
       }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> NatashaThirlwell/master
-=======
->>>>>>> NatashaThirlwell/master
-=======
->>>>>>> NatashaThirlwell/master
-=======
->>>>>>> NatashaThirlwell/master
-    // function deleteAllProducts(){
-    //   console.log(self.products)
-    //   for(var i = 1;i <= 5;i++)
-    //   api.request('/products/'+i,{},'DEL')
-    //   .then(function(res){
-    //     console.log(res);
-    //     if(res.status === 200){
-    //       //product was deleted successfully
-    //       self.removeProduct(i);
-    //       // self.getProducts();
-    //       // $state.go('admin.dash');
-    //     }
-    //   })
-    // }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
->>>>>>> NatashaThirlwell/master
-=======
->>>>>>> NatashaThirlwell/master
-=======
->>>>>>> NatashaThirlwell/master
-=======
-
->>>>>>> NatashaThirlwell/master
->>>>>>> NatashaThirlwell/master
     function loadProducts(){
       console.log('load')
       getProducts()
       .then(function(products){
         console.log(products)
-        if(products.length == 1){
+        if(products.length < 20){
           console.log(PRODUCT_DATA.length)
           for(var i = 0;i < PRODUCT_DATA.length;i++){
             addProduct(PRODUCT_DATA[i]);
@@ -207,7 +162,10 @@ var PRODUCT_DATA = [{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> NatashaThirlwell/master
 =======
 >>>>>>> NatashaThirlwell/master
 =======
