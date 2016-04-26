@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CategoryCtrl',CategoryCtrl);
 
-	function CategoryCtrl($location,productSrv,products){
+	function CategoryCtrl($location,productSrv,products,$stateParams){
 		var catVm = this;
 		catVm.productSrv = productSrv;
 
@@ -15,7 +15,9 @@
 		console.log(catVm.products.length)
 
 		catVm.search = '';
+
 		catVm.currCtgry = 'food';
+		console.log($stateParams.categoryName)
 
 		//public methods
 		catVm.toProductPage = toProductPage;

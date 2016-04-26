@@ -41,6 +41,7 @@
 		}
 
 		function updateTotal(){
+			checkVm.total = 0;
 			for(var i = 0;i< checkVm.cart.length;i++)
 			{
 				checkVm.total += checkVm.cart[i].quantity * checkVm.cart[i].product.price;
