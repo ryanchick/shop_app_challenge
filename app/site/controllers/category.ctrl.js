@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CategoryCtrl',CategoryCtrl);
 
-	function CategoryCtrl($location,productSrv,products){
+	function CategoryCtrl($location,productSrv,products,$stateParams){
 		var catVm = this;
 		catVm.productSrv = productSrv;
 
@@ -15,7 +15,10 @@
 		console.log(catVm.products.length)
 
 		catVm.search = '';
+
 		catVm.currCtgry = 'food';
+		getCategory();
+		console.log($stateParams.categoryName)
 
 		//public methods
 		catVm.toProductPage = toProductPage;
@@ -42,6 +45,15 @@
 			}
 			console.log(newCats)
 			return newCats;
+		}
+
+		function getCategory(){
+			for(var i = 0;i<productSrv.categories.length;i++)
+			{
+				if($stateParams.categoryName == productSrv.categories[i].category){
+					catVm.currCtgry = $stateParams.categoryName;
+				}
+			}
 		}
 	}
 })();

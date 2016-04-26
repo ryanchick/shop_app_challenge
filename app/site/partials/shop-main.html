@@ -9,7 +9,7 @@
 						Spartan Supplier
 					</h1>
 					<h3>
-						Buy all your fetival gear from Burning Man's number one supplier in the world
+						Buy all your festival gear from Burning Man's number one supplier in the world
 					</h3>
 
     <!--       <div class="">
@@ -31,82 +31,25 @@
   </div>
 </section>
 
-<section ng-click="ctrl.goToCategories()" class="product-view" role="product-view">
+<section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-md-4">
+			<div class="col-xs-12 col-md-4" ng-repeat='category in ctrl.categories' ng-click='ctrl.goToCategories(category.category)'>
 			   <div id="product-card" class="product-card">
 		
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/bu2.jpg');background-size:cover;background-position:center center">
+					<div class="product-img" style="background:url('{{category.image}}');background-size:cover;background-position:center center">
 					</div>
 
 					<div class="product-info">
 						<div class="product-name">
 							<!-- SET PRODUCT NAME -->
-							<h1>Accomodation</h1>			
+							<h1>{{category.category |titleCaseFilter}}</h1>			
 						</div>
 						<div class="product-brand">
 							<!-- SET PRODUCT Description -->
-							<em>Tents - Sleeping Bags - Beds</em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-							<p>300</p>	
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-4">
-				<div id="product-card" class="product-card">
-		
-					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/bu3.jpg');background-size:cover;background-position:center center">
-					</div>
-
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							<h1>Food</h1>		
-						</div>
-						<div class="product-brand">
-							<!-- SET PRODUCT Description -->
-							<em>Protien Bars -</em>
-							<em>Pudding -</em>
-							<em>Power Shakes</em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-							<p>100</p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-4">
-				<div id="product-card" class="product-card">
-		
-					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('/assets/img/bu1.jpg');background-size:cover;background-position:center center">
-					</div>
-
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							<h1>Transportation</h1>
-											
-						</div>
-						<div class="product-brand">
-							<!-- SET PRODUCT Description -->
-							<em>Bicycles</em>
-						</div>
-						<div class="product-cost">
-							<!-- SET PRODUCT PRICE WITH FILTER -->
-							<p>20</p>
+							<em>{{category.description}}</em>
 						</div>
 					</div>
 
