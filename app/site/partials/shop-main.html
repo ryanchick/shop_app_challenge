@@ -38,28 +38,30 @@
 	</div>
 </section>
 
-<section class="product-view" role="product-view">
+<section class="main-view" role="main-view">
 	<div class="content-wrapper">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
 			<div class="col-xs-12 col-md-4" ng-repeat='category in ctrl.categories' ng-click='ctrl.goToCategories(category.category)'>
-			   <div id="product-card" class="product-card">
+			   <div id="main-card" class="main-card main-buy main-buy:hover">
 		
 					<!-- SET PRODUCT IMAGE -->
-					<div class="product-img" style="background:url('{{category.image}}');background-size:cover;background-position:center center">
+				<div class="main-img" style="background:url('{{category.image}}');background-size:cover;background-position:center center">
+						<div class="main-name">
+						<div class="main-info">
 						<div class="product-name">
-						<div class="product-info">
-						<!-- <div class="product-name"> -->
-							<!-- SET PRODUCT NAME -->
-							<h2>{{category.category |titleCaseFilter}}</h2>			
+						<!-- 	SET PRODUCT NAME -->
+							<h2>{{category.category |titleCaseFilter}}</h2>		
 						</div>
+					</div> 
+						
+						</div> 
 					</div>
 
-						<!-- <div class="product-brand"> -->
-							<!-- SET PRODUCT Description -->
-							<!-- <em>{{category.description}}</em> -->
-						<!-- </div> -->
-					</div>
+					<!-- <div class="main-categories">
+						<img src="{{category.image}}">
+						<h2>{{category.category |titleCaseFilter}}</h2>	
+					</div> -->
 
 				</div>
 			</div>
