@@ -5,34 +5,37 @@
 
 <article class="product-frm">
 	<form name="add-product" ng-submit="ctrl.addProduct()">
+	<h1>Add New Product</h1>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct" id="basic-addon1">Product Name</span>
+  			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.name"
+  			aria-describedby="basic-addon1" required>
+		</div>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct" id="basic-addon1">Insert Image</span>
+			<input id="newProduct2" type="text" name="image" placeholder="Image Url"class="form-control" ng-model="ctrl.image" required>
+		</div>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct" id="basic-addon1">Description</span>
+  			<input id="newProduct2" type="text" name="description" class="form-control" placeholder="Description"
+  			aria-describedby="basic-addon1" ng-model="ctrl.description" required>
+		</div>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct" id="basic-addon1">Category</span>
+  			<select id="newProduct2" ng-options="options as options.category for options in ctrl.categories" class="form-control" ng-model="ctrl.category" name="category" required></select>
+		</div>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct">$ Price</span>
+  			<input id="newProduct2" type="text" name="price" class="form-control" placeholder="10.00" aria-label="Amount (to the nearest dollar)" ng-model="ctrl.price" required>
+		</div>
+		<div class="input-group margin">
+  			<span class="input-group-addon newProduct" id="basic-addon1">Quantity</span>
+  			<input id="newProduct2" type="number" name="quantity" class="form-control" placeholder="ProductName"
+  			aria-describedby="basic-addon1" ng-model="ctrl.quantity" required>
+		</div>
 
 		<div>
-			<label>Name</label>
-			<input type="text" name="name" ng-model="ctrl.name" required>
-		</div>
-		<div>
-			<label>Image</label>
-			<input type="text" name="image" ng-model="ctrl.image" required>
-		</div>
-		<div>
-			<label>Description</label>
-			<textarea type="text" name="description" ng-model="ctrl.description" required></textarea>
-		</div>
-		<div>
-			<label>Category</label>
-			<select ng-options="option.value as option.label for option in ctrl.categories" ng-model="ctrl.category" name="category">
-			</select>
-		</div>
-		<div>
-			<label>Price</label>
-			<input type="number" name="price" ng-model="ctrl.price" required>
-		</div>
-		<div>
-			<label>Quantity</label>
-			<input type="number" name="quantity" ng-model="ctrl.quantity" required>
-		</div>
-		<div>
-			<button type="submit">{{ctrl.product_add_btn}}</button>
+			<button class="btn btn-default newSubmit" type="submit">{{ctrl.product_add_btn}}</button>
 		</div>
 	</form>
 </article>

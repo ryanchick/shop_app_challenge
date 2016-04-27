@@ -173,6 +173,7 @@
           name:name,
           email:email
         }
+        // var orderId;
         console.log(newOrder)
         console.log(self.cart)
         self.orders.push(newOrder)

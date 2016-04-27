@@ -4,16 +4,10 @@
   .module('shopApp')
   .controller('ProductCtrl',ProductCtrl);
 
-  function ProductCtrl($stateParams,api,productSrv, $uibModal,$state){
+  function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr){
     var productVm = this;
 
-    productVm.categories = [
-      {label:'Shirts',value:'shirts'},
-      {label:'Pants',value:'pants'},
-      {label:'Shoes',value:'shoes'},
-      {label:'Outerwear',value:'outerwear'},
-      {label:'Accessories',value:'accessories'},
-    ];
+    productVm.categories = productSrv.categories;
 
     productVm.quantity = 1;
     productVm.product = productSrv.getProduct($stateParams.productId);
@@ -66,7 +60,7 @@
         name:productVm.name,
         image:productVm.image,
         description:productVm.description,
-        category:productVm.category,
+        category:productVm.category.category,
         price:productVm.price,
         quantity:productVm.quantity,
         status:1
@@ -97,6 +91,7 @@
     		alert('There are too many items!')
     	}else{
       		productSrv.addtoCart(productVm.product,productVm.quantity);
+      		toastr.success(productVm.product.name +' was added to your cart!')
     	}
     }
 
