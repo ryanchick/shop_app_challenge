@@ -16,7 +16,7 @@
     <h3>{{ctrl.product.price | currency}}</h3>
 
     <form class="form-inline">
-      
+
 <!--       <div class="btnmargin">
         <select class="form-control input-lg" placeholder="Quantity">
             <option>1</option>
@@ -26,13 +26,45 @@
             <option>5</option>
         </select>
       </div> -->
-      Quantity: <input class="form-control" ng-model='ctrl.quantity'></input>
+      Quantity: <input type="number" class="form-control" ng-model='ctrl.quantity'></input>
 
-      <div class="btnmargin">
+      <div data-toggle="modal" data-target="#myModal" class="btnmargin">
         <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart()'>Add to Cart</button>
       </div>
 
     </form>
+
+<!-- Make a modal window to pop up saying the order has been added to the cart -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body" style="font-size: 18px">
+        <h3>This items have been added to your order:</h3>
+        <p>
+          <br>
+          <b>Name:</b> {{ctrl.product.name}}
+          <br>
+          <b>Quantity:</b> {{ctrl.quantity}}
+        </p>
+          <br>
+
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="ctrl.openCart_v2()">See your order</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+    <div>
+      {{productVm.product.name}}
+    </div>
 
     </div>
 
