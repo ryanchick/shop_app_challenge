@@ -11,6 +11,9 @@
     adminVm.is_products = false;
     adminVm.is_orders = false;
     adminVm.totalRev = 0;
+    adminVm.categories = productSrv.categories;
+    adminVm.category = productSrv.category;
+    console.log(adminVm.categories);
 
 
     //check if logged in

@@ -7,13 +7,7 @@
   function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr){
     var productVm = this;
 
-    productVm.categories = [
-      {label:'Shirts',value:'shirts'},
-      {label:'Pants',value:'pants'},
-      {label:'Shoes',value:'shoes'},
-      {label:'Outerwear',value:'outerwear'},
-      {label:'Accessories',value:'accessories'},
-    ];
+    productVm.categories = productSrv.categories;
 
     productVm.quantity = 1;
     productVm.product = productSrv.getProduct($stateParams.productId);
@@ -66,7 +60,7 @@
         name:productVm.name,
         image:productVm.image,
         description:productVm.description,
-        category:productVm.category,
+        category:productVm.category.category,
         price:productVm.price,
         quantity:productVm.quantity,
         status:1
