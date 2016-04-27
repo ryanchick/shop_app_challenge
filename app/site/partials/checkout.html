@@ -1,9 +1,12 @@
 <shop-navbar></shop-navbar>
 
 <div class="container">
-
+	<button type="submit" class="btn btn-default" ng-click='ctrl.goBack()'>Back</button>
 	<div class="cart-list panel panel-default">
-		<div class="panel-heading"ng-click='ctrl.selected = 1'><h4 ng-click='ctrl.selected = 1'>Cart:</h4></div>
+		<div class="panel-heading"ng-click='ctrl.selected = 1'>
+			<h4 ng-click='ctrl.selected = 1'>Cart:</h4>
+			<h4 class='panel-heading-right'ng-hide='ctrl.selected == 1'>Total: {{ctrl.total * 1.13|currency}}</h4>
+		</div>
 		<ul class="panel-body" ng-show='ctrl.selected == 1'>
 			<li ng-repeat='item in ctrl.cart'>
 			<div>
@@ -27,32 +30,34 @@
 			<h4>Shipping and Billing Info</h4>
 		</div>
 		<div class="panel-body" ng-show='ctrl.selected == 2'>
-			<form>
+			<form name='addressForm'>
 				<div class="form-group">
 					<label for="name">Name</label>
-					<input type="text" class="form-control"	name="name" placeholder="name" ng-model='ctrl.name' required></input>
+					<input type="text" class="form-control"	name="name" placeholder="Name" ng-model='ctrl.name' required></input>
 				</div>
 				<div class="form-group">
 					<label for="email">Email</label>
-					<input type="email" class="form-control"	name="email" placeholder="email" ng-model='ctrl.email' required></input>
+					<input type="email" class="form-control"	name="email" placeholder="Email" ng-model='ctrl.email' required></input>
 				</div>
 				<div class="form-group">
 					<label for="name">Address:</label>
-					<input type="text" class="form-control"	name="name" placeholder="Street address , company name" ng-model='ctrl.address' required></input>
+					<input type="text" class="form-control"	name="address" placeholder="Address" ng-model='ctrl.address'></input>
 				</div>
 				<div class="form-group">
 					<label for="name">City:</label>
-					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.city' required></input>
+					<input type="text" class="form-control"	name="city" placeholder="City" ng-model='ctrl.city'></input>
 				</div>
 				<div class="form-group">
-					<label for="name">State/Province/Region:</label>
-					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.region' required></input>
+					<label for="name">Province/State/Region:</label>
+					<input type="text" class="form-control"	name="region" placeholder="Province" ng-model='ctrl.region'></input>
 				</div>
 				<div class="form-group">
 					<label for="name">Postal Code/ZIP: </label>
-					<input type="text" class="form-control"	name="name" placeholder="" ng-model='ctrl.zip' required></input>
+					<input type="text" class="form-control"	name="postal" placeholder="Postal Code" ng-model='ctrl.postal'></input>
 				</div>
 			</form>
+			<button class="btn btn-success" ng-disabled= '!addressForm.$valid'
+			ng-click='ctrl.selected = 2'>Confirm</button>
 		</div>
 	</div>
 
@@ -61,20 +66,22 @@
 			<h4>Payment Info</h4>
 		</div>
 		<div class="panel-body" ng-show='ctrl.selected == 3'>
-			<form>
+			<form name='cardForm'>
 				<div class="form-group">
-					<label for="name">Your credit cards</label>
-					<input type="text" class="form-control"	name="visa - master" placeholder="name" ng-model='ctrl.card_number' required></input>
+					<label for="cardnumber">Credit Card Number</label>
+					<input type="text" class="form-control"	name="cardnumber" placeholder="Card Number" ng-model='ctrl.card_number' required></input>
 				</div>
 				<div class="form-group">
-					<label for="email">Name on card</label>
-					<input type="email" class="form-control"	name="name" placeholder="email" ng-model='ctrl.card_name' required></input>
+					<label for="cardname">Name on Card</label>
+					<input type="text" class="form-control"	name="cardname" placeholder="Name" ng-model='ctrl.card_name' required></input>
 				</div>
 				<div class="form-group">
 					<label for="name">Expires on</label>
-					<input type="datetime-local" class="form-control"	name="name" placeholder="Street address , company name" ng-model='ctrl.card_expiry' required></input>
+					<input type="number" class="form-control" name="cardexpiry" placeholder="MMYY" ng-model='ctrl.card_expiry'required></input>
 				</div>
 			</form>
+			<button class="btn btn-success" ng-disabled= '!cardForm.$valid'
+			ng-click='ctrl.selected = 2'>Confirm</button>
 		</div>
 	</div>
 

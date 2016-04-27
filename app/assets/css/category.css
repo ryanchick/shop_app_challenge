@@ -5,7 +5,14 @@
 .sidebar{
 	height: 100em;
 	background-color:white;
+	position: fixed;
 }
+
+#products{
+	position: relative;
+	left:156px;
+}
+
 
 .product-card{
 	margin:10px;
@@ -21,9 +28,9 @@
 	/*background-color:red;*/
 	color:#ff6d37;
 }
-.category-header{
+/*.category-header{
 	text-decoration: underline;
-}
+}*/
 
 #shop-navbar{
 	margin-bottom:0px;

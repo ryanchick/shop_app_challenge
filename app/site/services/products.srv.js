@@ -122,7 +122,17 @@
         product:product,
         quantity:quantity
       }
-      self.cart.push(newProduct)
+      var found = false;
+      for(var i = 0;i<self.cart.length;i++){
+        if(product.id === self.cart[i].product.id)
+        {
+          self.cart[i].quantity += quantity;
+          found = true;
+        }
+      }
+      if(found === false){
+        self.cart.push(newProduct)
+      }
       console.log(self.cart)
       self.saveCart();
     }
@@ -153,48 +163,49 @@
       console.log(email)
       console.log('Process Order')
       console.log(self.cart)
-      var newOrder = {
-        id:Math.floor(Math.random()*10000),
-        cart:JSON.parse(JSON.stringify(self.cart)),
-        total:subtotal,
-        tax:subtotal * self.tax,
-        final_total:subtotal+(subtotal*self.tax),
-        name:name,
-        email:email
-      }
-      var orderId;
-      console.log(newOrder)
-      console.log(self.cart)
-      self.orders.push(newOrder)
-      self.saveOrders();
-      // api.request('/orders',newOrder,'POST')
-        // .then(function(res){
-          // console.log(res)
+      if(self.cart.length > 0){
+        var newOrder = {
+          id:Math.floor(Math.random()*10000),
+          cart:JSON.parse(JSON.stringify(self.cart)),
+          total:subtotal,
+          tax:subtotal * self.tax,
+          final_total:subtotal+(subtotal*self.tax),
+          name:name,
+          email:email
+        }
+        console.log(newOrder)
+        console.log(self.cart)
+        self.orders.push(newOrder)
+        self.saveOrders();
+        // api.request('/orders',newOrder,'POST')
+          // .then(function(res){
+            // console.log(res)
 
-          //update inventory
-          if(self.cart.length > 0){
-            for(var i = 0;i<self.cart.length;i++){
-              var newProduct = {
-                name:self.cart[i].product.name,
-                description:self.cart[i].product.description,
-                image:self.cart[i].product.image,
-                category:self.cart[i].product.category,
-                price:self.cart[i].product.price,
-                quantity:self.cart[i].product.quantity,
-                status:1
+            //update inventory
+            if(self.cart.length > 0){
+              for(var i = 0;i<self.cart.length;i++){
+                var newProduct = {
+                  name:self.cart[i].product.name,
+                  description:self.cart[i].product.description,
+                  image:self.cart[i].product.image,
+                  category:self.cart[i].product.category,
+                  price:self.cart[i].product.price,
+                  quantity:self.cart[i].product.quantity,
+                  status:1
+                }
+                newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+                if(newProduct.quantity == 0)
+                {
+                  // newProduct.status = 0;
+                }
+                self.updateFromCart(newProduct,self.cart[i].product.id)
               }
-              newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
-              if(newProduct.quantity == 0)
-              {
-                // newProduct.status = 0;
-              }
-              self.updateFromCart(newProduct,self.cart[i].product.id)
             }
-          }
-        // })
-      self.cart = [];
-      self.saveCart();
-      $state.go('confirmation',{'orderId':newOrder.id})
+          // })
+        self.cart = [];
+        self.saveCart();
+        $state.go('confirmation',{'orderId':newOrder.id})
+      }
     }
 
     function updateFromCart(product,productId){

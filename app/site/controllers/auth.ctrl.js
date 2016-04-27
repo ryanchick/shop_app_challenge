@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.controller('AuthCtrl',AuthCtrl);
 
-	function AuthCtrl($state,api){
+	function AuthCtrl($state,api,toastr){
 		var authVm = this;
 
 		authVm.password;
@@ -11,7 +11,7 @@
 		authVm.auth_btn = 'Continue';
 
 		if(localStorage.authToken){
-			$state.go('admin');
+			$state.go('admin.dash');
 		}
 
 		//public functions
@@ -38,7 +38,9 @@
 						authVm.auth_btn = 'Invalid Password';	
 					}
 					else{
+						toastr.success('Logged in as Admin.')
 						$state.go('admin.dash');
+
 					}
 				}
 				

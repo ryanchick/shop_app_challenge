@@ -11,16 +11,19 @@
 	</ul>
 </nav> -->
 
-<nav id="shop-navbar" class="navbar navbar-default">
+<nav id="shop-navbar" class="navbar navbar-default navbar-fixed-top">
   	<div class="container-fluid">
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
+
+		    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		    </button>
+
 	 <!-- Brand Name -->
+
 		      <span ><img ng-click="ctrl.goToHome()" class="logo" id="logo" src="assets/img/logo2.png" ></span>
 		      <span id="spartan" class="navbar-brand" ng-click="ctrl.goToHome()">Spartan</span>
 	    </div>
@@ -29,7 +32,8 @@
 	     	</ul>
 
 	     	<ul class="nav navbar-nav navbar-right">
-	     		<div class="form-group">
+	     		
+	     		<!-- <div class="form-group" ng-hide='ctrl.is_admin'>
 	     			<form class="navbar-right form-inline">
 	     				<div id="searchbutton" class="input-group">
 						<input 
@@ -45,28 +49,17 @@
 						</span>
 						</div>
 					</form>
-				</div>
-				</li>
-
-				<button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()"><span id="loginF">Login</span></button>
-
-    <!--       <div class="">
-            <form> -->
-             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
-              <div class="form-container">
- -->          <!--       <input 
-                  type="text" 
-                  class="form-control"  
-                  placeholder="Search for a brand or item" 
-                  ng-model="ctrl.search">
-                <a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
-              </div>
-            </form>
-          </div> -->
-
+				</div> -->
+				
 			<!-- Cart Icon -->
-		       <li><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+		       <li ng-hide='ctrl.is_admin'><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+
+		       	<li><button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()" ng-disabled='ctrl.is_admin'>
+		       		<span ng-hide='ctrl.is_admin'id="loginF">Login</span>
+		       		<span ng-show='ctrl.is_admin'>Welcome, Admin</span>
+		       	</button></li>
 		        
+
 	    	</ul>
 	    </div>
   	</div>
