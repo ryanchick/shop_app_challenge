@@ -58,3 +58,7 @@
 	z-index:50;
 }
 
+#products .productImg{
+	max-width: 24.5816vw;
+	max-height: 16.667vw;
+}

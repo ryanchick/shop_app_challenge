@@ -21,8 +21,8 @@
 	        <span class="icon-bar"></span>
 	      </button>
 	 <!-- Brand Name -->
-		      <!-- <span><img class="logo" src="assets/img/icon.png"></span> -->
-		      <span class="navbar-brand">Spartan</span>
+		      <span><img class="logo" id="logo" src="assets/img/logo2.png" ></span>
+		      <span id="spartan" class="navbar-brand">Spartan</span>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -31,8 +31,9 @@
 	     	<ul class="nav navbar-nav navbar-right">
 	     		<div class="form-group">
 	     			<form class="navbar-right form-inline">
-	     				<div class="input-group">
+	     				<div id="searchbutton" class="input-group">
 						<input 
+							id="look"
 							ng-model="ctrl.productSearch" 
 							type="text" 
 							class="form-control" placeholder="Search">
@@ -61,7 +62,7 @@
           </div> -->
 
 			<!-- Cart Icon -->
-		        <li><div ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+		        <li><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
 	    	</ul>
 	    </div>
   	</div>
