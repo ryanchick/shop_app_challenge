@@ -8,19 +8,26 @@
 			<h4 class='panel-heading-right'ng-hide='ctrl.selected == 1'>Total: {{ctrl.total * 1.13|currency}}</h4>
 		</div>
 		<ul class="panel-body" ng-show='ctrl.selected == 1'>
+			<form name='cartForm'>
 			<li ng-repeat='item in ctrl.cart'>
 			<div>
-				<img style="" ng-src='{{item.product.image}}'>Name: {{item.product.name}}
+				<img ng-src='{{item.product.image}}'>Name: {{item.product.name}}
 				{{item.product.price|currency}}
-				Quantity: {{item.quantity}}
-				Total: {{item.quantity * item.product.price||currency}}
-				<button class="btn btn-danger" ng-click='ctrl.removeCart($index)'>Delete</button>
+				Quantity: <input type="number" 
+					ng-model='item.quantity' 
+					max='{{item.product.quantity}}'
+					min='1'
+					name='qty_{{$index}}'
+					ng-class="{'invalid-form':cartForm['qty_' +$index].$invalid}">
+				Total: {{item.quantity * item.product.price | currency}}
+				<button class="btn btn-danger btn-xs" ng-click='ctrl.removeCart($index)'><i class="fa fa-times"></i></button>
 			</div></li>
 			<h3>Subtotal:{{ctrl.total|currency}}</h3>
 			<h3>Tax:{{ctrl.total * 0.13 |currency}}</h3>
 			<h3>Total:{{ctrl.total * 1.13|currency}}</h3>
 			<button class="btn btn-success" ng-click='ctrl.selected = 2'>Confirm</button>
 			<button class="btn btn-warning" ng-click='ctrl.processOrder()'>Process Order</button>
+			</form>
 		</ul>
 		
 	</div>
@@ -49,7 +56,7 @@
 				</div>
 				<div class="form-group">
 					<label for="name">Province/State/Region:</label>
-					<input type="text" class="form-control"	name="region" placeholder="Province" ng-model='ctrl.region'></input>
+					<input type="text" class="form-control"	name="province" placeholder="Province" ng-model='ctrl.province'></input>
 				</div>
 				<div class="form-group">
 					<label for="name">Postal Code/ZIP: </label>

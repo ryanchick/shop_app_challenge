@@ -318,3 +318,7 @@ Product view
 .btn-default {
 	color: #FF6D37
 }
+
+.invalid-form{
+  border: 1px solid red;
+}
