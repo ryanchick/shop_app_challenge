@@ -5,6 +5,8 @@
 	</p>
 </div>
 
+<button class="btn btn-danger" ng-click='ctrl.reloadProducts()'>Reload Products</button>
+
 <div ng-show="ctrl.is_products">
 	<table class="products-list table">
 		<tr>
@@ -16,7 +18,7 @@
 		</tr>
 		<tr ng-repeat="product in ctrl.products |
                  filter: ctrl.productSearch">
-			<td>{{product.category}}</td>
+			<td>{{product.category | titleCaseFilter}}</td>
 			<td>{{product.name}}</td>
 			<td>{{product.price}}</td>
 			<td>{{product.quantity}}</td>
