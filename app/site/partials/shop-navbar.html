@@ -32,7 +32,8 @@
 	     	</ul>
 
 	     	<ul class="nav navbar-nav navbar-right">
-	     		<div class="form-group">
+	     		
+	     		<div class="form-group" ng-hide='ctrl.is_admin'>
 	     			<form class="navbar-right form-inline">
 	     				<div id="searchbutton" class="input-group">
 						<input 
@@ -52,7 +53,9 @@
 
 
 			<!-- Cart Icon -->
-		       <li><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+		       <li ng-hide='ctrl.is_admin'><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+
+		       	<button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()"><span id="loginF">Login</span></button>å
 		        
 	    	</ul>
 	    </div>

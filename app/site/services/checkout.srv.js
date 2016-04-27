@@ -7,9 +7,7 @@
   function CheckoutService($state,api){
   	var self = this;
   	self.name = '';
-  	self.email = ''
-
-
+  	self.email = '';
   }
 
 })();

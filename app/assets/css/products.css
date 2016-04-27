@@ -25,7 +25,6 @@
 
 h1 {
   margin-top: 0px;
-  margin-top: Opx;
 }
 
 #info button{
@@ -47,4 +46,5 @@ h1 {
 .modal.fade.ng-isolate-scope.in {
   overflow: scroll;
 }*/
+
 

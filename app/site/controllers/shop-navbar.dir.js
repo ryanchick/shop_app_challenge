@@ -15,13 +15,21 @@
 		.controller('shopNavbarCtrl', shopNavbarCtrl);
 		
 
-	function shopNavbarCtrl($location, $uibModal, $scope, productSrv){
+	function shopNavbarCtrl($location, $uibModal, $scope,$state, productSrv){
 		this.newTitle = '';
 		this.toNewMovie = toNewMovie;
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
 		this.productSrv = productSrv
+		this.is_admin = false;
+
+		console.log('state')
+		console.log($state.current)
+		if($state.current.name.search('admin') != -1){
+			this.is_admin = true;
+		}
+		console.log(this.is_admin)
 		
 
 		function toNewMovie(title){
