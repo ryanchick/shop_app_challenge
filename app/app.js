@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router', 'ui.bootstrap','toastr']);
+		.module('shopApp',['ui.router', 'ui.bootstrap','ngMessages','toastr']);
 
 
 	angular
