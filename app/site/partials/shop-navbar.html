@@ -54,9 +54,11 @@
 			<!-- Cart Icon -->
 		       <li ng-hide='ctrl.is_admin'><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
 
-		       	<button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()"><span id="loginF">Login</span></button>å
+		       	<li><button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()" ng-disabled='ctrl.is_admin'>
+		       		<span ng-hide='ctrl.is_admin'id="loginF">Login</span>
+		       		<span ng-show='ctrl.is_admin'>Welcome, Admin</span>
+		       	</button></li>
 		        
-		       <button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()"><span id="loginF">Login</span></button>
 
 	    	</ul>
 	    </div>
