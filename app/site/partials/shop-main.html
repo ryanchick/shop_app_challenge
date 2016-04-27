@@ -4,13 +4,14 @@
 	<div class="content-wrapper">
 		<div class="table-view">
 			<div class="table-cell">
-				<div class="content">		
+				<div class="content">	
 					<h1 class="brand">
 						Spartan Supplier
 					</h1>
 					<h3>
-						Buy all your festival gear from Burning Man's number one supplier in the world
+						Buy all your festival gear from Burning Man's number one online supplier
 					</h3>
+
 
     <!--       <div class="">
             <form> -->
@@ -31,6 +32,12 @@
   </div>
 </section>
 
+<section id="call-to-action" class="container">
+	<div>
+		<h2> Click On A Category To Begin Your Search</h2>
+	</div>
+</section>
+
 <section class="product-view" role="product-view">
 	<div class="content-wrapper">
 		<div class="row">
@@ -40,17 +47,18 @@
 		
 					<!-- SET PRODUCT IMAGE -->
 					<div class="product-img" style="background:url('{{category.image}}');background-size:cover;background-position:center center">
+						<div class="product-name">
+						<div class="product-info">
+						<!-- <div class="product-name"> -->
+							<!-- SET PRODUCT NAME -->
+							<h2>{{category.category |titleCaseFilter}}</h2>			
+						</div>
 					</div>
 
-					<div class="product-info">
-						<div class="product-name">
-							<!-- SET PRODUCT NAME -->
-							<h1>{{category.category |titleCaseFilter}}</h1>			
-						</div>
-						<div class="product-brand">
+						<!-- <div class="product-brand"> -->
 							<!-- SET PRODUCT Description -->
-							<em>{{category.description}}</em>
-						</div>
+							<!-- <em>{{category.description}}</em> -->
+						<!-- </div> -->
 					</div>
 
 				</div>

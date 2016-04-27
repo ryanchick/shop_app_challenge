@@ -247,29 +247,29 @@
 })();
 
 var CATEGORY_DATA = [{
-  category:'camping',
-  description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
-},{
-  category:'food',
-  description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
-},{
   category:'accessories',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/5.jpg',
+},{
+  category:'camping',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'http://i2.cdn.turner.com/cnnnext/dam/assets/150724114946-5-super-43.jpg',
 },{
   category:'clothing',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/4.jpg'
+},{
+   category:'food',
+  description:'Protein Bars - Pudding - Power Shakes',
+  image:'/assets/img/bu3.jpg'
 },{
   category:'pharmaceutical',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/6.jpg'
 },{
   category:'transportation',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/bu1.jpg'
 }]
 
 var PRODUCT_DATA = [{
@@ -467,7 +467,7 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //clothing
-  "name": "Egyptian kitty Merimask",
+  "name": "Egyptian Kitty Merimask",
   "image": "https://img0.etsystatic.com/134/0/5203101/il_570xN.963149186_ngyx.jpg",
   "description": "Handmade Materials: leather, acrylic painting, turquoise stone",
   "category": "clothing",
@@ -475,7 +475,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Purple leather mask Swirly",
+  "name": "Purple Leather Swirly Mask",
   "image": "https://img0.etsystatic.com/000/0/5288709/il_570xN.203258642.jpg",
   "description": "Handmade Materials: leather, dye, elastic, sealant, paint",
   "category": "clothing",
