@@ -14,9 +14,8 @@
 		.module('shopApp')
 		.controller('shopNavbarCtrl', shopNavbarCtrl);
 		
-
 	function shopNavbarCtrl($location, $uibModal, $scope,$state, productSrv){
-	
+
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
