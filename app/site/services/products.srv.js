@@ -81,7 +81,6 @@
           self.removeProduct(productId);
           self.getProducts();
           $state.go('admin.dash');
-
         }
       })
     }
