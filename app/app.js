@@ -86,7 +86,7 @@
 			})
 
 			.state('confirmation',{
-				url:'/confirmation',
+				url:'/confirmation/:orderId',
 				controller: 'ConfirmationCtrl as ctrl',
 				templateUrl: 'site/partials/confirmation.html',
 			});
