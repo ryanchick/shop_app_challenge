@@ -9,15 +9,11 @@
     //public variables
     self.products = [];
     self.cart = [];
+    self.orders = [];
     self.categories = CATEGORY_DATA;
+    self.tax = 0.13;
     console.log(localStorage.cart)
-    if(localStorage.cart != undefined)
-    {
-      self.cart = JSON.parse(localStorage.cart);
-      console.log('selfcart')
-      console.log(self.cart)    
-    }
-  
+    loadCart();
     loadProducts();
 
     //public functions
@@ -30,6 +26,8 @@
     self.deleteProduct = deleteProduct;
     self.addtoCart = addtoCart;
     self.removeCart = removeCart;
+    self.processOrder = processOrder;
+    self.updateFromCart = updateFromCart;
     self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
 
@@ -126,6 +124,58 @@
       console.log('srvremove' + index)
       self.cart.splice(index,1);
       localStorage.cart = JSON.stringify(self.cart);
+    }
+
+    function loadCart()
+    {
+      if(localStorage.cart != undefined){
+        self.cart = JSON.parse(localStorage.cart);
+        console.log('selfcart')
+        console.log(self.cart)    
+      }
+    }
+
+    function processOrder(subtotal)
+    {
+      var newOrder = {
+        cart:JSON.parse(JSON.stringify(self.cart)),
+        total:subtotal,
+        tax:subtotal * self.tax,
+        final_total:subtotal+(subtotal*self.tax)
+      }
+      console.log(newOrder)
+      console.log(self.cart)
+      if(self.cart.length > 0){
+        for(var i = 0;i<self.cart.length;i++){
+          var newProduct = {
+            name:self.cart[i].product.name,
+            description:self.cart[i].product.description,
+            image:self.cart[i].product.image,
+            category:self.cart[i].product.category,
+            price:self.cart[i].product.price,
+            quantity:self.cart[i].product.quantity,
+            status:1
+          }
+          newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+          if(newProduct.quantity == 0)
+          {
+            // newProduct.status = 0;
+          }
+          self.updateFromCart(newProduct,self.cart[i].product.id)
+        }
+      }
+    }
+
+    function updateFromCart(product,productId){
+      api.request('/products/'+productId,product,'PUT')
+      .then(function(res){
+        console.log(res);
+        if(res.status === 200){
+          //product was updated successfully
+          self.updateProductList(product,productId);
+          // $state.go('admin.dash');
+        }
+      })
     }
 
     function deleteAllProducts(){

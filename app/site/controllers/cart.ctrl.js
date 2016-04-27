@@ -15,11 +15,6 @@
 		console.log(cartVm.cart)
 
 		cartVm.removeCart = removeCart;
-		// $scope.$watch(function(){
-	 //    	return productSrv.products;
-		// }, function (newValue) {
-		//     shopVm.products = productSrv.products;
-		// });
 
 		function removeCart(index){
 			console.log('remove' + index)

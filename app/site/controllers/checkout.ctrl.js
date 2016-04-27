@@ -13,9 +13,6 @@
 		checkVm.total = 0;
 		updateTotal();
 
-
-	
-
 		checkVm.selected = 2;
 
 		// checkVm.addtoCart = addtoCart;
@@ -27,9 +24,6 @@
 		function checkProducts(){
 			productSrv.getProducts();
 		}
-
-
-	
 	
 		function removeCart(index){
 			console.log('remove' + index)
@@ -37,7 +31,6 @@
 			checkVm.cart = productSrv.cart;
 
 			updateTotal();
-
 		}
 
 		function updateTotal(){
