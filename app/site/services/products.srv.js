@@ -9,16 +9,13 @@
     //public variables
     self.products = [];
     self.cart = [];
+    self.orders = [];
     self.categories = CATEGORY_DATA;
+    self.tax = 0.13;
     console.log(localStorage.cart)
-    if(localStorage.cart != undefined)
-    {
-      self.cart = JSON.parse(localStorage.cart);
-      console.log('selfcart')
-      console.log(self.cart)    
-    }
-  
+    loadCart();
     loadProducts();
+    loadOrders();
 
     //public functions
     self.getProduct = getProduct;
@@ -28,8 +25,17 @@
     self.updateProductList = updateProductList;
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
+
     self.addtoCart = addtoCart;
     self.removeCart = removeCart;
+    self.saveCart = saveCart;
+    self.loadCart = loadCart;
+
+    self.processOrder = processOrder;
+    self.updateFromCart = updateFromCart;
+    self.saveOrders = saveOrders;
+    self.loadOrders = loadOrders;
+
     self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
 
@@ -81,7 +87,6 @@
           self.removeProduct(productId);
           self.getProducts();
           $state.go('admin.dash');
-
         }
       })
     }
@@ -119,14 +124,100 @@
       }
       self.cart.push(newProduct)
       console.log(self.cart)
-      localStorage.cart = JSON.stringify(self.cart);
+      self.saveCart();
     }
 
     function removeCart(index)
     {
       console.log('srvremove' + index)
       self.cart.splice(index,1);
+      self.saveCart();
+    }
+
+    function saveCart(){
       localStorage.cart = JSON.stringify(self.cart);
+    }
+
+    function loadCart()
+    {
+      if(localStorage.cart != undefined){
+        self.cart = JSON.parse(localStorage.cart);
+        console.log('selfcart')
+        console.log(self.cart)    
+      }
+    }
+
+    function processOrder(subtotal,name,email)
+    {
+      console.log('name:' + name)
+      console.log(email)
+      console.log('Process Order')
+      console.log(self.cart)
+      var newOrder = {
+        id:Math.floor(Math.random()*10000),
+        cart:JSON.parse(JSON.stringify(self.cart)),
+        total:subtotal,
+        tax:subtotal * self.tax,
+        final_total:subtotal+(subtotal*self.tax),
+        name:name,
+        email:email
+      }
+      var orderId;
+      console.log(newOrder)
+      console.log(self.cart)
+      self.orders.push(newOrder)
+      self.saveOrders();
+      // api.request('/orders',newOrder,'POST')
+        // .then(function(res){
+          // console.log(res)
+
+          //update inventory
+          if(self.cart.length > 0){
+            for(var i = 0;i<self.cart.length;i++){
+              var newProduct = {
+                name:self.cart[i].product.name,
+                description:self.cart[i].product.description,
+                image:self.cart[i].product.image,
+                category:self.cart[i].product.category,
+                price:self.cart[i].product.price,
+                quantity:self.cart[i].product.quantity,
+                status:1
+              }
+              newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+              if(newProduct.quantity == 0)
+              {
+                // newProduct.status = 0;
+              }
+              self.updateFromCart(newProduct,self.cart[i].product.id)
+            }
+          }
+        // })
+      self.cart = [];
+      self.saveCart();
+      $state.go('confirmation',{'orderId':newOrder.id})
+    }
+
+    function updateFromCart(product,productId){
+      api.request('/products/'+productId,product,'PUT')
+      .then(function(res){
+        console.log(res);
+        if(res.status === 200){
+          //product was updated successfully
+          self.updateProductList(product,productId);
+          // $state.go('admin.dash');
+        }
+      })
+    }
+
+    function saveOrders(){
+      localStorage.orders = JSON.stringify(self.orders)
+    }
+
+    function loadOrders(){
+      if(localStorage.orders != undefined){
+        self.orders = JSON.parse(localStorage.orders)
+      }
+      // self.orders = [];
     }
 
     function deleteAllProducts(){
@@ -156,29 +247,29 @@
 })();
 
 var CATEGORY_DATA = [{
-  category:'camping',
-  description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
-},{
-  category:'food',
-  description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
-},{
   category:'accessories',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/5.jpg',
+},{
+  category:'camping',
+  description:'Tents - Sleeping Bags - Beds',
+  image:'http://i2.cdn.turner.com/cnnnext/dam/assets/150724114946-5-super-43.jpg',
 },{
   category:'clothing',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/4.jpg'
+},{
+   category:'food',
+  description:'Protein Bars - Pudding - Power Shakes',
+  image:'/assets/img/bu3.jpg'
 },{
   category:'pharmaceutical',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/6.jpg'
 },{
   category:'transportation',
   description:'Tents - Sleeping Bags - Beds',
-  image:'/assets/img/bu2.jpg'
+  image:'/assets/img/bu1.jpg'
 }]
 
 var PRODUCT_DATA = [{
@@ -376,7 +467,7 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //clothing
-  "name": "Egyptian kitty Merimask",
+  "name": "Egyptian Kitty Merimask",
   "image": "https://img0.etsystatic.com/134/0/5203101/il_570xN.963149186_ngyx.jpg",
   "description": "Handmade Materials: leather, acrylic painting, turquoise stone",
   "category": "clothing",
@@ -384,7 +475,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Purple leather mask Swirly",
+  "name": "Purple Leather Swirly Mask",
   "image": "https://img0.etsystatic.com/000/0/5288709/il_570xN.203258642.jpg",
   "description": "Handmade Materials: leather, dye, elastic, sealant, paint",
   "category": "clothing",

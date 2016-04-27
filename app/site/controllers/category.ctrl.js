@@ -16,7 +16,7 @@
 
 		catVm.search = '';
 
-		catVm.currCtgry = 'food';
+		catVm.currCtgry = '';
 		getCategory();
 		console.log($stateParams.categoryName)
 
@@ -48,6 +48,7 @@
 		}
 
 		function getCategory(){
+			catVm.currCtgry = ''
 			for(var i = 0;i<productSrv.categories.length;i++)
 			{
 				if($stateParams.categoryName == productSrv.categories[i].category){
