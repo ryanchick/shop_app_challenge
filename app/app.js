@@ -42,6 +42,12 @@
 				controller:'AdminCtrl as ctrl'
 			})
 
+			.state('admin.orders',{
+				url:'/orders',
+				templateUrl:'site/partials/admin-orders.html',
+				controller:'AdminCtrl as ctrl'
+			})
+
 			.state('admin.add_product',{
 				url:'/add_product',
 				controller:'ProductCtrl as ctrl',

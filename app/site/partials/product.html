@@ -1,8 +1,7 @@
 <shop-navbar></shop-navbar>
 <div class="container-fluid" id="top">
-
+  <button type="submit" class="btn btn-default" ng-click='ctrl.goBack()'>Back</button>
   <div class="row">
-
     <div class="productImg col-xs-5" id="products">
       <img class="movie-poster" src="{{ctrl.product.image}}">
     </div>
@@ -15,7 +14,9 @@
 
     <h3>{{ctrl.product.price | currency}}</h3>
 
-    <form class="form-inline">
+    <h4>Remaining in Stock: {{ctrl.product.quantity}}</h4>
+
+    <form name='quantForm' class="form-inline">
 
 <!--       <div class="btnmargin">
         <select class="form-control input-lg" placeholder="Quantity">
@@ -26,11 +27,13 @@
             <option>5</option>
         </select>
       </div> -->
-      Quantity: <input type="number" class="form-control" ng-model='ctrl.quantity'></input>
+      Quantity: <input type="number" class="form-control" ng-model='ctrl.quantity' max={{ctrl.product.quantity}}></input>
 
-      <div data-toggle="modal" data-target="#myModal" class="btnmargin">
-        <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart()'>Add to Cart</button>
+      <!-- <div data-toggle="modal" data-target="#myModal" class="btnmargin"> -->
+      <div class="btnmargin">
+        <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart(quantForm.$valid)'>Add to Cart</button>
       </div>
+      <!-- </div> -->
 
     </form>
 
