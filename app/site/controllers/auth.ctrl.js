@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.controller('AuthCtrl',AuthCtrl);
 
-	function AuthCtrl($state,api){
+	function AuthCtrl($state,api,toastr){
 		var authVm = this;
 
 		authVm.password;
@@ -38,7 +38,9 @@
 						authVm.auth_btn = 'Invalid Password';	
 					}
 					else{
+						toastr.success('Logged in as Admin.')
 						$state.go('admin.dash');
+
 					}
 				}
 				

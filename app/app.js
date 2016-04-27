@@ -2,7 +2,8 @@
 	'use strict';
 
 	angular
-		.module('shopApp',['ui.router', 'ui.bootstrap']);
+		.module('shopApp',['ui.router', 'ui.bootstrap','toastr']);
+
 
 	angular
 		.module('shopApp')
@@ -111,7 +112,27 @@
 		               return response;
 		           }
 		       }
-		   });
+		   	});
+
+			
 		});
+
+	angular.module('shopApp')
+		.run(function($rootScope) {
+    		$rootScope.$on('$stateChangeSuccess', function() {
+	   			document.body.scrollTop = document.documentElement.scrollTop = 0;
+			});
+		})
+
+	angular
+	    .module('shopApp')
+	    .config(function(toastrConfig) {
+	      angular.extend(toastrConfig, {
+	        positionClass: 'toast-bottom-right'
+	    	});
+	    });
+
+
+ 
 })();
 

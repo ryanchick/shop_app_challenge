@@ -5,7 +5,7 @@
     .module('shopApp')
     .controller('AdminCtrl',AdminCtrl);
 
-  function AdminCtrl($scope,$state,productSrv){
+  function AdminCtrl($scope,$state,productSrv,toastr){
     var adminVm = this;
     adminVm.productSrv = productSrv;
     adminVm.is_products = false;
@@ -68,6 +68,7 @@
 
     function logout(){
       localStorage.removeItem('authToken');
+      toastr.success('Logged out succesfully.')
       $state.go('auth');
     }
 

@@ -4,7 +4,7 @@
   .module('shopApp')
   .controller('ProductCtrl',ProductCtrl);
 
-  function ProductCtrl($stateParams,api,productSrv, $uibModal,$state){
+  function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr){
     var productVm = this;
 
     productVm.categories = [
@@ -97,6 +97,7 @@
     		alert('There are too many items!')
     	}else{
       		productSrv.addtoCart(productVm.product,productVm.quantity);
+      		toastr.success(productVm.product.name +' was added to your cart!')
     	}
     }
 
