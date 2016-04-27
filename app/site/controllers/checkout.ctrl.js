@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CheckoutCtrl',CheckoutCtrl);
 
-	function CheckoutCtrl (productSrv){
+	function CheckoutCtrl (productSrv,checkoutSrv){
 		var checkVm = this;
 
 		checkVm.cart = [];
@@ -18,6 +18,7 @@
 		// checkVm.addtoCart = addtoCart;
 		checkVm.checkProducts = checkProducts;
 		checkVm.removeCart = removeCart;
+		checkVm.processOrder = processOrder;
 
 		// checkVm.product = productSrv.getProduct(1);
 
@@ -31,6 +32,14 @@
 			checkVm.cart = productSrv.cart;
 
 			updateTotal();
+		}
+
+		function processOrder(){
+			console.log(checkVm.name)
+			console.log(checkVm.email)
+			productSrv.processOrder(checkVm.total,checkVm.name,checkVm.email);
+			// checkoutSrv.name = checkVm.name;
+			// checkoutSrv.email = checkVm.email;
 		}
 
 		function updateTotal(){

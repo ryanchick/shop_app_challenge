@@ -15,6 +15,7 @@
     console.log(localStorage.cart)
     loadCart();
     loadProducts();
+    loadOrders();
 
     //public functions
     self.getProduct = getProduct;
@@ -24,10 +25,17 @@
     self.updateProductList = updateProductList;
     self.removeProduct = removeProduct;
     self.deleteProduct = deleteProduct;
+
     self.addtoCart = addtoCart;
     self.removeCart = removeCart;
+    self.saveCart = saveCart;
+    self.loadCart = loadCart;
+
     self.processOrder = processOrder;
     self.updateFromCart = updateFromCart;
+    self.saveOrders = saveOrders;
+    self.loadOrders = loadOrders;
+
     self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
 
@@ -116,13 +124,17 @@
       }
       self.cart.push(newProduct)
       console.log(self.cart)
-      localStorage.cart = JSON.stringify(self.cart);
+      self.saveCart();
     }
 
     function removeCart(index)
     {
       console.log('srvremove' + index)
       self.cart.splice(index,1);
+      self.saveCart();
+    }
+
+    function saveCart(){
       localStorage.cart = JSON.stringify(self.cart);
     }
 
@@ -135,35 +147,54 @@
       }
     }
 
-    function processOrder(subtotal)
+    function processOrder(subtotal,name,email)
     {
+      console.log('name:' + name)
+      console.log(email)
+      console.log('Process Order')
+      console.log(self.cart)
       var newOrder = {
+        id:Math.floor(Math.random()*10000),
         cart:JSON.parse(JSON.stringify(self.cart)),
         total:subtotal,
         tax:subtotal * self.tax,
-        final_total:subtotal+(subtotal*self.tax)
+        final_total:subtotal+(subtotal*self.tax),
+        name:name,
+        email:email
       }
+      var orderId;
       console.log(newOrder)
       console.log(self.cart)
-      if(self.cart.length > 0){
-        for(var i = 0;i<self.cart.length;i++){
-          var newProduct = {
-            name:self.cart[i].product.name,
-            description:self.cart[i].product.description,
-            image:self.cart[i].product.image,
-            category:self.cart[i].product.category,
-            price:self.cart[i].product.price,
-            quantity:self.cart[i].product.quantity,
-            status:1
+      self.orders.push(newOrder)
+      self.saveOrders();
+      // api.request('/orders',newOrder,'POST')
+        // .then(function(res){
+          // console.log(res)
+
+          //update inventory
+          if(self.cart.length > 0){
+            for(var i = 0;i<self.cart.length;i++){
+              var newProduct = {
+                name:self.cart[i].product.name,
+                description:self.cart[i].product.description,
+                image:self.cart[i].product.image,
+                category:self.cart[i].product.category,
+                price:self.cart[i].product.price,
+                quantity:self.cart[i].product.quantity,
+                status:1
+              }
+              newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+              if(newProduct.quantity == 0)
+              {
+                // newProduct.status = 0;
+              }
+              self.updateFromCart(newProduct,self.cart[i].product.id)
+            }
           }
-          newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
-          if(newProduct.quantity == 0)
-          {
-            // newProduct.status = 0;
-          }
-          self.updateFromCart(newProduct,self.cart[i].product.id)
-        }
-      }
+        // })
+      self.cart = [];
+      self.saveCart();
+      $state.go('confirmation',{'orderId':newOrder.id})
     }
 
     function updateFromCart(product,productId){
@@ -176,6 +207,17 @@
           // $state.go('admin.dash');
         }
       })
+    }
+
+    function saveOrders(){
+      localStorage.orders = JSON.stringify(self.orders)
+    }
+
+    function loadOrders(){
+      if(localStorage.orders != undefined){
+        self.orders = JSON.parse(localStorage.orders)
+      }
+      // self.orders = [];
     }
 
     function deleteAllProducts(){
