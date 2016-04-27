@@ -11,7 +11,7 @@
 		authVm.auth_btn = 'Continue';
 
 		if(localStorage.authToken){
-			$state.go('admin');
+			$state.go('admin.dash');
 		}
 
 		//public functions

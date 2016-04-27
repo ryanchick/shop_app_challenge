@@ -19,6 +19,7 @@
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
+
 		
 	  	function openCart(){
 	  		console.log('Modal');

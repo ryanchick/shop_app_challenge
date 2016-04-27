@@ -4,7 +4,7 @@
   .module('shopApp')
   .controller('ProductCtrl',ProductCtrl);
 
-  function ProductCtrl($stateParams,api,productSrv, $uibModal){
+  function ProductCtrl($stateParams,api,productSrv, $uibModal,$state){
     var productVm = this;
 
     productVm.categories = [
@@ -46,7 +46,7 @@
     productVm.deleteProduct = deleteProduct;
     productVm.addtoCart = addtoCart;
     productVm.openCart_v2 = openCart_v2;
-
+    productVm.goBack = goBack;
 
     function openCart_v2(){
 
@@ -56,8 +56,6 @@
             controller: "CartCtrl as ctrl"
       });
     }
-
-
 
     function addProduct(){
       //TODO #2
@@ -94,8 +92,16 @@
       alert('Product Deleted')
     }
 
-    function addtoCart(){
-      productSrv.addtoCart(productVm.product,productVm.quantity);
+    function addtoCart(isValid){
+    	if(!isValid){
+    		alert('There are too many items!')
+    	}else{
+      		productSrv.addtoCart(productVm.product,productVm.quantity);
+    	}
+    }
+
+    function goBack(){
+    	$state.go('categories',{'categoryName':productVm.product.category})
     }
   }
 
