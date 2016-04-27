@@ -24,17 +24,16 @@
 
 	 <!-- Brand Name -->
 
-		    <span ><img ng-click="ctrl.goToHome()" class="logo" id="logo" src="assets/img/logo2.png"></span>
-
-		    <span id="spartan" class="navbar-brand" ng-click="ctrl.goToHome()">Spartan</span>
-
+		      <span ><img ng-click="ctrl.goToHome()" class="logo" id="logo" src="assets/img/logo2.png" ></span>
+		      <span id="spartan" class="navbar-brand" ng-click="ctrl.goToHome()">Spartan</span>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	     	</ul>
 
 	     	<ul class="nav navbar-nav navbar-right">
 	     		
-	     		<div class="form-group" ng-hide='ctrl.is_admin'>
+	     		<!-- <div class="form-group" ng-hide='ctrl.is_admin'>
 	     			<form class="navbar-right form-inline">
 	     				<div id="searchbutton" class="input-group">
 						<input 
@@ -50,8 +49,8 @@
 						</span>
 						</div>
 					</form>
-				</div>
-			
+				</div> -->
+				
 			<!-- Cart Icon -->
 		       <li ng-hide='ctrl.is_admin'><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
 
@@ -59,11 +58,9 @@
 		       		<span ng-hide='ctrl.is_admin'id="loginF">Login</span>
 		       		<span ng-show='ctrl.is_admin'>Welcome, Admin</span>
 		       	</button></li>
-
 		        
 
 	    	</ul>
 	    </div>
-
   	</div>
 </nav>
