@@ -30,6 +30,7 @@
     self.deleteProduct = deleteProduct;
     self.addtoCart = addtoCart;
     self.removeCart = removeCart;
+    self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
 
     function getProducts(){
@@ -128,12 +129,22 @@
       localStorage.cart = JSON.stringify(self.cart);
     }
 
-    function loadProducts(){
-      console.log('load')
-      getProducts()
+    function deleteAllProducts(){
+      return getProducts()
       .then(function(products){
         console.log(products)
-        if(products.length < 20){
+        for (var i = 0; i < products.length; i++) {
+          self.deleteProduct(products[i].id)
+        }
+      })
+    }
+
+    function loadProducts(){
+      console.log('load')
+      return getProducts()
+      .then(function(products){
+        console.log(products)
+        if(products.length == 0){
           console.log(PRODUCT_DATA.length)
           for(var i = 0;i < PRODUCT_DATA.length;i++){
             addProduct(PRODUCT_DATA[i]);
@@ -479,15 +490,7 @@ var PRODUCT_DATA = [{
   "price": "425.00",
   "quantity": "10",
   "status": "1"
-}, {
-  name: "Ghost Powerkid 20 Bicycle",
-  image: "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
-  description: "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
-  category: "Transportation",
-  price: "425.00",
-  quantity: "10",
-  status: "1"
-}, {
+},{
   "name": "Viva Juliett Classic City Bike",
   "image": "http://images.mec.ca/fluid/customers/c822/5042-007/generated/5042-007_MLL07_view1_720x720.jpg",
   "description": "With a classic design and vintage esthetic, Viva Bikes does more than just offer up a good-looking ride. A stylish way to commute and arrive at any social engagement, the Juliett Classic is equipped with a 3-speed internally geared hub. It has no exposed derailleur nor all the grease and maintenance that goes with it. You can shift gears at a standstill, taking the work out of moving away from a light because you couldn't shift down from high gear. The low step-through cross bar makes it comfortable and practical. The long-lasting steel frame ensures the integrity of your bike, so you'll be riding it years from now.",
