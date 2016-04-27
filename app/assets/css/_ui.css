@@ -92,8 +92,8 @@ Top-content
 */
 .top-content{
 	width:100%;
-	height:80%;
-	background:url('http://a.abcnews.go.com/images/Entertainment/Burning_Man_Swar_33x16_1600.jpg');
+	height:50%;
+	background:url('../img/orange.png');
 	background-size:cover;
 	overflow: hidden;
 	background-position:center center;
@@ -107,15 +107,17 @@ Top-content
 .top-content h1{
 	color:white;
 	font-size:4rem;
-	padding-top: 3.75vw;
-	margin-bottom: 2.5vw;
+	border: 0.083vw solid rgba(245, 245, 245, 0.2);
+	padding: 1vw 0vw;
+	margin-bottom: 4.58;
+	margin-bottom: 1.5vw;
 }
 
 .top-content h3{
 	color:white;
 	font-size:2rem;
-	padding-top: 2.5vw;
-	margin-top:4.167vw;
+	padding-top: 0.5vw;
+/*	margin-top:4.167vw;*/
 	letter-spacing:0.05rem;
 	font-weight:100 !important;
 
@@ -152,6 +154,14 @@ Top-content
 	margin-top:11px;
 }
 
+
+
+/*// Call To Action //*/
+#call-to-action h2{
+	font-size:2rem;
+	text-align: center;
+	margin-top: 3.33vw;
+}
 
 /*
 Sub Nav
@@ -193,11 +203,12 @@ Product view
 
 .product-view{
 	background: whitesmoke;
-	padding:40px 0px;
+	padding-top:1vw;
 }
 
 .product-view .product-card{
 	width:100%;
+	max-height: 23.67vwvw;
 	background:white;
 	font-size:1.5rem;
 	text-align:center;
@@ -223,10 +234,28 @@ Product view
 #product-card .product-img{
 	width:100%;
 	height:200px;
+	margin-top:0px;
+	/*border:1px solid blue;*/
+	/*overflow:hidden;*/
+
+	min-height:100% !important;
+	max-height:100% !important;
+	/*border:1px solid red;*/
 }
 
 #product-card .product-info{
 	padding:10px 0px;
+}
+
+#product-card .product-info h2{
+	color: white;
+	background-color: rgba(128, 128, 128, 0.09);
+	margin-top: 11.708vw;
+	margin-bottom: 0vw;
+	height: 4.2vw;
+}
+
+#product-card .productImg{
 	letter-spacing: 0.05rem;
 }
 #product-card .product-name{

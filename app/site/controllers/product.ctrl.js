@@ -84,6 +84,8 @@
 		function addtoCart(){
 			productSrv.addtoCart(productVm.product,productVm.quantity)
 		}
+
+
 	}
 
 })();

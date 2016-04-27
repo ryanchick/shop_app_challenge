@@ -3,8 +3,10 @@
 		.module('shopApp')
 		.controller('CartCtrl',CartCtrl)
 
-	function CartCtrl($scope,productSrv,$state){
+	function CartCtrl($scope,productSrv,$state,$uibModalInstance){
+		console.log('cart control');
 		var cartVm = this;
+
 		cartVm.state = $state;
 		cartVm.products;
 		cartVm.goTocheckout = goTocheckout;
@@ -15,11 +17,6 @@
 		console.log(cartVm.cart)
 
 		cartVm.removeCart = removeCart;
-		// $scope.$watch(function(){
-	 //    	return productSrv.products;
-		// }, function (newValue) {
-		//     shopVm.products = productSrv.products;
-		// });
 
 		function removeCart(index){
 			console.log('remove' + index)
@@ -37,7 +34,8 @@
 		}
 
 		function goTocheckout() {
-			$state.go('checkout');		
+			$uibModalInstance.close();
+			$state.go('checkout');
 		}
 	}
 
