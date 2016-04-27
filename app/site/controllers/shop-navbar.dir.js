@@ -16,18 +16,10 @@
 		
 
 	function shopNavbarCtrl($location, $uibModal, $scope, productSrv){
-		this.newTitle = '';
-		this.toNewMovie = toNewMovie;
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
-		this.productSrv = productSrv
 		
-
-		function toNewMovie(title){
-	  		$location.path('/new/' + title);
-	  	}
-
 	  	function openCart(){
 	  		console.log('Modal');
 	  		$uibModal.open({
