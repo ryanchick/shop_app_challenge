@@ -1,6 +1,10 @@
 #products {
-     text-align: center;
+    text-align: center;
 }
+
+/*#products .row{
+	margin-top: 150px;
+}*/
 
 #top {
 	margin-top: 100px;
