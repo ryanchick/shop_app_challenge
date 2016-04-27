@@ -277,29 +277,44 @@ Product view
 #logo {
 	position:absolute;
 	top: 5px;
-	left: 10;
+	left: 50px;
 }
 
 #spartan {
 	position: absolute;
 	top: 3px;
+	left: 50px;
 }
 
 #look {
 	margin-top: 10px;
-/*	position: absolute;
-	top: 0px;
-	right: 150px;*/
+	width: 400px;
+	border-color: rgb(214,122,77);
+}
+
+#look::-webkit-input-placeholder{
+    color:rgba(214,122,77,.7);
 }
 
 #searchbutton {
 	position: absolute;
-	right: 110px;
+	right: 485px;
 }
 
 #cart {
 	padding: 0px;
 	position: absolute;
-	right: 0px;
+	right: 70px;
 	top: 0px;
+}
+
+#login {
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	border-color: rgb(214,122,77);
+}
+
+.btn-default {
+	color: #FF6D37
 }
