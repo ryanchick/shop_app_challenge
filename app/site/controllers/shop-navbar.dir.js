@@ -14,22 +14,18 @@
 		.module('shopApp')
 		.controller('shopNavbarCtrl', shopNavbarCtrl);
 
-	function shopNavbarCtrl($location, $uibModal){
-		this.newTitle = '';
-		this.toNewMovie = toNewMovie;
-		this.openCart = openCart;
+	function shopNavbarCtrl($location,$uibModal){
 
-		function toNewMovie(title){
-	  		$location.path('/new/' + title);
-	  	}
+		this.openCart = openCart;
 
 	  	function openCart(){
 	  		console.log('Modal');
 	  		$uibModal.open({
 	  			animation: true,
           		templateUrl: 'site/partials/cart.html',
+          		controller: 'CartCtrl as ctrl'
 	  		});
-	  	}
+	  	}	
 	}
 
 })();

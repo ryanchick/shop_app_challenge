@@ -3,8 +3,10 @@
 		.module('shopApp')
 		.controller('CartCtrl',CartCtrl)
 
-	function CartCtrl($scope,productSrv,$state){
+	function CartCtrl($scope,productSrv,$state,$uibModalInstance){
+		console.log('cart control');
 		var cartVm = this;
+
 		cartVm.state = $state;
 		cartVm.products;
 		cartVm.goTocheckout = goTocheckout;
@@ -37,7 +39,8 @@
 		}
 
 		function goTocheckout() {
-			$state.go('checkout');		
+			$uibModalInstance.close();
+			$state.go('checkout');
 		}
 	}
 
