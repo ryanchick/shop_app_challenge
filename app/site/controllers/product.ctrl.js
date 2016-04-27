@@ -49,9 +49,11 @@
 
 
     function openCart_v2(){
+
       $uibModal.open({
         animation: true,
             templateUrl: 'site/partials/cart.html',
+            controller: "CartCtrl as ctrl"
       });
     }
 
