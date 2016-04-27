@@ -23,10 +23,15 @@
 		    </button>
 
 	 <!-- Brand Name -->
+<<<<<<< HEAD
 
 		    <span><img class="logo" id="logo" src="assets/img/logo2.png" ></span>
 		    <span id="spartan" class="navbar-brand">Spartan</span>
 
+=======
+		      <span ><img ng-click="ctrl.goToHome()" class="logo" id="logo" src="assets/img/logo2.png" ></span>
+		      <span id="spartan" class="navbar-brand" ng-click="ctrl.goToHome()">Spartan</span>
+>>>>>>> NatashaThirlwell/master
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,9 +43,10 @@
 	     				<div id="searchbutton" class="input-group">
 						<input 
 							id="look"
-							ng-model="ctrl.productSearch" 
+							ng-model="ctrl.productSrv.productsSearch" 
 							type="text" 
-							class="form-control" placeholder="Search">
+							class="form-control"
+							placeholder="Looking for something?">
 						<span class="input-group-btn">
 							<button class="btn search-btn" type="button">
 								<img src="assets/img/icon-search@2x.png">
@@ -50,12 +56,20 @@
 					</form>
 				</div>
 
+<<<<<<< HEAD
 			<!-- Cart Icon -->
 		        <li><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
 
 <!--           <div class="">
             <form>
               <! TO DO #3: ENABLE PRODUCT SEARCH
+=======
+				<button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()"><span id="loginF">Login</span></button>
+
+    <!--       <div class="">
+            <form> -->
+             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
+>>>>>>> NatashaThirlwell/master
               <div class="form-container">
                 <input 
                   type="text" 
@@ -67,6 +81,12 @@
             </form>
           </div> -->
 
+<<<<<<< HEAD
+=======
+			<!-- Cart Icon -->
+		       <li><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart</span></div></li>
+		        
+>>>>>>> NatashaThirlwell/master
 	    	</ul>
 	    </div>
   	</div>
