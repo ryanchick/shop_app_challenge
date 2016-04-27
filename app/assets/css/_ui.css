@@ -273,6 +273,10 @@ Top-content
 	font-weight:600;
 }
 
+.invalid-form{
+  border: 1px solid red;
+}
+
 /*.main-categories h2{
 	position: absolute;
 	bottom:20px;
@@ -280,3 +284,4 @@ Top-content
 	text-align: center;
 	background-color: rgba(128, 128, 128, 0.09);
 }*/
+
