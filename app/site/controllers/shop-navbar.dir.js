@@ -14,13 +14,12 @@
 		.module('shopApp')
 		.controller('shopNavbarCtrl', shopNavbarCtrl);
 		
+	function shopNavbarCtrl($location, $uibModal, $scope,$state, productSrv){
 
-	function shopNavbarCtrl($location, $uibModal, $scope, productSrv){
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
 
-		
 	  	function openCart(){
 	  		console.log('Modal');
 	  		$uibModal.open({
