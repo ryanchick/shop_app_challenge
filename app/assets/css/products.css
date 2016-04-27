@@ -29,9 +29,7 @@ h1 {
 }
 
 #info button{
-<<<<<<< HEAD
 	color: #ff6d37;
-	
 }
 
 .cartitem {
@@ -43,12 +41,10 @@ h1 {
 	text-align: center;
 }
 
-=======
-  color: #ff6d37;
 
-}
 
+/*
 .modal.fade.ng-isolate-scope.in {
   overflow: scroll;
-}
->>>>>>> NatashaThirlwell/master
+}*/
+
