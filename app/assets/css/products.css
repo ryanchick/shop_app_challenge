@@ -28,8 +28,16 @@ h1 {
 }
 
 #info button{
-  color: #ff6d37;
+	color: #ff6d37;
+}
 
+.cartitem {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#total {
+	text-align: center;
 }
 
 .modal.fade.ng-isolate-scope.in {
