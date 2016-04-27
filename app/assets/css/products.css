@@ -31,3 +31,13 @@ h1 {
 	color: #ff6d37;
 	
 }
+
+.cartitem {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#total {
+	text-align: center;
+}
+
