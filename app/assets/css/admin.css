@@ -61,9 +61,9 @@
 	margin-bottom:5px;
 }
 
-#admin .product-frm input, #admin .product-frm textarea, #admin .product-frm select{
+/*#admin .product-frm input, #admin .product-frm textarea, #admin .product-frm select{
 	width:100%;
-}
+}*/
 
 #admin .product-frm select{
 	font-size:1rem;
@@ -80,4 +80,26 @@
 
 #refine {
 	color: black;
+}
+
+
+#newProduct2 {
+	background-color: white;
+	width: 300px;
+}
+
+.newProduct {
+	background-color: rgb(214,122,77);
+	width: 120px;
+	text-align: left;
+	color: white;
+}
+
+.newSubmit {
+	margin-left: 335px;
+}
+
+.margin {
+	margin-bottom: 5px;
+	margin-left: 20px;
 }
