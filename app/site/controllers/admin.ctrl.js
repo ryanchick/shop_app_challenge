@@ -34,6 +34,14 @@
     //public functions
     adminVm.editProduct = editProduct;
     adminVm.logout = logout;
+    adminVm.reloadProducts = reloadProducts;
+
+    function reloadProducts(){
+      productSrv.deleteAllProducts()
+      .then(function(){
+        productSrv.loadProducts();
+      })
+    }
 
     function editProduct(product){
       $state.go('admin.edit_product',{productId:product.id});
