@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CategoryCtrl',CategoryCtrl);
 
-	function CategoryCtrl($location,productSrv,products,$stateParams){
+	function CategoryCtrl($location,$stateParams,toastr,productSrv,products){
 		var catVm = this;
 		catVm.productSrv = productSrv;
 
@@ -22,6 +22,7 @@
 
 		//public methods
 		catVm.toProductPage = toProductPage;
+		catVm.addtoCart = addtoCart;
 
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
@@ -55,6 +56,11 @@
 					catVm.currCtgry = $stateParams.categoryName;
 				}
 			}
+		}
+
+		function addtoCart(product){
+			productSrv.addtoCart(product,1);
+			toastr.success(product.name + ' has been added to the cart!');
 		}
 	}
 })();
