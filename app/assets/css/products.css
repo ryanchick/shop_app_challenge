@@ -165,27 +165,17 @@ Product view
   right:10px;
 }
 
-
-
-/*Styling for cart page*/
-.melon {
-  text-align: right;
-  margin-right: 50px;
-}
-.grape {
-  margin-bottom: 20px;
-  margin-right: 50px;
-  float: right;
-}
-.mango {
-  height: 125px;
-}
-
-#product-card .product-buy:hover .fa{
-  color:whitesmoke;
+#product-card .product-buy:hover{
+  background:black;
+  color:#ff6d37;
   cursor: pointer;
   cursor:hand;
 }
+
+#product-card .product-buy:hover .fa{
+  color:#ff6d37;
+}
+
 #product-card .product-img{
   width:100%;
   height:200px;
