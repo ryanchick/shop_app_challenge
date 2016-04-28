@@ -3,7 +3,7 @@
 }
 
 /*#products .row{
-	margin-top: 150px;
+  margin-top: 150px;
 }*/
 
 #top {
@@ -95,7 +95,7 @@ h1 {
   width:50px;
   /*border:1px solid red;*/
   text-align: center;
-} 
+}
 
 #checkout .cart-list .error-msg{
   position:absolute;
@@ -131,12 +131,12 @@ h1 {
 
 
 
-<<<<<<< HEAD
+
 /*#admin h3 {
   background-color: #ff6d37;
 }*/
 
-=======
+
 /*
 Product view
 */
@@ -163,6 +163,22 @@ Product view
   width:30px;
   top:10px;
   right:10px;
+}
+
+
+
+/*Styling for cart page*/
+.melon {
+  text-align: right;
+  margin-right: 50px;
+}
+.grape {
+  margin-bottom: 20px;
+  margin-right: 50px;
+  float: right;
+}
+.mango {
+  height: 125px;
 }
 
 #product-card .product-buy:hover .fa{
@@ -213,4 +229,3 @@ Product view
   font-weight:500;
   margin:10px 0px;
 }
->>>>>>> NatashaThirlwell/master
