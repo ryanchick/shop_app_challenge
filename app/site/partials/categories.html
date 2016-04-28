@@ -66,13 +66,6 @@
 					 ng-click='ctrl.toProductPage(product.id)'>
 					<div id="product-card" 
 						class="product-card">
-						<div class="product-buy" ng-click='ctrl.addtoCart(product); $event.stopPropagation();'>
-							<div class="table-view">
-								<div class="table-cell">
-									<i class="fa fa-shopping-cart"></i>
-								</div>
-							</div>
-						</div>
 						
 						<div class="products">
 						<!-- SET PRODUCT IMAGE -->
@@ -88,7 +81,14 @@
 									{{product.price | currency}}
 								</div>
 							</div>
-
+						</div>
+						
+						<div class="product-buy" ng-click='ctrl.addtoCart(product); $event.stopPropagation();'>
+							<div class="table-view">
+								<div class="table-cell">
+									<i class="fa fa-shopping-cart"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
