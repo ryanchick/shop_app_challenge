@@ -62,17 +62,10 @@
 			<div class="row">
 				<!-- TODO #3: SHOW PRODUCTS -->
 				<div class="main-card col-xs-12 col-sm-6 col-md-4" 
-					 ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' 
+					 ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' ng-hide='product.quantity <= 0' 
 					 ng-click='ctrl.toProductPage(product.id)'>
 					<div id="product-card" 
 						class="product-card">
-						<div class="product-buy" ng-click='ctrl.addtoCart(product); $event.stopPropagation();'>
-							<div class="table-view">
-								<div class="table-cell">
-									<i class="fa fa-shopping-cart"></i>
-								</div>
-							</div>
-						</div>
 						
 						<div class="products">
 						<!-- SET PRODUCT IMAGE -->
@@ -80,9 +73,6 @@
 								background-size:cover;
 					 			background-position:center center;"
 					 			>
-							</div>
-
-							<div class="product-info">
 								<div class="prod-name">
 							<!-- SET PRODUCT NAME -->
 									{{product.name}}
@@ -91,7 +81,14 @@
 									{{product.price | currency}}
 								</div>
 							</div>
-
+						</div>
+						
+						<div class="product-buy" ng-click='ctrl.addtoCart(product); $event.stopPropagation();'>
+							<div class="table-view">
+								<div class="table-cell">
+									<i class="fa fa-shopping-cart"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
