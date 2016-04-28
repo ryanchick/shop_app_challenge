@@ -1,4 +1,8 @@
-<!-- <h3>Add Product</h3> -->
+
+<h3>
+	Add Product
+</h3>
+
 <article class="product-frm">
 	<form name="add-product" ng-submit="ctrl.addProduct()">
 	<h1>Add New Product</h1>
@@ -22,14 +26,15 @@
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct">$ Price</span>
-  			<input id="newProduct2" type="text" name="price" class="form-control" placeholder="10.00" aria-label="Amount (to the nearest dollar)" ng-model="ctrl.price" required>
+  			<input id="newProduct2" type="number" name="price" class="form-control" placeholder="10.00" aria-label="Amount (to the nearest dollar)" ng-model="ctrl.price" required>
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Quantity</span>
   			<input id="newProduct2" type="number" name="quantity" class="form-control" placeholder="ProductName"
   			aria-describedby="basic-addon1" ng-model="ctrl.quantity" required>
 		</div>
-	    <div>
+
+		<div>
 			<button class="btn btn-default newSubmit" type="submit">{{ctrl.product_add_btn}}</button>
 		</div>
 	</form>

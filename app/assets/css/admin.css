@@ -104,6 +104,15 @@
 	margin-left: 20px;
 }
 
+.updateBu {
+	margin-left: 173.5px;
+}
+
+.deleteBu {
+	margin-left: 10px;
+}
+
+
 #order-detail .back-btn{
   position:relative;
   left:0px;
@@ -175,3 +184,6 @@
 #order-detail .th-del{
   width:5%;
 }
+
+
+

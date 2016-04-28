@@ -11,6 +11,7 @@
 
     productVm.quantity = 1;
     productVm.product = productSrv.getProduct($stateParams.productId);
+    productVm.category = productVm.product.category;
     console.log(productVm.product);
     console.log($stateParams.productId);
 
@@ -25,12 +26,16 @@
         productVm.product = res.data.product;
         //TODO #2 set category based on edit form based on
         //product category
-        for(var index in productVm.categories){
-          if(productVm.product.category == productVm.categories[index].value){
-            productVm.set_category = productVm.categories[index].value;
-          }
-        }
-
+     //   for(var index in productVm.categories){
+     //     if(productVm.product.category == productVm.categories[index].value){
+     //       productVm.set_category = productVm.categories[index].value;
+     //     }
+     //   }
+        for (var i=0; i < productVm.categories.length; i++){
+        if (productVm.product.category == productVm.categories[i].category){
+        productVm.category = productVm.categories[i]
+      }
+      }
       })
     }
 
