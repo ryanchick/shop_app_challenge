@@ -19,6 +19,25 @@
 		this.openCart = openCart;
 		this.goToHome = goToHome;
 		this.loginForm = loginForm;
+		this.logged = false;
+		this.is_admin = false;
+		this.cart = productSrv.cart;
+
+		$scope.$watchCollection(function(){
+        	return productSrv.cart;
+    	}, function (newValue) {
+          		this.cart = productSrv.cart;
+    	});
+
+		if(localStorage.authToken){
+			this.logged = true;
+		}
+
+		console.log($state.current.name)
+		if($state.current.name.search('admin') != -1)
+		{
+			this.is_admin=true;
+		}
 
 	  	function openCart(){
 	  		console.log('Modal');

@@ -35,6 +35,7 @@
     self.updateFromCart = updateFromCart;
     self.saveOrders = saveOrders;
     self.loadOrders = loadOrders;
+    self.deleteOrders = deleteOrders;
 
     self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
@@ -157,21 +158,21 @@
       }
     }
 
-    function processOrder(subtotal,name,email)
+    function processOrder(subtotal,customer,card)
     {
-      console.log('name:' + name)
-      console.log(email)
+      console.log('name:' + customer)
+      console.log(card)
       console.log('Process Order')
       console.log(self.cart)
       if(self.cart.length > 0){
         var newOrder = {
-          id:Math.floor(Math.random()*10000),
+          id:self.orders.length+1 || 1,
           cart:JSON.parse(JSON.stringify(self.cart)),
           total:subtotal,
           tax:subtotal * self.tax,
           final_total:subtotal+(subtotal*self.tax),
-          name:name,
-          email:email
+          customer:customer,
+          card:card
         }
         // var orderId;
         console.log(newOrder)
@@ -183,25 +184,25 @@
             // console.log(res)
 
             //update inventory
-            if(self.cart.length > 0){
-              for(var i = 0;i<self.cart.length;i++){
-                var newProduct = {
-                  name:self.cart[i].product.name,
-                  description:self.cart[i].product.description,
-                  image:self.cart[i].product.image,
-                  category:self.cart[i].product.category,
-                  price:self.cart[i].product.price,
-                  quantity:self.cart[i].product.quantity,
-                  status:1
-                }
-                newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
-                if(newProduct.quantity == 0)
-                {
-                  // newProduct.status = 0;
-                }
-                self.updateFromCart(newProduct,self.cart[i].product.id)
-              }
+        if(self.cart.length > 0){
+          for(var i = 0;i<self.cart.length;i++){
+            var newProduct = {
+              name:self.cart[i].product.name,
+              description:self.cart[i].product.description,
+              image:self.cart[i].product.image,
+              category:self.cart[i].product.category,
+              price:self.cart[i].product.price,
+              quantity:self.cart[i].product.quantity,
+              status:1
             }
+            newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+            if(newProduct.quantity == 0)
+            {
+              newProduct.status = 0;
+            }
+            self.updateFromCart(newProduct,self.cart[i].product.id)
+          }
+        }
           // })
         self.cart = [];
         self.saveCart();
@@ -216,7 +217,6 @@
         if(res.status === 200){
           //product was updated successfully
           self.updateProductList(product,productId);
-          // $state.go('admin.dash');
         }
       })
     }
@@ -229,7 +229,12 @@
       if(localStorage.orders != undefined){
         self.orders = JSON.parse(localStorage.orders)
       }
-      // self.orders = [];
+    }
+
+    function deleteOrders(){
+      console.log('delete orders')
+      self.orders = [];
+      localStorage.orders = JSON.stringify(self.orders);
     }
 
     function deleteAllProducts(){
@@ -285,7 +290,7 @@ var CATEGORY_DATA = [{
 }]
 
 var PRODUCT_DATA = [{
-  "name": "Retreat 320 6 Person Module Tent",
+  "name": "Retreat 320 - 6 Person Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87155_retreat320_a_h43.jpg",
   "description": "The Retreat 320 6 PersonModule Tent delivers the perfect balance of durable construction, space and comfort. You’ll want to spend the entire summer in this tent: the living space isn’t just big, it’s HUGE, with three fully enclosed rooms and a back vestibule for storing gear. Spend the days hiking, biking and kayaking with the family, returning every night to sleep in comfort.",
   "category": "camping",
@@ -293,7 +298,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Retreat 80 3 Person Tent",
+  "name": "Retreat 80 - 3 Person Tent",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87152_retreat80_tent_a_h41_1.jpg",
   "description": "The Retreat 80 is the perfect weekend getaway tent for couples who want comfort and space to store their gear. Both front and rear vestibules offer storage for packs and other gear, while the unique top-arching pole maximizes interior living space and head-room. This tent is waterproof, durable and easy to pitch, with great air-flow, quick-zip windows and insect-proof mesh for extra comfort.",
   "category": "camping",
@@ -301,7 +306,7 @@ var PRODUCT_DATA = [{
   "quantity": "5",
   "status": "1"
 }, {
-  "name": "Boreas 3 Person Tent v2",
+  "name": "Boreas - 3 Person Tent V2",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/0/50155_boreastent_v2_a_102.jpg",
   "description": "The Boreas is not your normal tent. The strong pole configuration uses a multitude of intersecting triangles to create a truly unique geodesic design - the more triangular elements in a pole structure, the sturdier and stronger the tent is for its weight. The Boreas' design is so unique we've registered it in New Zealand and Australia. Trust the Boreas to be your refuge when youre off exploring the back country, whether youre carrying it with you into the wilderness for ultimate four-season hiking freedom, or setting it up as a base while you explore the surrounding country. At just 3.98kg the Boreas won't slow you down on your adventures",
   "category": "camping",
@@ -333,7 +338,7 @@ var PRODUCT_DATA = [{
   "quantity": "2",
   "status": "1"
 }, {
-  "name": "Semi-Rectangular Down Sleeping Bag v7",
+  "name": "Semi-Rectangular Down Sleeping Bag",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51213_navigator_v7_b90.jpg",
   "description": "Natural duck down fill is an excellent insulator, and packs down small, making the Navigator Sleeping Bag lightweight and extremely compressible. An ideal bag for multi-day backpacking, camping and trips in colder climates.",
   "category": "camping",
@@ -341,7 +346,7 @@ var PRODUCT_DATA = [{
   "quantity": "3",
   "status": "1"
 }, {
-  "name": "Rectangular Insulated Sleeping Bag v5",
+  "name": "Rectangular Insulated Sleeping Bag V5",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51209_pipsqueak_v5_a_h47.jpg",
   "description": "Ideal for warmer climates, the Pipsqueak is a rectangular sleeping bag for Kids'.",
   "category": "camping",
@@ -349,7 +354,7 @@ var PRODUCT_DATA = [{
   "quantity": "4",
   "status": "1"
 }, {
-  "name": "Maison Folding Campbed v2",
+  "name": "Maison Folding Campbed V2",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/2/82047_maisoncampbedv2_b_997.jpg",
   "description": "After a busy day exploring you’ll have a great sleep on the Maison Folding Campbed v2. This sturdy, portable campbed is easy to set up, with a load capacity of 100kgs and it has a detachable pocket to hold your phone, torch and other essentials. Whether you’re looking to relax in camp, or need a spare bed at home for visitors, this campbed will give you a comfortable night’s sleep.",
   "category": "camping",
@@ -365,7 +370,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Mosquito Net Untreated",
+  "name": "Mosquito Net",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/0/50156_mosquitonetsingle_000.jpg",
   "description": "Lightweight, transportable insect protection, easily suspended with ample coverage for single beds",
   "category": "camping",
@@ -373,7 +378,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Retreat Self Inflating Mat Camp 50mm",
+  "name": "Self Inflating Mat",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/1/51248_retreatsimat50_a_781.jpg",
   "description": "Comfort is king with our self-inflating Retreat 50mm mat. It's designed for three season campsite and car camping, with 50mm of thickness, a soft brushed polyester surface and a corrugated texture designed for anti-slip comfort. It also features snap domes that allow connection to another compatible mat, easily turning it from a single to a double.",
   "category": "camping",
@@ -382,7 +387,7 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //accessories
-  "name": "Double Action Pump v2",
+  "name": "Double Action Pump V2",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/2/82036_pumpv2_900.jpg",
   "description": "Ideal for use on all inflatables. Continuous stream pumps air on both up and down stroke.",
   "category": "accessories",
@@ -390,7 +395,7 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
-  "name": "Multi Tool 14 in 1",
+  "name": "Multi Tool - 14 in 1",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61221_multitool_14in1_925.jpg",
   "description": "Heavy duty, multi-function tool, with 14 unique tools to provide a wide range of form and function.",
   "category": "accessories",
@@ -406,7 +411,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Talum Sunglasses Men",
+  "name": "Talum Sunglasses",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61419_sg_talum_984.jpg",
   "description": "Men's Talum sunglasses comply with the mandatory requirements of the Australian and New Zealand standard AS/NZS 1067:2003.",
   "category": "accessories",
@@ -414,15 +419,15 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Waterproof Binoculars 10x25",
+  "name": "Waterproof Binoculars",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61216_binoculars_743.jpg",
-  "description": "Waterproof binoculars with an easy-grip design.",
+  "description": "10x25 Waterproof binoculars with an easy-grip design.",
   "category": "accessories",
   "price": "99.98",
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Backpacker Stove Titanium",
+  "name": "Backpacker Titanium Stove",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61004_StoveTitanium_911.png",
   "description": "Ultra-lightweight and compact the Titanium Backpacker Stove is invaluable when trekking. This robust, high output stove works with Gasmate screw type canisters to boil one litre of water in around three minutes at sea level, thanks to clever design features like its large stove head and straight fire design. This stove is easy to control, even while wearing winter gloves. Whether you’re a gourmet back-country cook or prefer instant noodles, the Titanium Backpacker Stove will have your meal ready to eat in no time.",
   "category": "accessories",
@@ -479,8 +484,8 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //clothing
-  "name": "Egyptian Kitty Merimask",
-  "image": "https://img0.etsystatic.com/134/0/5203101/il_570xN.963149186_ngyx.jpg",
+  "name": "Egyptian Kitty Mask",
+  "image": "/assets/img/cat-mask.png",
   "description": "Handmade Materials: leather, acrylic painting, turquoise stone",
   "category": "clothing",
   "price": "260.38",
@@ -495,7 +500,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Deer antlers",
+  "name": "Deer Antlers",
   "image": "https://img1.etsystatic.com/109/1/5961957/il_570xN.998285777_as39.jpg",
   "description": "Handmade Materials: resin, hair clip, acrylic paints, white ",
   "category": "clothing",
@@ -503,7 +508,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Native American tribal belt",
+  "name": "Tribal Belt",
   "image": "https://img1.etsystatic.com/076/1/8975597/il_570xN.812671583_13j7.jpg",
   "description": "Handmade feather coat",
   "category": "clothing",
@@ -511,7 +516,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Voodoo priestess",
+  "name": "Voodoo Priestess Headpiece",
   "image": "https://img1.etsystatic.com/102/1/7921682/il_570xN.839215227_7rnn.jpg",
   "description": "Handmade Materials: headband, dreadlocks and hair extensions classifieds, wooden beads and plastic rooster feathers, real bones, wool bags",
   "category": "clothing",
@@ -519,8 +524,8 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Fluffies Rave warmers",
-  "image": "https://img1.etsystatic.com/000/0/5149263/il_570xN.223575095.jpg",
+  "name": "Fluffies Rave Warmers",
+  "image": "/assets/img/fluff.png",
   "description": "Handmade Materials: synthetic leather, elastic",
   "category": "clothing",
   "price": "36.39",
@@ -528,25 +533,25 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //food
-  "name": "Protein Bar – Chocolate Chip Cookie Dough",
+  "name": "QuestBar - Protein Bar",
   "image": "http://www.gnc.com/graphics/product_images/pGNC1-20829738t300x300.jpg",
-  "description": "Rice protein is extracted from rice and used in some protein supplements. Vegetarians may prefer it over protein supplements made from animal sources (such as whey or casein, which are milk proteins). Since rice is rarely involved in food allergies,1 rice protein may also be preferred by people with food allergies, and may be suitable to use in hypoallergenic infant formulas.2 Rice protein is not a complete protein, however, due to insufficient levels of the amino acids lysine and threonine.3, 4 Therefore, these amino acids are often added to rice protein products to correct this imbalance.",
+  "description": "Chocolate Chip Cookie Dough Flavoured. Rice protein is extracted from rice and used in some protein supplements. Vegetarians may prefer it over protein supplements made from animal sources (such as whey or casein, which are milk proteins). Since rice is rarely involved in food allergies,1 rice protein may also be preferred by people with food allergies, and may be suitable to use in hypoallergenic infant formulas.2 Rice protein is not a complete protein, however, due to insufficient levels of the amino acids lysine and threonine.3, 4 Therefore, these amino acids are often added to rice protein products to correct this imbalance.",
   "category": "food",
   "price": "24.99",
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Power Pak Pudding - Chocolate",
+  "name": "Power Pak Pudding",
   "image": "http://www.gnc.com/graphics/product_images/pGNC1-10067049t300x300.jpg",
-  "description": "Ready-to-eat Power Pak Pudding will satisfy your sweet tooth and hunger while providing great nutrition. This delectable snack contains the highest quality protein from real milk protein isolate, as well as ultra-healthy soy protein isolate. It also is a great source of calcium, with a full 50% of Daily Value per single serving. Better yet, Power Pak Pudding is completely free from fattening high fructose corn syrup and unhealthy hydrogenated oils.",
+  "description": "Ready-to-eat Chocolate Power Pak Pudding will satisfy your sweet tooth and hunger while providing great nutrition. This delectable snack contains the highest quality protein from real milk protein isolate, as well as ultra-healthy soy protein isolate. It also is a great source of calcium, with a full 50% of Daily Value per single serving. Better yet, Power Pak Pudding is completely free from fattening high fructose corn syrup and unhealthy hydrogenated oils.",
   "category": "food",
   "price": "19.99",
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Protein Power Shake - Cookies & Creme",
+  "name": "Protein Power Shake",
   "image": "http://www.gnc.com/graphics/product_images/pGNC1-7033227t300x300.jpg",
-  "description": "Protein is a great place to start, and focusing on getting the right types of protein, in the right amounts, and at the right times is key. Our protein supplement guide will help you meet your wellness goals, potentially improving your performance on the court, in the gym, or on the road.",
+  "description": "Cookies & Creme Flavoured. Protein is a great place to start, and focusing on getting the right types of protein, in the right amounts, and at the right times is key. Our protein supplement guide will help you meet your wellness goals, potentially improving your performance on the court, in the gym, or on the road.",
   "category": "food",
   "price": "56.99",
   "quantity": "10",
