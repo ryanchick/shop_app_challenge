@@ -118,6 +118,7 @@
       		  toastr.success(productVm.quantity+ ' ' + productVm.product.name +'s was added to your cart!')
           } else{
             toastr.success('1 ' +productVm.product.name +' was added to your cart!')
+            
           }
     	}
     }
