@@ -1,14 +1,21 @@
-<h3>Products</h3>
+<h1>Products</h1>
+<div class="top-content" ng-show="ctrl.is_orders">
+    <form>
+	    <div class="form-container">  	        
+			<input ng-model='ctrl.productSearch' type="text" class="form-control" placeholder="Refine search" >
+			<a class="search-btn" id="adminbutt"><img src="assets/img/icon-search@2x.png"></a>	
+		</div>
+	</form>
+</div>	
+
 <div ng-hide="ctrl.is_products">
 	<p>
 		You have no products
 	</p>
 </div>
 
-
-
 <div ng-show="ctrl.is_products">
-	<table class="products-list table">
+	<table class="products-list table table-hover">
 		<tr>
 			<th>Category</th>
 			<th>Name</th>
@@ -16,8 +23,7 @@
 			<th>Quantity</th>
 			<th>&nbsp;</th>
 		</tr>
-		<tr ng-repeat="product in ctrl.products |
-                 filter: ctrl.productSearch">
+		<tr ng-repeat="product in ctrl.products | filter: ctrl.productSearch">
 			<td>{{product.category | titleCaseFilter}}</td>
 			<td>{{product.name}}</td>
 			<td>{{product.price}}</td>
@@ -25,5 +31,8 @@
 			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
 	</table>
-	<button class="btn btn-danger" ng-click='ctrl.reloadProducts()'>Reload Products</button>
+
+<button class="btn btn-danger" ng-click='ctrl.reloadProducts()' id="reloadbutt">Reload Products</button>
+
 </div>
+
