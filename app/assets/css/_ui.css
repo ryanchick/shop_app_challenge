@@ -49,7 +49,7 @@ a{
 Nav
 */
 
-#shop-navbar{
+nav{
 	height:55px;
 	line-height:55px;
 	color:#ff6d37;
@@ -57,7 +57,7 @@ Nav
 	box-shadow: 0 4px 2px -2px #d8d8d8;
 }
 
-#shop-navbar .left-nav{
+nav .left-nav{
 	float:left;
 	margin:0px 0px 0px 70px;
 	vertical-align: top;
@@ -70,43 +70,36 @@ Nav
 	margin-left: 20px;
 }*/
 
-#shop-navbar .right-nav{
+nav .right-nav{
 	float:right;
 	margin:0px 70px 0px 0px;
 	vertical-align: top;
 }
 
-#shop-navbar .search{
+nav .search{
 	margin-top: 1vw;
 }
 
-#shop-navbar .cart {
-	padding: 0px;
-    position: relative;
-    right: 43px;
-    top: -1px;
-}
-
-#shop-navbar .fa-shopping-cart{
+nav .fa-shopping-cart{
 	margin-right:10px;
 	font-size:2rem;
 	position: relative;
     top: 1px;
     right: -6px;
 }
-#shop-navbar .cart-label{
+nav .cart{
 	font-size:1.6rem;
 }
 
 #shop-navbar .badge{
-	color:#ff6d37;
-	background: white;
-	border:1px solid #ff6d37;
+    color:#ff6d37 ;
+    background: white;
+    border:1px solid #ff6d37 ;
 }
 
 #shop-navbar .cart:hover .badge{
-	color:black;
-	border-color:black;
+    color:black;
+    border-color:black;
 
 }
 
@@ -144,7 +137,12 @@ Nav
 	right: 485px;
 }*/
 
-
+#cart {
+	padding: 0px;
+    position: relative;
+    right: 43px;
+    top: -1px;
+}
 
 #login {
 	position: relative;
@@ -169,6 +167,8 @@ Top-content
 	background-position:center center;
 	text-align: center;
 }
+
+
 
 /*#mainimage {
 	height:50%);
@@ -196,7 +196,8 @@ Top-content
 }
 
 .top-content .content{
-	margin:0 auto;
+	position: relative;
+    top: 3vw;
 }
 
 .top-content form{
@@ -270,7 +271,7 @@ Top-content
 	color: white;
 	text-align: center;
     position: relative;
-    top: 12vw;
+    top: 10vw;
 }
 
 #main-card .main-img:hover{
