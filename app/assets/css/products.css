@@ -44,6 +44,23 @@ h1 {
 /*.modal.fade.ng-isolate-scope.in {
   overflow: scroll;
 }*/
+
+
+#confirm {
+  background-image: url("https://images7.alphacoders.com/320/320543.jpg");
+  opacity: 0.5;
+  background-repeat: repeat;
+  width: 100%;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/*#textin {
+  opacity: 1;
+}*/
+
+
 #checkout .back-btn{
   position:relative;
   left:0px;

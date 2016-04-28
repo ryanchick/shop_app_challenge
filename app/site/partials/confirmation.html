@@ -1,26 +1,30 @@
 <shop-navbar></shop-navbar>
-<div class="message container">
-	<h1>Hey {{ctrl.order.customer.name}}!</h1>
-	<p>Your order has succesfully been submitted, listed below you will find your confirmation number as well as a summary of your purchase. 
-	We've also sent you an invoice to {{ctrl.order.customer.email}}. </p>
-</div>
 
-<div class="orderSummary container">
-	<h2>Order Summary</h2>
-	<div class="cfrmNumber">
-		<h4>Order Number: {{ctrl.orderId | digits:4}}</h4>
+
+<div id="confirm">
+    <div id="textin">
+		<div class="message container">
+			<h1>Hey {{ctrl.order.customer.name}}!</h1>
+			<p>Your order has succesfully been submitted, listed below you will find your confirmation number as well as a summary of your purchase. 
+			We've also sent you an invoice to {{ctrl.order.customer.email}}.</p>
+		</div>
+
+		<div class="orderSummary container">
+			<h4>Order Summary</h4>
+			<div class="cfrmNumber">
+				<p>Order Number: {{ctrl.orderId | digits:4}}</p>
+			</div>
+			<div class="order">
+				<h4>Your Order</h4>
+				<ul>
+					<li ng-repeat='item in ctrl.order.cart'>
+						<p>{{item.product.name}}, Qty: {{item.quantity}}</p>
+					</li>
+				</ul>
+				<h4>Cart Total: {{ctrl.order.final_total|currency}}</h4>
+				<p>Shipping: {{ctrl.order.customer.shipping.cost | currency}}</p>
+				<h2>Order Total: {{ctrl.order.final_total + ctrl.order.customer.shipping.cost | currency}}</h2>	
+			</div>	
+		</div>
 	</div>
-	<div class="order">
-		<h2>Your Order</h2>
-		<ul>
-			<li ng-repeat='item in ctrl.order.cart'>
-				{{item.product.name}}, Qty: {{item.quantity}}
-			</li>
-		</ul>
-		<h3>Cart Total: {{ctrl.order.final_total|currency}}</h3>
-		<h4>Shipping: {{ctrl.order.customer.shipping.cost | currency}}
-		<h3>Order Total: {{ctrl.order.final_total + ctrl.order.customer.shipping.cost | currency}}
-		
-	</div>
-	
 </div>

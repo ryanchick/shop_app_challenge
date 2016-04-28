@@ -67,7 +67,7 @@
             placeholder="Name"
             ng-model='ctrl.name'
             ng-class="{'invalid-form':addressForm.name.$invalid && (addressForm.name.$touched || ctrl.submit),'valid-form':addressForm.name.$valid && addressForm.name.$touched}"
-            required>
+            required >
           <div ng-messages="addressForm.name.$error" ng-if="ctrl.submit || addressForm.name.$touched">
                   <div class="alert alert-danger" ng-message="required">A name is required.</div>
                 </div>
@@ -212,8 +212,7 @@
       <!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
       ng-click='ctrl.selected = 1'>Confirm</button> -->
       <button class="btn btn-warning"
-        ng-click='ctrl.processOrder(cartForm.$valid && addressForm.$valid && cardForm.$valid)'
-        ng-disabled='!(cartForm.$valid && addressForm.$valid && cardForm.$valid)'>
+        ng-click='ctrl.processOrder(true)'>
         Process Order
       </button>
     </div>
