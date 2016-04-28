@@ -96,8 +96,8 @@ nav .cart{
 
 #spartan {
 	position: absolute;
-	top: 3px;
-	left: 50px;
+	top: 0.333vw;
+    left: 3.5vw;
 }
 
 /*
@@ -214,7 +214,6 @@ Top-content
 
 /*///Main Page view////*/
 .main-view{
-	background: whitesmoke;
 	padding-top:1vw;
 }
 
