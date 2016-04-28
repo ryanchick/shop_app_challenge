@@ -188,8 +188,8 @@
             ng-class="{'invalid-form':cardForm.cardname.$invalid && (cardForm.cardname.$touched || ctrl.submit),'valid-form':cardForm.cardname.$valid && cardForm.cardname.$touched}"
             required>
           <div ng-messages="cardForm.cardname.$error" ng-if="ctrl.submit || cardForm.cardname.$touched">
-                  <div class="alert alert-danger" ng-message="required">A valid name is required.</div>
-                </div>
+            <div class="alert alert-danger" ng-message="required">A valid name is required.</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="name">Expires on:</label>
@@ -204,11 +204,11 @@
             ng-class="{'invalid-form':cardForm.cardexpiry.$invalid && (cardForm.cardexpiry.$touched || ctrl.submit),'valid-form':cardForm.cardexpiry.$valid && cardForm.cardexpiry.$touched}"
             required>
           <div ng-messages="cardForm.cardexpiry.$error" ng-if="ctrl.submit || cardForm.cardexpiry.$touched">
-                  <div class="alert alert-danger" ng-message="required">A valid expiry date is required.</div>
-                  <div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
-                  <div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
-                  <div class="alert alert-danger" ng-message="pattern">Please follow the 'MMYY' format</div>
-                </div>
+            <div class="alert alert-danger" ng-message="required">A valid expiry date is required.</div>
+            <div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
+            <div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
+            <div class="alert alert-danger" ng-message="pattern">Please follow the 'MMYY' format</div>
+          </div>
         </div>
       </form>
       <!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
@@ -219,6 +219,4 @@
       </button>
     </div>
   </div>
-
-
 </div>
