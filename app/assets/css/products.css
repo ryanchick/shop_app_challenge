@@ -3,7 +3,7 @@
 }
 
 /*#products .row{
-	margin-top: 150px;
+  margin-top: 150px;
 }*/
 
 #top {
@@ -37,3 +37,17 @@ h1 {
   overflow: scroll;
 }*/
 
+
+/*Styling for cart page*/
+.melon {
+  text-align: right;
+  margin-right: 50px;
+}
+.grape {
+  margin-bottom: 20px;
+  margin-right: 50px;
+  float: right;
+}
+.mango {
+  height: 125px;
+}

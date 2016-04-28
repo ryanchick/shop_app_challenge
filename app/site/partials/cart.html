@@ -1,64 +1,69 @@
 <div class="container-fluid">
 
     <div>
-		<h3>Shopping Cart</h3>
-	</div>
+    <h3>Shopping Cart</h3>
+  </div>
 
-	<div ng-show='ctrl.cart.length <= 0'>
-    	<h3>There are no items in your cart!</h3>
+  <br>
+  <br>
+
+  <div ng-show='ctrl.cart.length <= 0'>
+      <h3>There are no items in your cart!</h3>
     </div>
 
-	<div class="cartitem row">
-		<ul ng-show='ctrl.cart.length > 0'>
-			<li ng-repeat='item in ctrl.cart track by $index'>
+  <div class="cartitem row">
+    <ul ng-show='ctrl.cart.length > 0'>
 
-			 	<div class="col-md-2" id="image">
-					<img style="width: 70px;" ng-src='{{item.product.image}}'>
-				</div>
+     <li>
 
-				<div class="col-md-2">
-					<h5>Name:</h5>{{item.product.name}}
-				</div>
+        <table class="table table-striped">
+            <tr>
+              <th scope="col" class="col-md-2">Image</th>
+              <th scope="col" class="col-md-2">Name</th>
+              <th scope="col" class="col-md-2">Price</th>
+              <th scope="col" class="col-md-2">Quantity</th>
+              <th scope="col" class="col-md-2">Total</th>
+              <th scope="col" class="col-md-2">Remove from the cart</th>
+            </tr>
 
-				<div class="col-md-2">	
-					<h5>Price:</h5>{{item.product.price|currency}}
-				</div>
 
-				<div class="col-md-2">
-					<h5>Quantity:</h5>{{item.quantity}}
-				</div>
+            <tr ng-repeat='item in ctrl.cart track by $index'>
+              <td class="mango"><img style="width: 70px;" ng-src='{{item.product.image}}'></td>
+              <td class="mango">{{item.product.name}}</td>
+              <td class="mango">{{item.product.price|currency}}</td>
+              <td class="mango">{{item.quantity}}</td>
+              <td class="mango">{{item.quantity * item.product.price||currency}}</td>
+              <td class="mango"><button class="btn btn-danger btn-xs" style="margin-top: 20px; margin-bottom: 20px;" id="deletebtn" ng-click='ctrl.removeCart($index)'><i class="fa fa-times"></i></button></td>
+            </tr>
+        </table>
 
-				<div class="col-md-2">
-					<h5>Total:</h5>{{item.quantity * item.product.price||currency}}
-				</div>
+      </li>
+    </ul>
+  </div>
 
-				<div class="col-md-2">
-					<div><button class="btn btn-danger" style="margin-top: 20px; margin-bottom: 20px;" id="deletebtn" ng-click='ctrl.removeCart($index)'>Delete</button></div>
-				</div>
 
-			</li>	
-		</ul>
-	</div>
 
-	<div id="total">
+  <div id="total">
 
-		<h3>Subtotal: {{ctrl.total|currency}}</h3>
+    <h4 class="melon">Subtotal: {{ctrl.total|currency}}</h4>
 
-		<button type="button" class="btn btn-danger btn-lg" style="margin-bottom: 20px;" ng-click="ctrl.goTocheckout()">Checkout</button>
+<br>
 
-	</div>
+    <button type="button" class="btn btn-success btn-lg grape"  ng-click="ctrl.goTocheckout()">Checkout</button>
+
+  </div>
 
 </div>
- 
+
     <!-- <li ng-repeat='item in ctrl.cart track by $index'>
       <div> -->
         <!-- <img style="" ng-src='{{item.product.image}}'> -->
     <!--     Name: {{item.product.name}} -->
 
        <!--  Price:{{item.product.price|currency}} -->
-  <!-- 
+  <!--
         Quantity: {{item.quantity}} -->
-<!-- 
+<!--
         Total: {{item.quantity * item.product.price||currency}} -->
 
         <!-- <button class="btn btn-danger" ng-click='ctrl.removeCart($index)'>Delete</button>
@@ -79,53 +84,53 @@
 
 <!-- <div class="container-fluid">
 
-	<div ng-show='ctrl.cart.length <= 0'>
-		<h3>There are no items in your cart!</h3>
-	</div>
+  <div ng-show='ctrl.cart.length <= 0'>
+    <h3>There are no items in your cart!</h3>
+  </div>
 
-	<div>
-		<h3>Shopping Cart</h3>
-	</div>
+  <div>
+    <h3>Shopping Cart</h3>
+  </div>
 
-	<div class="cartitem row">
-		<ul ng-show='ctrl.cart.length > 0'>
-			<li ng-repeat='item in ctrl.cart'>
-			
-			    <div class="col-md-2" id="image">
-					<img style="width: 70px;" ng-src='{{item.product.image}}'>
-				</div>
+  <div class="cartitem row">
+    <ul ng-show='ctrl.cart.length > 0'>
+      <li ng-repeat='item in ctrl.cart'>
 
-				<div class="col-md-2">
-					<h5>Name:</h5>{{item.product.name}}		
-				</div>
+          <div class="col-md-2" id="image">
+          <img style="width: 70px;" ng-src='{{item.product.image}}'>
+        </div>
 
-				<div class="col-md-2">	
-					<h5>Price:</h5>{{item.product.price|currency}}
-				</div>	
-					
-				<div class="col-md-2">
-					<h5>Quantity:</h5>{{item.quantity}}
-				</div>
-					
-				<div class="col-md-2">
-					<h5>Total:</h5>{{item.quantity * item.product.price||currency}}
-				</div>
+        <div class="col-md-2">
+          <h5>Name:</h5>{{item.product.name}}
+        </div>
+
+        <div class="col-md-2">
+          <h5>Price:</h5>{{item.product.price|currency}}
+        </div>
+
+        <div class="col-md-2">
+          <h5>Quantity:</h5>{{item.quantity}}
+        </div>
+
+        <div class="col-md-2">
+          <h5>Total:</h5>{{item.quantity * item.product.price||currency}}
+        </div>
 
                 <div class="col-md-2">
-					<div><button class="btn btn-danger" style="margin-top: 20px; margin-bottom: 20px;" id="deletebtn" ng-click='ctrl.removeCart($index)'>Delete</button></div>
-				</div>
+          <div><button class="btn btn-danger" style="margin-top: 20px; margin-bottom: 20px;" id="deletebtn" ng-click='ctrl.removeCart($index)'>Delete</button></div>
+        </div>
 
-			</li>	
-		</ul>
-	</div>
+      </li>
+    </ul>
+  </div>
 
-	<div id="total">
+  <div id="total">
 
-		<h3>Subtotal: {{ctrl.total|currency}}</h3>
+    <h3>Subtotal: {{ctrl.total|currency}}</h3>
 
-		<button type="button" class="btn btn-danger btn-lg" style="margin-bottom: 20px;" ng-click="ctrl.goTocheckout()">Checkout</button>
+    <button type="button" class="btn btn-danger btn-lg" style="margin-bottom: 20px;" ng-click="ctrl.goTocheckout()">Checkout</button>
 
-	</div>
+  </div>
 
 </div>
  -->
