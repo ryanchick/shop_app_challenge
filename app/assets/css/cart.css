@@ -31,3 +31,52 @@
   max-width: 70px;
   height: 100%
 }
+
+
+/*Navbar related*/
+
+body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 0 200px;
+}
+
+#footer {
+  height: 200px!important;
+  background-color: #3B3B40;
+
+}
+
+#footer p{
+  color: white;
+  font-size: 16px;
+  /*padding: 10px;*/
+}
+
+.container-footer div {
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  padding: 20px;
+
+
+  /*vertical-align: middle;*/
+}
+
+#team {
+  padding-top: 25px;
+
+}
+
+#team p {
+  color: #A6A6A6;
+}
+
+.glyphicon-footer {
+  color: #9ACC60;
+}
