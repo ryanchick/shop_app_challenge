@@ -1,5 +1,6 @@
 <shop-navbar></shop-navbar>
 
+<!-- Top Banner -->
 <section class="top-content" id="mainimage" role="topbanner">
 	<div class="content-wrapper">
 		<div class="table-view">
@@ -11,42 +12,35 @@
 					<h3>
 						Buy all your festival gear from Burning Man's number one online supplier
 					</h3>
-
-
-    <!--       <div class="">
-            <form> -->
-             <!--  <! TO DO #3: ENABLE PRODUCT SEARCH
-              <div class="form-container">
- -->          <!--       <input 
-                  type="text" 
-                  class="form-control"  
-                  placeholder="Search for a brand or item" 
-                  ng-model="ctrl.search">
-                <a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
-              </div>
-            </form>
-          </div> -->
-        </div>
-      </div>
-    </div>
-  </div>
+        		</div>
+      		</div>
+    	</div>
+  	</div>
 </section>
 
+<!-- Call To Action -->
 <section id="call-to-action" class="container">
 	<div>
 		<h2> Click On A Category To Begin Your Search</h2>
 	</div>
 </section>
 
+<!-- Category Galleries -->
 <section class="main-view" role="main-view">
 	<div class="content-wrapper">
 		<div class="row">
 			<!-- TODO #3: SHOW PRODUCTS -->
-			<div class="col-xs-12 col-md-4" ng-repeat='category in ctrl.categories' ng-click='ctrl.goToCategories(category.category)'>
-			   <div id="main-card" class="main-card main-buy main-buy:hover">
+			<div class="col-xs-12 col-md-4" 
+				 ng-repeat='category in ctrl.categories' 
+				 ng-click='ctrl.goToCategories(category.category)'>
+			   	<div id="main-card" 
+			   		 class="main-card main-buy main-buy:hover">
 		
 					<!-- SET PRODUCT IMAGE -->
-				<div class="main-img" style="background:url('{{category.image}}');background-size:cover;background-position:center center">
+				<div class="main-img" 
+					 style="background:url('{{category.image}}');
+					 		background-size:cover;
+					 		background-position:center center">
 						<div class="main-name">
 						<div class="main-info">
 						<div class="product-name">
