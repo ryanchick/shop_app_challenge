@@ -155,7 +155,7 @@ Product view
   cursor: pointer;
   cursor:hand;
 }
-/*#product-card .product-img{
+#product-card .product-img{
   width:100%;
   height:200px;
   margin-top:0px;*/
