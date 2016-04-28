@@ -18,10 +18,10 @@
   margin-top: 15px;
 }
 
-<<<<<<< HEAD
-#backToShop {
-  text-align: center;
-=======
+
+/*#backToShop {
+  text-align: center;*/
+
 #addBtn {
   background-color: #EF6A33;
   color: white;
@@ -30,7 +30,6 @@
 
 .colorF {
   color:white;
->>>>>>> NatashaThirlwell/master
 }
 /*#products .row{
   margin-top: 150px;
