@@ -1,0 +1,33 @@
+.cart-table td {
+  height:60px;
+  vertical-align: middle!important;
+
+
+  /*font-size: 14px;*/
+}
+
+#total h4 {
+  text-align: right;
+  margin-right: 20px;
+}
+
+#total button {
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
+.cart-table {
+  text-align: center;
+  font-size: 14px;
+}
+
+.cart-th {
+  text-align: center;
+}
+
+.cart-table img {
+  border:1px solid lightgray;
+  max-width: 70px;
+  height: 100%
+}
