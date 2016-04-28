@@ -69,7 +69,7 @@
             placeholder="Name"
             ng-model='ctrl.name'
             ng-class="{'invalid-form':addressForm.name.$invalid && (addressForm.name.$touched || ctrl.submit),'valid-form':addressForm.name.$valid && addressForm.name.$touched}"
-            required>
+            required >
           <div ng-messages="addressForm.name.$error" ng-if="ctrl.submit || addressForm.name.$touched">
                   <div class="alert alert-danger" ng-message="required">A name is required.</div>
                 </div>
@@ -190,8 +190,8 @@
             ng-class="{'invalid-form':cardForm.cardname.$invalid && (cardForm.cardname.$touched || ctrl.submit),'valid-form':cardForm.cardname.$valid && cardForm.cardname.$touched}"
             required>
           <div ng-messages="cardForm.cardname.$error" ng-if="ctrl.submit || cardForm.cardname.$touched">
-                  <div class="alert alert-danger" ng-message="required">A valid name is required.</div>
-                </div>
+            <div class="alert alert-danger" ng-message="required">A valid name is required.</div>
+          </div>
         </div>
         <div class="form-group">
           <label for="name">Expires on:</label>
@@ -206,21 +206,23 @@
             ng-class="{'invalid-form':cardForm.cardexpiry.$invalid && (cardForm.cardexpiry.$touched || ctrl.submit),'valid-form':cardForm.cardexpiry.$valid && cardForm.cardexpiry.$touched}"
             required>
           <div ng-messages="cardForm.cardexpiry.$error" ng-if="ctrl.submit || cardForm.cardexpiry.$touched">
-                  <div class="alert alert-danger" ng-message="required">A valid expiry date is required.</div>
-                  <div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
-                  <div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
-                  <div class="alert alert-danger" ng-message="pattern">Please follow the 'MMYY' format</div>
-                </div>
+            <div class="alert alert-danger" ng-message="required">A valid expiry date is required.</div>
+            <div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
+            <div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
+            <div class="alert alert-danger" ng-message="pattern">Please follow the 'MMYY' format</div>
+          </div>
         </div>
       </form>
       <!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
       ng-click='ctrl.selected = 1'>Confirm</button> -->
+<<<<<<< HEAD
+      <button class="btn btn-warning"
+=======
       <button id="nextbutton" class="btn btn-warning"
+>>>>>>> NatashaThirlwell/master
         ng-click='ctrl.processOrder(true)'>
         Process Order
       </button>
     </div>
   </div>
-
-
 </div>
