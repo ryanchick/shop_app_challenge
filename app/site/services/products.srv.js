@@ -217,7 +217,6 @@
         if(res.status === 200){
           //product was updated successfully
           self.updateProductList(product,productId);
-          // $state.go('admin.dash');
         }
       })
     }
@@ -230,7 +229,6 @@
       if(localStorage.orders != undefined){
         self.orders = JSON.parse(localStorage.orders)
       }
-      // self.orders = [];
     }
 
     function deleteOrders(){
