@@ -1,8 +1,8 @@
 <!-- 	TODO #2: Populate fields with product data -->
 <article class="product-frm">
-<h3>
+<h1>
 	Edit Product
-</h3>
+</h1>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Product Name</span>
 			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.product.name"
@@ -15,7 +15,7 @@
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Description</span>
   			<input id="newProduct2" type="text" name="description" class="form-control" placeholder="Description"
-  			aria-describedby="basic-addon1" ng-model="ctrl.description" required>
+  			aria-describedby="basic-addon1" ng-model="ctrl.product.description" required>
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Category</span>
@@ -30,8 +30,8 @@
   			<input id="newProduct2" type="number" name="quantity" class="form-control" placeholder="ProductName"
   			aria-describedby="basic-addon1" ng-model="ctrl.product.quantity" required>
 		</div>
-		<div class="input-group margin">
+		<div class="input-group margin updateBu">
 			<button class="btn btn-default" type="submit" ng-click='ctrl.updateProduct()'>{{ctrl.product_update_btn}}</button>
-			<button class="btn btn-default" type="submit" ng-click='ctrl.deleteProduct()'>{{ctrl.product_delete_btn}}</button>
+			<button class="btn btn-default deleteBu" type="submit" ng-click='ctrl.deleteProduct()'>{{ctrl.product_delete_btn}}</button>
 		</div>
 </article>
