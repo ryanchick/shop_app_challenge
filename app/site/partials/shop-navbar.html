@@ -53,9 +53,9 @@
 				
 			<!-- Cart Icon -->
 		       <li ng-hide='ctrl.is_admin'>
-			       	<div id="cart" ng-click="ctrl.openCart()" class="btn">
+			       	<div ng-click="ctrl.openCart()" class="btn cart">
 			       		<i class="fa fa-shopping-cart"></i>
-			       		<span class="cart">Cart </span>
+			       		<span class="cart-label">Cart </span>
 			       		<span class="badge" ng-hide='ctrl.cartCount == 0'>{{ctrl.cartCount}}</span>
 			       	</div>
 		       	</li>

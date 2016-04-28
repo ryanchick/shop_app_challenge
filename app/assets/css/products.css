@@ -14,13 +14,18 @@
  z-index: 5;
 }
 
+#back .position {
+  left:50px;
+  top: 100px;
+}
+
 #formmargin {
   margin-top: 15px;
 }
 
-
-/*#backToShop {
-  text-align: center;*/
+#backToShop {
+  text-align: center;
+}
 
 #addBtn {
   background-color: #EF6A33;
@@ -31,6 +36,7 @@
 .colorF {
   color:white;
 }
+
 /*#products .row{
   margin-top: 150px;
 }*/
