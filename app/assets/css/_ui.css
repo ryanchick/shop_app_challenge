@@ -140,7 +140,7 @@ Top-content
 .top-content{
 	width:100%;
 	height:50%;
-	background:url('../img/orange.png');
+	background:url('/assets/img/orange.png');
 	background-size:cover;
 	overflow: hidden;
 	background-position:center center;
@@ -154,7 +154,8 @@ Top-content
 .top-content h1{
 	color:white;
 	font-size:4rem;
-	border: 0.083vw solid rgba(245, 245, 245, 0.2);
+	/*background-color: rgba(153,153,153,0.09);*/
+	/*border: 0.083vw solid rgba(245, 245, 245, 0.2);*/
 	padding: 1vw 0vw;
 	margin-bottom: 4.58;
 	margin-bottom: 1.5vw;
@@ -164,6 +165,7 @@ Top-content
 	color:white;
 	font-size:2rem;
 	padding-top: 0.5vw;
+	background: rgba(153, 153, 153, 0.04);
 /*	margin-top:4.167vw;*/
 	letter-spacing:0.05rem;
 	font-weight:100 !important;
@@ -236,16 +238,45 @@ Top-content
 	right:10px;
 }
 
-#main-card .main-buy:hover .fa{
+#main-card .main-img{
+	width:100%;
+	height:200px;
+	margin-bottom:2.5vw;
+}
+
+#main-card h2{
+	color: white;
+	text-align: center;
+    position: relative;
+    top: 12vw;
+}
+
+#main-card .main-img:hover{
 	color:whitesmoke;
 	cursor: pointer;
 	cursor:hand;
 }
-#main-card .main-img{
-	width:100%;
-	height:200px;
-	margin-top:0px;
+
+#main-card .main-img:hover{
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
 }
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
 /*.main-categories img{
 	width:100%;
 	height: 200px;
@@ -274,7 +305,7 @@ Top-content
 }
 
 .invalid-form{
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 /*.main-categories h2{
@@ -284,4 +315,3 @@ Top-content
 	text-align: center;
 	background-color: rgba(128, 128, 128, 0.09);
 }*/
-

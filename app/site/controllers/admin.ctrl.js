@@ -57,12 +57,21 @@
     adminVm.editProduct = editProduct;
     adminVm.logout = logout;
     adminVm.reloadProducts = reloadProducts;
+    adminVm.deleteOrders = deleteOrders;
+    adminVm.calcRev = calcRev;
 
     function reloadProducts(){
       productSrv.deleteAllProducts()
       .then(function(){
         productSrv.loadProducts();
       })
+    }
+
+    function deleteOrders(){
+      productSrv.deleteOrders();
+      adminVm.orders = productSrv.orders;
+      adminVm.is_orders = false;
+      adminVm.calcRev();
     }
 
     function editProduct(product){
@@ -76,6 +85,7 @@
     }
 
     function calcRev(){
+      adminVm.totalRev = 0;
       for(var order in adminVm.orders){
         adminVm.totalRev += adminVm.orders[order].final_total;
       }
