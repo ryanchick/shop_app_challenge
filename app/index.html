@@ -4,6 +4,9 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- App Styles -->
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
   <!-- build:css css/app.min.css -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -46,6 +49,7 @@
 
   <!-- Custom Directives -->
   <script type="text/javascript" src="site/controllers/shop-navbar.dir.js"></script>
+  <script type="text/javascript" src="site/controllers/footer.dir.js"></script>
   <script type="text/javascript" src="assets/js/titleCaseFilter.js"></script>
 
 
@@ -58,7 +62,9 @@
 </head>
 <body ng-app="shopApp">
 
-  <div ui-view class="wrapper"></div>
+  <div ui-view class="wrapper" id="wrap"></div>
+
+  <footer></footer>
 
 </body>
 </html>
