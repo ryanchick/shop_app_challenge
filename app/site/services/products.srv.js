@@ -322,7 +322,7 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
-  "name": "Retreat Configure Wing Shelter",
+  "name": "Retreat Configure Wing Shelter - Warm Grey/Sunset",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/7/87158_retreatconfigurewing_h41_2.jpg",
   "description": "The Configure Wing is a lightweight, easy-to-pitch shelter that cleverly extends covered living space outside of our Retreat tents. Use it to join tents, create a communal outdoor living area, or storage space for bikes and other gear. The Configure Wing can also be used on its own as a stand-alone shelter.",
   "category": "camping",
@@ -330,7 +330,7 @@ var PRODUCT_DATA = [{
   "quantity": "1",
   "status": "1"
 }, {
-  "name": "Cabana Double Air Bed With Pump",
+  "name": "Cabana Double Air Bed With Pump - Charcoal",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/2/82033_cabanaairbed_901.png",
   "description": "With minimum fuss, you can add a little luxury to your camping adventures with the Cabana Airbed. The easy-fit electric pump makes short work of inflation and deflation and the push button valve control allows you to find your perfect comfort level.",
   "category": "camping",
@@ -362,7 +362,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Retreat Hammock",
+  "name": "Retreat Hammock - Dark Navy",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/4/84197_retreathammock_632.jpg",
   "description": "Folding, portable hammock for home and camping. Side mesh book pocket for extra storage.",
   "category": "camping",
@@ -403,7 +403,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Kids Telescope",
+  "name": "Kids Telescope - Bright Green",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61023_kidstelescope_c42_1.jpg",
   "description": "Discover the world around you and explore the land, sea and sky up close!",
   "category": "accessories",
@@ -435,7 +435,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Head Torch Core 230",
+  "name": "Head Torch Core 230 - Green/Black",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61522_torchcore230__653.jpg",
   "description": "Ideal for multi-day use on longer adventures. 3 x 1.5V AA Alkaline batteries included. Comfortable, bright, long lasting light. Cleverly balanced weight of the padded headlight & battery case, combined with a wide head-strap for more comfort over longer periods of wear.",
   "category": "accessories",
@@ -443,7 +443,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Cooler Box with Wheels",
+  "name": "Cooler Box with Wheels - Grey",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/8/3/83158_coolerbox_900.jpg",
   "description": "For the ultimate in the cool convenience, take the Cooler Box with Wheels to your next picnic, party or outdoor event. It's durable, reliable and ultimately versatile and with multiple handles and wheels, super easy to lift from the car and get to your destination.",
   "category": "accessories",
@@ -451,7 +451,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Goal Zero Guide 10 Plus Kit",
+  "name": "Goal Zero Guide 10 Plus Kit - Black/Green",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61684_goalzeroguide10_a_c15.jpg",
   "description": "Power USB and battery devices from the sun. With the Guide 10 Plus Recharger and Nomad 7 Solar Panel, you have a portable, rugged charging kit as adventurous as you are. Charge AA or AAAs from the sun or any USB port, then power your phone, MP3, action cam or perk up your tablet in a pinch. Alternatively, remove the batteries to run battery-powered devices.",
   "category": "accessories",
@@ -459,7 +459,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Goal Zero Venture 30 Recharger",
+  "name": "Goal Zero Venture 30 Recharger - Black/Green",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61685_goalzeroventure30_a_c15.jpg",
   "description": "The Goal Zero Venture 30 Recharger is more than just a battery, it’s a lifeline to adventure, a conduit for exploration. Push the limits of your creativity and keep essentials charged and ready for what happens next – no matter the weather. The Venture 30’s advanced smart charging feature allows charging optimisation for specific devices and with pass-through charging you can refuel the Venture 30 and connected devices all at once. The Venture 30 Kit includes a Micro-USB Cable Tip.",
   "category": "accessories",
@@ -467,7 +467,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Bluetooth Travel Speaker",
+  "name": "Bluetooth Travel Speaker - Azure",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61606_portablebttravelspeaker_015.jpg",
   "description": "Have music wherever you go with our Bluetooth Travel Speaker. Simply connect your audio device through Bluetooth to the speaker. It can also be used with micro SD cards, any audio device via the 3.5mm audio cable (included), or access the in-built FM radio for local music and news.",
   "category": "accessories",
@@ -558,7 +558,7 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //pharmaceutical
-  "name": "First Aid Kit - 2 Person",
+  "name": "First Aid Kit - 2 Person - Red",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61262_aidkit2p_b_403.png",
   "description": "Two person first aid kit for emergencies",
   "category": "pharmaceutical",
@@ -566,7 +566,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Survival Kit Bottle",
+  "name": "Survival Kit Bottle - Orange",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/6/1/61231_SurvBottle_302.png",
   "description": "All-in-one survival kit bottle.",
   "category": "pharmaceutical",
@@ -574,7 +574,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Mosquito Head Net",
+  "name": "Mosquito Head Net - Black",
   "image": "http://www.kathmandu.co.nz/media/catalog/product/cache/1/image/450x/9df78eab33525d08d6e5fb8d27136e95/5/0/50150_mosquitoheadnet_b_902.jpg",
   "description": "Ideal for camping, fishing or tramping. Lightweight and comfortable. Fine, untreated mesh provides safe, effective and easy protection against insects.",
   "category": "pharmaceutical",
@@ -583,7 +583,7 @@ var PRODUCT_DATA = [{
   "status": "1"
 }, {
                       //transportation
-  "name": "Mixed Tape Bicycle",
+  "name": "Mixed Tape Bicycle (Unisex)",
   "image": "http://images.mec.ca/fluid/customers/c822/5039-273/generated/5039-273_SIL03_view1_720x720.jpg",
   "description": "A nice compilation of components and the bonus track is the Nexus 7-speed internal hub from Shimano®. The internal hub allows you to switch gears anytime (stopped or moving) and requires much less maintenance than a bike with an external drivetrain. The Nexus 7 gives you extra gears to drop into when you're going up hills or carrying a 5kg sack of apples. Revo shifters have a simple, fluid action and a large indicator to show you what gear you're currently in. The Mixed Tape will sound fine for anyone with a relatively flat 9 to 5 commute, who rides through cross town traffic, and mixes in the occasional rolling country road.<",
   "category": "transportation",
@@ -591,7 +591,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Ghost Powerkid 20 Bicycle",
+  "name": "Ghost Powerkid 20 Bicycle - Youths",
   "image": "http://images.mec.ca/fluid/customers/c822/5043-749/generated/5043-749_CYN28_view1_720x720.jpg",
   "description": "The Ghost Powerkid 20 is a super-solid bike that will help young riders learn to stomp hills and float trails. Built with reliable components from trustworthy brands, the frame is light, the shifting is smooth, and the braking is precise and consistent. RST shocks smooth out bumps and roughness, making the ride feel more predictable and helping the rider feel in control. The Powerkid series is an excellent base for building confidence and honing cross-country riding skills.",
   "category": "transportation",
@@ -607,7 +607,7 @@ var PRODUCT_DATA = [{
   "quantity": "10",
   "status": "1"
 }, {
-  "name": "Runners Aluminum Push Bicycle",
+  "name": "Runners Aluminum Push Bicycle - Children to Youths",
   "image": "http://images.mec.ca/fluid/customers/c822/5028-323/generated/5028-323_NOC02_view1_720x720.jpg",
   "description": "Since this bike has no pedals or training wheels, kids have to use their legs for balance and movement. This exercise encourages quicker learning and makes the transition to a bicycle with pedals much easier because they've already honed their balance and motor skills.",
   "category": "transportation",

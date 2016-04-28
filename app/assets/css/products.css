@@ -14,19 +14,18 @@
  z-index: 5;
 }
 
+#back .position {
+  left:50px;
+  top: 100px;
+}
+
 #formmargin {
   margin-top: 15px;
 }
 
-<<<<<<< HEAD
 #backToShop {
   text-align: center;
 }
-=======
-
-/*#backToShop {
-  text-align: center;*/
->>>>>>> NatashaThirlwell/master
 
 #addBtn {
   background-color: #EF6A33;
