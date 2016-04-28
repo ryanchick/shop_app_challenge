@@ -49,7 +49,7 @@ a{
 Nav
 */
 
-nav{
+#shop-navbar{
 	height:55px;
 	line-height:55px;
 	color:#ff6d37;
@@ -57,7 +57,7 @@ nav{
 	box-shadow: 0 4px 2px -2px #d8d8d8;
 }
 
-nav .left-nav{
+#shop-navbar .left-nav{
 	float:left;
 	margin:0px 0px 0px 70px;
 	vertical-align: top;
@@ -70,25 +70,44 @@ nav .left-nav{
 	margin-left: 20px;
 }*/
 
-nav .right-nav{
+#shop-navbar .right-nav{
 	float:right;
 	margin:0px 70px 0px 0px;
 	vertical-align: top;
 }
 
-nav .search{
+#shop-navbar .search{
 	margin-top: 1vw;
 }
 
-nav .fa-shopping-cart{
+#shop-navbar .cart {
+	padding: 0px;
+    position: relative;
+    right: 43px;
+    top: -1px;
+}
+
+#shop-navbar .fa-shopping-cart{
 	margin-right:10px;
 	font-size:2rem;
 	position: relative;
     top: 1px;
     right: -6px;
 }
-nav .cart{
+#shop-navbar .cart-label{
 	font-size:1.6rem;
+}
+
+#shop-navbar .badge{
+	color:#ff6d37;
+	background: white;
+	border:1px solid #ff6d37;
+}
+
+#shop-navbar .cart:hover .badge{
+	color:black;
+	border-color:black;
+
 }
 
 #logo {
@@ -125,12 +144,7 @@ nav .cart{
 	right: 485px;
 }*/
 
-#cart {
-	padding: 0px;
-    position: relative;
-    right: 43px;
-    top: -1px;
-}
+
 
 #login {
 	position: relative;
@@ -183,8 +197,6 @@ Top-content
 
 .top-content .content{
 	margin:0 auto;
-	/*position: relative;
-    top: 3vw;*/
 }
 
 .top-content form{
