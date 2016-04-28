@@ -26,7 +26,7 @@
 		<tr ng-repeat="product in ctrl.products | filter: ctrl.productSearch">
 			<td>{{product.category | titleCaseFilter}}</td>
 			<td>{{product.name}}</td>
-			<td>{{product.price}}</td>
+			<td>{{product.price | currency}}</td>
 			<td>{{product.quantity}}</td>
 			<td><a ng-click="ctrl.editProduct(product)">Edit</a></td>
 		</tr>
