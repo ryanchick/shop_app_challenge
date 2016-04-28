@@ -137,30 +137,20 @@ h1 {
   border:2px solid green;
 }
 
-
-
-
-/*#admin h3 {
-  background-color: #ff6d37;
-}*/
-
-
-/*
 Product view
 */
-.product-view{
-  background: whitesmoke;
+/*.product-view{
   padding-top:1vw;
-}
+}*/
 
-.product-view .product-card{
+/*.product-view .product-card{
   width:100%;
   max-height: 23.67vwvw;
   background:white;
   font-size:1.5rem;
   text-align:center;
   position: relative;
-}
+}*/
 
 #product-card .product-buy{
   position: absolute;
