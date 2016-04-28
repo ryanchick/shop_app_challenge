@@ -91,6 +91,18 @@ nav .cart{
 	font-size:1.6rem;
 }
 
+#shop-navbar .badge{
+    color:#ff6d37 ;
+    background: white;
+    border:1px solid #ff6d37 ;
+}
+
+#shop-navbar .cart:hover .badge{
+    color:black;
+    border-color:black;
+
+}
+
 #logo {
 	position:absolute;
 	top: 5px;
@@ -155,6 +167,8 @@ Top-content
 	background-position:center center;
 	text-align: center;
 }
+
+
 
 /*#mainimage {
 	height:50%);
