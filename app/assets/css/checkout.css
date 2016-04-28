@@ -1,0 +1,31 @@
+.checkuotCss {
+	position: absolute;
+	top: 70px;
+	left: 650px;
+}
+
+.backCss {
+	position: absolute;
+/*	top: 50px;
+	left: 50px;*/
+}
+
+.checkoutMargin {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.panel-default>.panel-heading {
+	background-color: #EF6A33;
+	color: white;
+}
+
+#nextbutton {
+	border-color:  #EF6A33;
+	background-color: white;
+	color: #EF6A33;
+}
+
+#nextbutton:hover { 
+    background-color: lightgrey;
+}
