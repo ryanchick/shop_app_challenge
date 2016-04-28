@@ -21,6 +21,13 @@
 		this.loginForm = loginForm;
 		this.logged = false;
 		this.is_admin = false;
+		this.cart = productSrv.cart;
+
+		$scope.$watchCollection(function(){
+        	return productSrv.cart;
+    	}, function (newValue) {
+          		this.cart = productSrv.cart;
+    	});
 
 		if(localStorage.authToken){
 			this.logged = true;
