@@ -13,8 +13,16 @@
 		checkVm.total = 0;
 		updateTotal();
 		checkVm.submit = false;
-
 		checkVm.selected = 1;
+
+		checkVm.shipOptions = [
+		{label:'Standard Shipping - $10.00',cost:10.00},
+		{label:'Express Shipping - $25.00',cost:25.00},
+		{label:'Magical Teleportation - $25,000.00',cost:25000.00}
+		]
+		checkVm.ship = checkVm.shipOptions[0]
+
+
 
 		// checkVm.addtoCart = addtoCart;
 		checkVm.checkProducts = checkProducts;
@@ -55,7 +63,8 @@
 					address:checkVm.address,
 					city:checkVm.city,
 					province:checkVm.province,
-					postal:checkVm.postal
+					postal:checkVm.postal,
+					shipping:checkVm.ship
 
 				}
 				var card = {

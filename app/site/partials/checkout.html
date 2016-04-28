@@ -54,31 +54,31 @@
 	<div class="ship-form panel panel-default">
 		<div class="panel-heading"ng-click='ctrl.selected = 2'>
 			<h4>Shipping and Billing Info</h4>
-			<h4 class='panel-heading-right' ng-hide=''>Total + Shipping: {{(ctrl.total * 1.13) + 10|currency}}</h4>
+			<h4 class='panel-heading-right' ng-hide=''>Total + Shipping: {{(ctrl.total * 1.13) + (ctrl.ship.cost)|currency}}</h4>
 		</div>
 		<div class="panel-body" ng-show='ctrl.selected == 2'>
 			<form name='addressForm'>
 				<div class="form-group">
-					<label for="name">Name</label>
+					<label for="name">Name:</label>
 					<input type="text" 
 						class="form-control"	
 						name="name" 
 						placeholder="Name" 
 						ng-model='ctrl.name' 
-						ng-class="{'invalid-form':addressForm.name.$invalid && (addressForm.name.$touched || ctrl.submit)}"
+						ng-class="{'invalid-form':addressForm.name.$invalid && (addressForm.name.$touched || ctrl.submit),'valid-form':addressForm.name.$valid && addressForm.name.$touched}"
 						required>
 					<div ng-messages="addressForm.name.$error" ng-if="ctrl.submit || addressForm.name.$touched">
           				<div class="alert alert-danger" ng-message="required">A name is required.</div>
           			</div>
 				</div>
 				<div class="form-group">
-					<label for="email">Email</label>
+					<label for="email">Email:</label>
 					<input type="email" 
 						class="form-control"
 						name="email" 
 						placeholder="Email" 
 						ng-model='ctrl.email' 
-						ng-class="{'invalid-form':addressForm.email.$invalid && (addressForm.email.$touched || ctrl.submit)}"
+						ng-class="{'invalid-form':addressForm.email.$invalid && (addressForm.email.$touched || ctrl.submit),'valid-form':addressForm.email.$valid && addressForm.email.$touched}"
 						required>
 					<div ng-messages="addressForm.email.$error" ng-if="ctrl.submit || addressForm.email.$touched">
 						<div class="alert alert-danger" ng-message="required">An email is required.</div>
@@ -92,7 +92,11 @@
 						name="address" 
 						placeholder="Address" 
 						ng-model='ctrl.address'
+						ng-class="{'invalid-form':addressForm.address.$invalid && (addressForm.address.$touched || ctrl.submit),'valid-form':addressForm.address.$valid && addressForm.address.$touched}"
 						required>
+					<div ng-messages="addressForm.address.$error" ng-if="ctrl.submit || addressForm.address.$touched">
+          				<div class="alert alert-danger" ng-message="required">An address is required.</div>
+          			</div>		
 				</div>
 				<div class="form-group">
 					<label for="name">City:</label>
@@ -101,16 +105,45 @@
 						name="city" 
 						placeholder="City" 
 						ng-model='ctrl.city'
+						ng-class="{'invalid-form':addressForm.city.$invalid && (addressForm.city.$touched || ctrl.submit),'valid-form':addressForm.city.$valid && addressForm.city.$touched}"
 						required>
+					<div ng-messages="addressForm.city.$error" ng-if="ctrl.submit || addressForm.city.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid city is required.</div>
+          			</div>
 				</div>
 				<div class="form-group">
 					<label for="name">Province/State/Region:</label>
-					<input type="text" class="form-control"	name="province" placeholder="Province" ng-model='ctrl.province'>
+					<input type="text" 
+						class="form-control"	
+						name="province" 
+						placeholder="Province" 
+						ng-model='ctrl.province'
+						ng-class="{'invalid-form':addressForm.province.$invalid && (addressForm.province.$touched || ctrl.submit),'valid-form':addressForm.province.$valid && addressForm.province.$touched}"
+						required>
+					<div ng-messages="addressForm.province.$error" ng-if="ctrl.submit || addressForm.province.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid region is required.</div>
+          			</div>
 				</div>
 				<div class="form-group">
 					<label for="name">Postal Code/ZIP: </label>
-					<input type="text" class="form-control"	name="postal" placeholder="Postal Code" ng-model='ctrl.postal'>
+					<input type="text" 
+						class="form-control"	
+						name="postal" 
+						placeholder="Postal Code" 
+						ng-model='ctrl.postal'
+						ng-class="{'invalid-form':addressForm.postal.$invalid && (addressForm.postal.$touched || ctrl.submit),'valid-form':addressForm.postal.$valid && addressForm.postal.$touched}"
+						required>
+					<div ng-messages="addressForm.postal.$error" ng-if="ctrl.submit || addressForm.postal.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid postal code is required.</div>
+          			</div>
 				</div>
+				<div class="form-group">
+					<label for="shipping">Shipping Options:</label>
+					<select class="form-control" ng-options='ship as ship.label for ship in ctrl.shipOptions' ng-model='ctrl.ship'>
+						
+					</select>
+				</div>
+
 			</form>
 			<button class="btn btn-success" ng-disabled= '!addressForm.$valid'
 			ng-click='ctrl.selected = 3'>Next Step</button>
@@ -124,21 +157,64 @@
 		<div class="panel-body" ng-show='ctrl.selected == 3'>
 			<form name='cardForm'>
 				<div class="form-group">
-					<label for="cardnumber">Credit Card Number</label>
-					<input type="text" class="form-control"	name="cardnumber" placeholder="Card Number" ng-model='ctrl.card_number' required></input>
+					<label for="cardnumber">Credit Card Number:</label>
+					<input type="type" 
+						class="form-control"	
+						name="cardnumber" 
+						placeholder="Card Number" 
+						ng-model='ctrl.card_number' 
+						minlength='16'
+						maxlength='16'
+						pattern="\d*"
+						ng-class="{'invalid-form':cardForm.cardnumber.$invalid && (cardForm.cardnumber.$touched || ctrl.submit),'valid-form':cardForm.cardnumber.$valid && cardForm.cardnumber.$touched}"
+						required>
+					<div ng-messages="cardForm.cardnumber.$error" ng-if="ctrl.submit || cardForm.cardnumber.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid credit card number is required.</div>
+          				<div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
+          				<div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
+          				<div class="alert alert-danger" ng-message="pattern">You must enter a number.</div>
+          			</div>
 				</div>
 				<div class="form-group">
-					<label for="cardname">Name on Card</label>
-					<input type="text" class="form-control"	name="cardname" placeholder="Name" ng-model='ctrl.card_name' required></input>
+					<label for="cardname">Name on Card:</label>
+					<input type="text" 
+						class="form-control"	
+						name="cardname" 
+						placeholder="Name" 
+						ng-model='ctrl.card_name'
+						ng-class="{'invalid-form':cardForm.cardname.$invalid && (cardForm.cardname.$touched || ctrl.submit),'valid-form':cardForm.cardname.$valid && cardForm.cardname.$touched}" 
+						required>
+					<div ng-messages="cardForm.cardname.$error" ng-if="ctrl.submit || cardForm.cardname.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid name is required.</div>
+          			</div>
 				</div>
 				<div class="form-group">
-					<label for="name">Expires on</label>
-					<input type="number" class="form-control" name="cardexpiry" placeholder="MMYY" ng-model='ctrl.card_expiry'required></input>
+					<label for="name">Expires on:</label>
+					<input type="text" 
+						class="form-control" 
+						name="cardexpiry" 
+						placeholder="MMYY" 
+						ng-model='ctrl.card_expiry'
+						pattern="\d*"
+						maxlength="4"
+						minlength="4" 
+						ng-class="{'invalid-form':cardForm.cardexpiry.$invalid && (cardForm.cardexpiry.$touched || ctrl.submit),'valid-form':cardForm.cardexpiry.$valid && cardForm.cardexpiry.$touched}"
+						required>
+					<div ng-messages="cardForm.cardexpiry.$error" ng-if="ctrl.submit || cardForm.cardexpiry.$touched">
+          				<div class="alert alert-danger" ng-message="required">A valid expiry date is required.</div>
+          				<div class="alert alert-danger" ng-message="minlength">This number is too short!</div>
+          				<div class="alert alert-danger" ng-message="maxlength">This number is too long!</div>
+          				<div class="alert alert-danger" ng-message="pattern">Please follow the 'MMYY' format</div>
+          			</div>
 				</div>
 			</form>
 			<!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
 			ng-click='ctrl.selected = 1'>Confirm</button> -->
-			<button class="btn btn-warning" ng-click='ctrl.processOrder(cartForm.$valid && addressForm.$valid && cardForm.$valid)'>Process Order</button>
+			<button class="btn btn-warning" 
+				ng-click='ctrl.processOrder(cartForm.$valid && addressForm.$valid && cardForm.$valid)' 
+				ng-disabled='!(cartForm.$valid && addressForm.$valid && cardForm.$valid)'>
+				Process Order
+			</button>
 		</div>
 	</div>
 

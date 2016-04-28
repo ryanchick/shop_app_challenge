@@ -238,16 +238,38 @@ Top-content
 	right:10px;
 }
 
-#main-card .main-buy:hover .fa{
-	color:whitesmoke;
-	cursor: pointer;
-	cursor:hand;
-}
 #main-card .main-img{
 	width:100%;
 	height:200px;
 	margin-bottom:2.5vw;
 }
+
+#main-card .main-img:hover{
+	color:whitesmoke;
+	cursor: pointer;
+	cursor:hand;
+}
+
+#main-card .main-img:hover{
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
 /*.main-categories img{
 	width:100%;
 	height: 200px;
@@ -276,7 +298,7 @@ Top-content
 }
 
 .invalid-form{
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 /*.main-categories h2{
@@ -287,3 +309,66 @@ Top-content
 	background-color: rgba(128, 128, 128, 0.09);
 }*/
 
+/*//Hover Css///*/
+
+.hover13 main-img:hover{
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+
+figure {
+	width: 300px;
+	height: 200px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+
+	/*///actual css///*/
+/* Flashing */
+.hover13 figure:hover img {
+	opacity: 1;
+	-webkit-animation: flash 1.5s;
+	animation: flash 1.5s;
+}
+@-webkit-keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+}

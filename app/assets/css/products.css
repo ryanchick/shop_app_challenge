@@ -125,6 +125,10 @@ h1 {
 #checkout .th-del{
   width:5%;
 }
+#checkout .valid-form{
+  border:2px solid green;
+}
+
 
 
 /*
