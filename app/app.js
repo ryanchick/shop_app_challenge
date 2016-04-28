@@ -49,6 +49,11 @@
 				templateUrl:'site/partials/admin-orders.html',
 				controller:'AdminCtrl as ctrl'
 			})
+			.state('admin.order_details',{
+				url:'/orders/:orderId',
+				templateUrl:'site/partials/admin-order-details.html',
+				controller:'OrderCtrl as ctrl'
+			})
 
 			.state('admin.add_product',{
 				url:'/add_product',
