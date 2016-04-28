@@ -1,51 +1,53 @@
 <shop-navbar></shop-navbar>
+
+<!-- Overall Container -->
 <section class="product-view" role="product-view">
 
-	<section class="top-content" role="topbanner">
+<!-- Top content -->
+	<section class="top-banner" role="topbanner">
 		<div class="content-wrapper">
 			<div class="table-view">
 				<div class="table-cell">
 					<div class="content">		
 						<h1>
-							Manage Your Closet.
+							Find Your Gear
 						</h1>
-						<h3>
-							Buy and Sell used fashion items from virtually anywhere.
-						</h3>
 
-						<div class="">
+						<div>
 							<form>
 								<!-- TO DO #3: ENABLE PRODUCT SEARCH -->
 								<div class="form-container">
-									<input ng-model='ctrl.search' type="text" class="form-control"  id="search" placeholder="Search for a brand or item Product Name">
+									<input 
+										ng-model='ctrl.search' 
+										type="text" 
+										class="form-control"  
+										id="search" placeholder="Refine your search">
 									<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>
 								</div>
-
 							</form>
 						</div>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-			<!-- OG -->
-				<!-- <form class="form-inline">
-				    <div class="form-group">
-				      	<label for="search">Search:</label>
-				      	<input ng-model='ctrl.search' type="text" class="form-control" id="search" placeholder="Product Name">
-				    </div>
-			    </form> -->
 
+	<!-- Sidebar -->
 	<div class="container">
 		<div class="row">
 
 			<div class="col-sm-2 hidden-xs sidebar">	
 				<ul class="category-list">
 					<!-- <h4 class="category-header">Categories</h4> -->
-					<li ng-click="ctrl.currCtgry = ''" ng-class="{active : ctrl.currCtgry == ''}"><img src="assets/img/logo2.png">All</li>
-					<li ng-repeat='category in ctrl.categories' ng-click='ctrl.currCtgry = category' ng-class='{active : category == ctrl.currCtgry}'>
-					<img ng-src='{{"assets/img/" + category + ".png"}}'>
+					<li ng-click="ctrl.currCtgry = ''" 
+						ng-class="{active : ctrl.currCtgry == ''}">
+						<img src="assets/img/logo2.png">
+						All
+					</li>
+					<li ng-repeat='category in ctrl.categories' 
+						ng-click='ctrl.currCtgry = category' 
+						ng-class='{active : category == ctrl.currCtgry}'>
+						<img ng-src='{{"assets/img/" + category + ".png"}}'>
 						{{category | titleCaseFilter}}
 					</li>
 										
@@ -53,11 +55,15 @@
 			</div>
 		</div>
 
+		<!-- Category Products -->
 		<div id="products" class="col-sm-10 col-xs-12 container">
 			<div class="row">
 				<!-- TODO #3: SHOW PRODUCTS -->
-				<div class="col-xs-12 col-sm-6 col-md-4" ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' ng-click='ctrl.toProductPage(product.id)'>
-					<div id="product-card" class="product-card">
+				<div class="main-card col-xs-12 col-sm-6 col-md-4" 
+					 ng-repeat='product in ctrl.products | filter:{name:ctrl.search, category:ctrl.currCtgry}' 
+					 ng-click='ctrl.toProductPage(product.id)'>
+					<div id="product-card" 
+						class="product-card">
 						<div class="product-buy">
 							<div class="table-view">
 								<div class="table-cell">
@@ -68,10 +74,14 @@
 						
 						<div class="products">
 						<!-- SET PRODUCT IMAGE -->
-							<img class="product-img" src="{{product.image}}">
+							<div class="product-img" style="background: url('{{product.image}}');
+								background-size:cover;
+					 			background-position:center center;"
+					 			>
+							</div>
 
 							<div class="product-info">
-								<div class="product-name">
+								<div class="prod-name">
 							<!-- SET PRODUCT NAME -->
 									{{product.name}}
 								<div class="product-cost">

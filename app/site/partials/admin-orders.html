@@ -1,4 +1,4 @@
-<h3>Orders</h3>
+<h1>Orders</h1>
 <div ng-hide="ctrl.is_orders">
 	<p>
 		You have no orders. Get some customers!
@@ -16,11 +16,11 @@
 			<th>Customer Name</th>
 			<th>&nbsp;</th>
 		</tr>
-		<tr ng-repeat="order in ctrl.orders">
-			<td>{{order.id}}</td>
+		<tr ng-repeat="order in ctrl.orders track by $index">
+			<td>{{order.id | digits:4}}</td>
 			<td>
 				<ul>
-					<li ng-repeat='item in order.cart'>
+					<li ng-repeat='item in order.cart track by $index'>
 						{{item.product.name}} Qty:{{item.quantity}}
 					</li>
 				</ul>
@@ -31,4 +31,5 @@
 		</tr>
 	</table>
 	<h4>Total Revenue to Date: {{ctrl.totalRev | currency}}</h4>
+	<button class="btn btn-danger" ng-click='ctrl.deleteOrders()'>Remove All Orders</button>
 </div>
