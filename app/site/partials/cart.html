@@ -16,24 +16,25 @@
 
      <li>
 
-        <table class="table table-striped">
+        <table class="table table-striped table-condensed cart-table">
             <tr>
-              <th scope="col" class="col-md-2">Image</th>
-              <th scope="col" class="col-md-2">Name</th>
-              <th scope="col" class="col-md-2">Price</th>
-              <th scope="col" class="col-md-2">Quantity</th>
-              <th scope="col" class="col-md-2">Total</th>
-              <th scope="col" class="col-md-2">Remove from the cart</th>
+              <th scope="col" class="col-md-2 cart-th">Item</th>
+              <th scope="col" class="col-md-3 cart-th">Name</th>
+              <th scope="col" class="col-md-2 cart-th">Price</th>
+              <th scope="col" class="col-md-2 cart-th">Quantity</th>
+              <th scope="col" class="col-md-2 cart-th">Total</th>
+              <th scope="col" class="col-md-1 cart-th">Remove</th>
             </tr>
 
 
+
             <tr ng-repeat='item in ctrl.cart track by $index'>
-              <td class="mango"><img style="width: 70px;" ng-src='{{item.product.image}}'></td>
-              <td class="mango">{{item.product.name}}</td>
-              <td class="mango">{{item.product.price|currency}}</td>
-              <td class="mango">{{item.quantity}}</td>
-              <td class="mango">{{item.quantity * item.product.price||currency}}</td>
-              <td class="mango"><button class="btn btn-danger btn-xs" style="margin-top: 20px; margin-bottom: 20px;" id="deletebtn" ng-click='ctrl.removeCart($index)'><i class="fa fa-times"></i></button></td>
+              <td><img ng-src='{{item.product.image}}'></td>
+              <td>{{item.product.name}}</td>
+              <td>{{item.product.price|currency}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.quantity * item.product.price||currency}}</td>
+              <td><button class="btn btn-danger btn-xs" id="deletebtn" ng-click='ctrl.removeCart($index)'><i class="fa fa-times"></i></button></td>
             </tr>
         </table>
 
@@ -45,11 +46,11 @@
 
   <div id="total">
 
-    <h4 class="melon">Subtotal: {{ctrl.total|currency}}</h4>
+    <h4>Subtotal: {{ctrl.total|currency}}</h4>
 
-<br>
 
-    <button type="button" class="btn btn-success btn-lg grape"  ng-click="ctrl.goTocheckout()">Checkout</button>
+
+    <button type="button" class="btn btn-success btn-lg"  ng-click="ctrl.goTocheckout()">Checkout</button>
 
   </div>
 
