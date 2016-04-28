@@ -148,8 +148,33 @@
 	max-height: 16.667vw;
 }
 
+<<<<<<< HEAD
+#adminbutt {
+	position: absolute;
+    background: #ff6d37;
+    height: 40px;
+    width: 40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    vertical-align: middle;
+    top: 0px;
+    right: 0px;
+}
+
+#reloadbutt {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+=======
 #product-card .product-img{
   width:100%;
   height:20vw;
   margin-top:0px;
 }
+>>>>>>> NatashaThirlwell/master
