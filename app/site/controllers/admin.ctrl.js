@@ -54,6 +54,7 @@
     });
 
     //public functions
+    adminVm.gotoOrder = gotoOrder;
     adminVm.editProduct = editProduct;
     adminVm.logout = logout;
     adminVm.reloadProducts = reloadProducts;
@@ -72,6 +73,10 @@
       adminVm.orders = productSrv.orders;
       adminVm.is_orders = false;
       adminVm.calcRev();
+    }
+
+    function gotoOrder(id){
+      $state.go('admin.order_details',{orderId:id})
     }
 
     function editProduct(product){

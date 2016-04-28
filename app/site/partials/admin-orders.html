@@ -8,7 +8,7 @@
 <!-- <button class="btn btn-danger" ng-click='ctrl.reloadProducts()'>Reload Products</button> -->
 
 <div ng-show="ctrl.is_orders">
-	<table class="products-list table">
+	<table class="products-list table table-striped">
 		<tr>
 			<th>Order ID</th>
 			<th>Cart</th>
@@ -26,8 +26,8 @@
 				</ul>
 			</td>
 			<td>{{order.final_total | currency}}</td>
-			<td>{{order.name}}</td>
-			<td><a ng-click="">Details</a></td>
+			<td>{{order.customer.name}}</td>
+			<td><a ng-click="ctrl.gotoOrder(order.id)">Details</a></td>
 		</tr>
 	</table>
 	<h4>Total Revenue to Date: {{ctrl.totalRev | currency}}</h4>

@@ -103,3 +103,87 @@
 	margin-bottom: 5px;
 	margin-left: 20px;
 }
+
+.updateBu {
+	margin-left: 173.5px;
+}
+
+.deleteBu {
+	margin-left: 10px;
+}
+
+
+
+#order-detail .back-btn{
+  position:relative;
+  left:0px;
+  top:0px;
+}
+
+#order-detail .cart-list{
+  margin-top:0px;
+}
+
+
+#order-detail img{
+  height:100%;
+  border:1px solid lightgray;
+}
+
+#order-detail td{
+  height:60px;
+  vertical-align: middle;
+}
+
+#order-detail table{
+  font-size:14px;
+  text-align: center;
+  table-layout: fixed;
+  word-wrap:break-word;
+}
+
+#order-detail th{
+  text-align:center;
+  /*border:1px solid blue;*/
+}
+
+#order-detail .panel-heading-right{
+  display:inline-block;
+  float:right;
+  margin-top:-30px;
+}
+
+#order-detail .totals{
+  /*width:250px;*/
+  display:block;
+  /*float:right;*/
+  /*border:1px solid blue;*/
+  text-align: right;
+}
+
+#order-detail .cart-list .error-msg{
+  position:absolute;
+  padding:5px;
+}
+
+
+#order-detail .th-img{
+  width:20%;
+}
+#order-detail .th-name{
+  width:45%;
+}
+#order-detail .th-prc{
+  width:10%;
+}
+#order-detail .th-qty{
+  width:15%;
+}
+#order-detail .th-tot{
+  width:10%;
+}
+#order-detail .th-del{
+  width:5%;
+}
+
+

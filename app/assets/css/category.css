@@ -87,6 +87,20 @@
 	height: 20em;
 }
 
+.product-view{
+  padding-top:1vw;
+}
+
+.product-view .product-card{
+  width:100%;
+  max-height: 23.67vwvw;
+  background:white;
+  font-size:1.5rem;
+  text-align:center;
+  position: relative;
+  border: lightgray solid 1px;
+}
+
 #product-card .prod-name{
   font-weight:600;
   padding-top: 1vw;
