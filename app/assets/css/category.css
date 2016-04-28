@@ -133,8 +133,31 @@
 	animation: flash 1.5s;
 }
 
-.category-list{
+#categories .category-list{
 	font-size:16px;
+}
+
+#categories .category-list li:hover{
+	color:#ff6d37;
+}
+
+#categories .category-list img{
+	height:40px;
+	width:40px;
+}
+
+#categories .category-list span{
+	vertical-align: middle;
+	position:relative;
+	top:1px;
+
+	/*line-height:40px;*/
+}
+#categories .all-label{
+	/*margin-top:10px;*/
+	display:inline;
+	position:relative;
+	top:2px;
 }
 
 .sidebar .list{
