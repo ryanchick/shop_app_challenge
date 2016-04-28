@@ -39,14 +39,14 @@
 			<div class="col-sm-2 hidden-xs sidebar">	
 				<ul class="category-list">
 					<!-- <h4 class="category-header">Categories</h4> -->
-					<li ng-click="ctrl.currCtgry = ''"
+					<li ng-click="ctrl.switchCategory('all')"
 						ng-class="{active : ctrl.currCtgry == ''}"
 						class="list">
 						<img src="assets/img/logo2.png">
 						All
 					</li>
 					<li ng-repeat='category in ctrl.categories' 
-						ng-click='ctrl.currCtgry = category' 
+						ng-click='ctrl.switchCategory(category)' 
 						ng-class='{active : category == ctrl.currCtgry}'
 						class="list">
 						<img ng-src='{{"assets/img/" + category + ".png"}}'>
