@@ -24,12 +24,12 @@
 		cartTotal();
 
 		//check for cart changes
-		$scope.$watchCollection(function(){
+		$scope.$watch(function(){
         	return productSrv.cart;
     	}, function (newValue) {
           		navVm.cart = productSrv.cart;
           		cartTotal();
-    	});
+    	},true);
 
 		if(localStorage.authToken){
 			navVm.logged = true;
