@@ -4,7 +4,18 @@
 	width:100%;
 	font-size:0;
 }
-#admin h3{
+
+#admin .admin-container{
+	position:relative;
+	width:100%;
+	margin-top:-5px;
+}
+
+#admin .active{
+	text-decoration: underline;
+}
+
+#admin .nav-panel h3{
 	font-size:2.5rem;
 	color:white;
 }
@@ -12,9 +23,13 @@
 	background:#ff6d37;
 	padding:40px;
 	width:25%;
-	height:100%;
-	float:left;
+	min-height:100vh;
+	/*float:left;*/
 	font-size:1rem;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
 }
 
 #admin .nav-panel ul{
@@ -38,11 +53,13 @@
 
 #admin .main-content{
 	background: white;
-	float:left;
+	/*float:left;*/
 	padding:40px;
 	width:75%;
-	font-size:1rem;
+	font-size:14px;
 	color:#555;
+	position:relative;
+	margin-left: 25%
 
 }
 
@@ -185,5 +202,3 @@
 #order-detail .th-del{
   width:5%;
 }
-
-
