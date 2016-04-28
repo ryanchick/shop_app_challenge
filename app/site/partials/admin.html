@@ -4,19 +4,13 @@
 		<h3>Admin Panel</h3>
 		<ul>
 			<li><a ui-sref="admin.dash">Products</a></li>
-			<li><a ui-sref="admin.orders">Orders</a></li>
+			<li><a ui-sref="admin.orders" ng-click="ctrl.is_orders">Orders</a></li>
 			<li><a ui-sref="admin.add_product">Add Product</a></li>
 			<li><a ng-click="ctrl.logout()">Log Out</a></li>
 		</ul>
 	</aside>
 
-	<article class="main-content top-content">
-	    <form class="navbar-right">
-		    <div class="form-container">  	        
-				<input ng-model='ctrl.productSearch' type="text" class="form-control" placeholder="Refine search" >
-				<a class="search-btn"><img src="assets/img/icon-search@2x.png"></a>			
-			</div>
-		</form>
+	<article class="main-content">
 		<div ui-view=""></div>
 	</article>
 </section>
