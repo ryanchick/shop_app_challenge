@@ -52,7 +52,13 @@
 				</div> -->
 				
 			<!-- Cart Icon -->
-		       <li ng-hide='ctrl.is_admin'><div id="cart" ng-click="ctrl.openCart()" class="btn"><i class="fa fa-shopping-cart"></i><span class="cart">Cart </span><span class="badge">{{ctrl.cartCount}}</span></div></li>
+		       <li ng-hide='ctrl.is_admin'>
+			       	<div id="cart" ng-click="ctrl.openCart()" class="btn">
+			       		<i class="fa fa-shopping-cart"></i>
+			       		<span class="cart">Cart </span>
+			       		<span class="badge" ng-hide='ctrl.cartCount == 0'>{{ctrl.cartCount}}</span>
+			       	</div>
+		       	</li>
 
 		       	<li><button id="login" type="button" class="btn btn-default" ng-click="ctrl.loginForm()">
 		       		<span ng-hide='ctrl.logged' id="loginF">Login</span>

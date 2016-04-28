@@ -65,7 +65,6 @@
 					province:checkVm.province,
 					postal:checkVm.postal,
 					shipping:checkVm.ship
-
 				}
 				var card = {
 					name:checkVm.card_name,
