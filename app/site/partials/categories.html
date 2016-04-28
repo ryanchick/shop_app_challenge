@@ -1,7 +1,7 @@
 <shop-navbar></shop-navbar>
 
 <!-- Overall Container -->
-<section class="product-view" role="product-view">
+<section id='categories' class="product-view" role="product-view">
 
 <!-- Top content -->
 	<section class="top-banner" role="topbanner">
@@ -42,15 +42,15 @@
 					<li ng-click="ctrl.switchCategory('all')"
 						ng-class="{active : ctrl.currCtgry == ''}"
 						class="list">
-						<img src="assets/img/logo2.png">
-						All
+						<img src="assets/img/all.png">
+						<span>All</span>
 					</li>
 					<li ng-repeat='category in ctrl.categories' 
 						ng-click='ctrl.switchCategory(category)' 
 						ng-class='{active : category == ctrl.currCtgry}'
 						class="list">
 						<img ng-src='{{"assets/img/" + category + ".png"}}'>
-						{{category | titleCaseFilter}}
+						<span>{{category | titleCaseFilter}}</span>
 					</li>
 										
 				</ul>
