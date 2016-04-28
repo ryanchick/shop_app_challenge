@@ -9,7 +9,7 @@
 		</div>
 		<ul class="panel-body" ng-show='ctrl.selected == 1'>
 			<form name='cartForm'>
-			<li ng-repeat='item in ctrl.cart'>
+			<li ng-repeat='item in ctrl.cart track by $index'>
 			<div>
 				<img ng-src='{{item.product.image}}'>Name: {{item.product.name}}
 				{{item.product.price|currency}}

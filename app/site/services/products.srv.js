@@ -35,6 +35,7 @@
     self.updateFromCart = updateFromCart;
     self.saveOrders = saveOrders;
     self.loadOrders = loadOrders;
+    self.deleteOrders = deleteOrders;
 
     self.deleteAllProducts = deleteAllProducts;
     self.loadProducts = loadProducts;
@@ -157,21 +158,21 @@
       }
     }
 
-    function processOrder(subtotal,name,email)
+    function processOrder(subtotal,customer,card)
     {
-      console.log('name:' + name)
-      console.log(email)
+      console.log('name:' + customer)
+      console.log(card)
       console.log('Process Order')
       console.log(self.cart)
       if(self.cart.length > 0){
         var newOrder = {
-          id:Math.floor(Math.random()*10000),
+          id:self.orders.length+1 || 1,
           cart:JSON.parse(JSON.stringify(self.cart)),
           total:subtotal,
           tax:subtotal * self.tax,
           final_total:subtotal+(subtotal*self.tax),
-          name:name,
-          email:email
+          customer:customer,
+          card:card
         }
         // var orderId;
         console.log(newOrder)
@@ -183,25 +184,25 @@
             // console.log(res)
 
             //update inventory
-            if(self.cart.length > 0){
-              for(var i = 0;i<self.cart.length;i++){
-                var newProduct = {
-                  name:self.cart[i].product.name,
-                  description:self.cart[i].product.description,
-                  image:self.cart[i].product.image,
-                  category:self.cart[i].product.category,
-                  price:self.cart[i].product.price,
-                  quantity:self.cart[i].product.quantity,
-                  status:1
-                }
-                newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
-                if(newProduct.quantity == 0)
-                {
-                  // newProduct.status = 0;
-                }
-                self.updateFromCart(newProduct,self.cart[i].product.id)
-              }
+        if(self.cart.length > 0){
+          for(var i = 0;i<self.cart.length;i++){
+            var newProduct = {
+              name:self.cart[i].product.name,
+              description:self.cart[i].product.description,
+              image:self.cart[i].product.image,
+              category:self.cart[i].product.category,
+              price:self.cart[i].product.price,
+              quantity:self.cart[i].product.quantity,
+              status:1
             }
+            newProduct.quantity = newProduct.quantity - self.cart[i].quantity;
+            if(newProduct.quantity == 0)
+            {
+              newProduct.status = 0;
+            }
+            self.updateFromCart(newProduct,self.cart[i].product.id)
+          }
+        }
           // })
         self.cart = [];
         self.saveCart();
@@ -230,6 +231,12 @@
         self.orders = JSON.parse(localStorage.orders)
       }
       // self.orders = [];
+    }
+
+    function deleteOrders(){
+      console.log('delete orders')
+      self.orders = [];
+      localStorage.orders = JSON.stringify(self.orders);
     }
 
     function deleteAllProducts(){
