@@ -7,7 +7,7 @@ html,body{
 
 body{
 	color:#666;
-	font-size:100%;
+	/*font-size:100%;*/
 	padding-top: 60px;
 }
 
@@ -83,9 +83,24 @@ nav .search{
 nav .fa-shopping-cart{
 	margin-right:10px;
 	font-size:2rem;
+	position: relative;
+    top: 1px;
+    right: -6px;
 }
 nav .cart{
 	font-size:1.6rem;
+}
+
+#shop-navbar .badge{
+    color:#ff6d37 ;
+    background: white;
+    border:1px solid #ff6d37 ;
+}
+
+#shop-navbar .cart:hover .badge{
+    color:black;
+    border-color:black;
+
 }
 
 #logo {
@@ -98,6 +113,12 @@ nav .cart{
 	position: absolute;
 	top: 0.333vw;
     left: 3.5vw;
+}
+
+#shop-navbar .navbar-brand:hover{
+	color:#333;
+  	cursor: pointer;
+  	cursor:hand;
 }
 
 /*
@@ -147,6 +168,8 @@ Top-content
 	text-align: center;
 }
 
+
+
 /*#mainimage {
 	height:50%);
 }*/
@@ -173,7 +196,8 @@ Top-content
 }
 
 .top-content .content{
-	margin:0 auto;
+	position: relative;
+    top: 3vw;
 }
 
 .top-content form{
@@ -247,7 +271,7 @@ Top-content
 	color: white;
 	text-align: center;
     position: relative;
-    top: 12vw;
+    top: 10vw;
 }
 
 #main-card .main-img:hover{

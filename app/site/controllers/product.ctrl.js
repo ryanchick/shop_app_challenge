@@ -4,16 +4,21 @@
   .module('shopApp')
   .controller('ProductCtrl',ProductCtrl);
 
-  function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr){
+  function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr,product){
     var productVm = this;
 
     productVm.categories = productSrv.categories;
 
     productVm.quantity = 1;
-    productVm.product = productSrv.getProduct($stateParams.productId);
-    productVm.category = productVm.product.category;
+    if(product)
+    {
+      productVm.product = product;
+    }
+    
+    productVm.category;
+    productVm.curCate = productVm.categories[0];
     console.log(productVm.product);
-    console.log($stateParams.productId);
+    console.log(productVm.category);
 
     productVm.product_add_btn = 'Add Product'
     productVm.product_update_btn = 'Update Product';
@@ -33,7 +38,7 @@
      //   }
         for (var i=0; i < productVm.categories.length; i++){
         if (productVm.product.category == productVm.categories[i].category){
-        productVm.category = productVm.categories[i]
+        productVm.curCate = productVm.categories[i]
       }
       }
       })
@@ -61,11 +66,12 @@
       //create product object, pass to product service
       //Update text in button
       console.log('add')
+      console.log(productVm.curCate.category)
       var newProduct = {
         name:productVm.name,
         image:productVm.image,
         description:productVm.description,
-        category:productVm.category.category,
+        category:productVm.curCate.category,
         price:productVm.price,
         quantity:productVm.quantity,
         status:1
@@ -79,7 +85,19 @@
       //TODO #2
       //create product object, pass to product service
       //Update text in button
-      productSrv.updateProduct(productVm.product,$stateParams.productId)
+      console.log(productVm.product)
+      console.log(productVm.curCate)
+      var updProduct = {
+        name:productVm.product.name,
+        image:productVm.product.image,
+        description:productVm.product.description,
+        category:productVm.curCate.category,
+        price:productVm.product.price,
+        quantity:productVm.product.quantity,
+        status:1
+      }
+      console.log(updProduct)
+      productSrv.updateProduct(updProduct,$stateParams.productId)
 
     }
 
@@ -100,6 +118,7 @@
       		  toastr.success(productVm.quantity+ ' ' + productVm.product.name +'s was added to your cart!')
           } else{
             toastr.success('1 ' +productVm.product.name +' was added to your cart!')
+            
           }
     	}
     }

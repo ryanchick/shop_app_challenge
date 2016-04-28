@@ -13,14 +13,31 @@
     adminVm.totalRev = 0;
     adminVm.categories = productSrv.categories;
     adminVm.category = productSrv.category;
+    adminVm.page = 1;
+
     console.log(adminVm.categories);
 
-
     //check if logged in
-
     if(localStorage.authToken == undefined || localStorage.authToken == null){
       $state.go('auth');
     }
+
+    //check current state
+    $scope.$watch(function(){
+      return $state.current;
+    },function(){
+      console.log($state.current.name)
+      if($state.current.name == 'admin.dash'){
+        console.log(1)
+        adminVm.page = 1;
+      }else if($state.current.name == 'admin.orders'){
+        console.log('2')
+        adminVm.page = 2;
+      }else if($state.current.name == 'admin.add_product'){
+        console.log('3')
+        adminVm.page = 3;
+      }
+    });
 
     adminVm.products = productSrv.products;
     if(adminVm.products.length > 0 ){

@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CategoryCtrl',CategoryCtrl);
 
-	function CategoryCtrl($location,$stateParams,toastr,productSrv,products){
+	function CategoryCtrl($location,$state,$stateParams,toastr,productSrv,products){
 		var catVm = this;
 		catVm.productSrv = productSrv;
 
@@ -23,9 +23,15 @@
 		//public methods
 		catVm.toProductPage = toProductPage;
 		catVm.addtoCart = addtoCart;
+		catVm.switchCategory = switchCategory;
 
 		function toProductPage(productID){
 			$location.path('/products/' + productID);
+		}
+
+		function switchCategory(category){
+			// $state.go('categories',{'categoryName':category})
+			$location.path('/categories/' + category)
 		}
 
 		function getCategories(){

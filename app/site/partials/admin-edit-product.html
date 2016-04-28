@@ -5,8 +5,7 @@
 </h1>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Product Name</span>
-			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.product.name"
-  			aria-describedby="basic-addon1" required>
+			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.product.name" aria-describedby="basic-addon1" required>
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Insert Image</span>
@@ -19,7 +18,7 @@
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Category</span>
-  			<select id="newProduct2" ng-options="options as options.category for options in ctrl.categories" class="form-control" ng-model="ctrl.category" name="category" required></select>
+  			<select id="newProduct2" ng-options="options as options.category for options in ctrl.categories" class="form-control" ng-model="ctrl.curCate" name="category" required></select>
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct">$ Price</span>

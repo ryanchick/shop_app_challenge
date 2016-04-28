@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.controller('ConfirmationCtrl',ConfirmationCtrl)
 
-	function ConfirmationCtrl($scope,$stateParams,productSrv){
+	function ConfirmationCtrl($scope,$stateParams,productSrv,$location){
 		var cfrmVm = this;
 
 		//TODO #1 Capture name, email, conirmation #
@@ -22,6 +22,12 @@
 					cfrmVm.order = productSrv.orders[i];
 				}
 			}
+		}
+
+		cfrmVm.backHome = backHome;
+		
+		function backHome() {
+			$location.path('/categories/accessories');
 		}
 		
 	}
