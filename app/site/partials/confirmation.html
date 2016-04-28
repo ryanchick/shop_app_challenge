@@ -17,7 +17,9 @@
 				{{item.product.name}}, Qty: {{item.quantity}}
 			</li>
 		</ul>
-		<h4>Order Total: {{ctrl.order.final_total|currency}}</h4>
+		<h3>Cart Total: {{ctrl.order.final_total|currency}}</h3>
+		<h4>Shipping: {{ctrl.order.customer.shipping.cost | currency}}
+		<h3>Order Total: {{ctrl.order.final_total + ctrl.order.customer.shipping.cost | currency}}
 		
 	</div>
 	
