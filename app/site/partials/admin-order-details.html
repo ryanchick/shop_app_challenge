@@ -1,0 +1,46 @@
+<div id='order-detail'>
+	<button type="submit" class="btn btn-default back-btn" ng-click='ctrl.goBack()'>Back</button>
+	<hr>
+	<h2>Order: #{{ctrl.order.id | digits:4}}</h2>
+	<hr>
+	<h4>Cart:</h4>
+	<table class="table table-condensed table-striped">
+	    <tr>
+		    <th class="th-img">Item</th>
+		    <th class="th-name">Name</th>
+		    <th class="th-prc">Price</th>
+		    <th class="th-qty">Quantity</th>
+		    <th class="th-tot">Total</th>
+	    </tr>
+	    <tr ng-repeat='item in ctrl.order.cart track by $index'>
+	      	<td><img class="" ng-src='{{item.product.image}}'></td>
+	      	<td>{{item.product.name}}</td>
+	      	<td>{{item.product.price|currency}}</td>
+	      	<td>{{item.quantity}}</td>
+	      	<td>{{item.quantity * item.product.price | currency}}</td>
+	    </tr>
+	</table>
+	<div class="totals">
+        <h4>Subtotal:{{ctrl.order.total|currency}}</h4>
+        <h4>Tax:{{ctrl.order.tax |currency}}</h4>
+        <h4>Total:{{ctrl.order.final_total|currency}}</h4>
+    </div>
+    <hr>
+    <h4>Customer Information:</h4>
+    <ul class="list-group">
+    	<li class="list-group-item">Name: {{ctrl.order.customer.name}}</li>
+    	<li class="list-group-item">Email: {{ctrl.order.customer.email}}</li>
+    	<li class="list-group-item">Address: {{ctrl.order.customer.address}}</li>
+    	<li class="list-group-item">City: {{ctrl.order.customer.city}}</li>
+    	<li class="list-group-item">Province/State: {{ctrl.order.customer.province}}</li>
+    	<li class="list-group-item">Postal Code: {{ctrl.order.customer.postal}}</li>
+    	<li class="list-group-item">Shipping Method: {{ctrl.order.customer.shipping.label}}</li>
+    </ul>
+    <hr>
+    <h4>Payment Information:</h4>
+    <ul class="list-group">
+    	<li class="list-group-item">Card Number: {{ctrl.order.card.number}}</li>
+    	<li class="list-group-item">Card Name: {{ctrl.order.card.name}}</li>
+    	<li class="list-group-item">Expiry: {{ctrl.order.card.expiry}}</li>
+    </ul>
+</div>
