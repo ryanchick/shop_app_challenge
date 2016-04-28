@@ -29,3 +29,12 @@
 #nextbutton:hover { 
     background-color: lightgrey;
 }
+
+#checkoutbtn {
+	background-color: #9ACC60;
+	border-color: white;
+}
+
+#checkoutbtn:hover { 
+	background-color: lightgrey;
+}
