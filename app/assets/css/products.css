@@ -7,12 +7,30 @@
   margin-top:50px;
 }
 
+.position {
+ position: absolute;
+ left:200px;
+ top: 167px; 
+ z-index: 5;
+}
+
 #formmargin {
   margin-top: 15px;
 }
 
+<<<<<<< HEAD
 #backToShop {
   text-align: center;
+=======
+#addBtn {
+  background-color: #EF6A33;
+  color: white;
+  border-color: white; 
+}
+
+.colorF {
+  color:white;
+>>>>>>> NatashaThirlwell/master
 }
 /*#products .row{
   margin-top: 150px;

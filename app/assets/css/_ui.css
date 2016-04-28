@@ -83,6 +83,9 @@ nav .search{
 nav .fa-shopping-cart{
 	margin-right:10px;
 	font-size:2rem;
+	position: relative;
+    top: 1px;
+    right: -6px;
 }
 nav .cart{
 	font-size:1.6rem;
@@ -98,6 +101,12 @@ nav .cart{
 	position: absolute;
 	top: 0.333vw;
     left: 3.5vw;
+}
+
+#shop-navbar .navbar-brand:hover{
+	color:#333;
+  	cursor: pointer;
+  	cursor:hand;
 }
 
 /*
