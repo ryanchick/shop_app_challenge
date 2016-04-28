@@ -156,6 +156,13 @@
 	color:#ff6d37;
 }
 
+#shop-navbar #cart .badge{
+	margin-bottom:0px;
+	border: 1px solid #333;
+	color:#333;
+	background: white;
+}
+
 #shop-navbar .navbar-brand{
 	margin-left:30px;
 	color: #ff6d37;
