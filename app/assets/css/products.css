@@ -36,11 +36,95 @@ h1 {
 /*.modal.fade.ng-isolate-scope.in {
   overflow: scroll;
 }*/
+#checkout .back-btn{
+  position:relative;
+  left:0px;
+  top:0px;
+}
+
+#checkout .check-title{
+  margin:5px;
+}
+
+#checkout .cart-list{
+  margin-top:0px;
+}
+
+#checkout .panel-heading{
+  z-index:50;
+  padding:5px 10px;
+}
+
+#checkout img{
+  height:100%;
+  border:1px solid lightgray;
+}
+
+#checkout td{
+  height:60px;
+  vertical-align: middle;
+}
+
+#checkout table{
+  font-size:14px;
+  text-align: center;
+  table-layout: fixed;
+  word-wrap:break-word;
+}
+
+#checkout th{
+  text-align:center;
+  /*border:1px solid blue;*/
+}
+
+#checkout .panel-heading-right{
+  display:inline-block;
+  float:right;
+  margin-top:-30px;
+}
+
+#checkout .totals{
+  /*width:250px;*/
+  display:block;
+  /*float:right;*/
+  /*border:1px solid blue;*/
+  text-align: right;
+}
+
+#checkout .qty-input{
+  width:50px;
+  /*border:1px solid red;*/
+  text-align: center;
+} 
+
+#checkout .error-msg{
+  position:absolute;
+  padding:5px;
+}
+
+#checkout .th-img{
+  width:20%;
+}
+#checkout .th-name{
+  width:40%;
+}
+#checkout .th-prc{
+  width:10%;
+}
+#checkout .th-qty{
+  width:15%;
+}
+#checkout .th-tot{
+  width:10%;
+}
+#checkout .th-del{
+  width:5%;
+}
+
 
 /*
 Product view
 */
-
 .product-view{
   background: whitesmoke;
   padding-top:1vw;
@@ -71,7 +155,7 @@ Product view
   cursor: pointer;
   cursor:hand;
 }
-/*#product-card .product-img{
+#product-card .product-img{
   width:100%;
   height:200px;
   margin-top:0px;*/
