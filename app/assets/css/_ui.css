@@ -213,7 +213,7 @@ Top-content
 }
 
 /*///Main Page view////*/
-.main-view{
+.main-view, #call-to-action{
 	background: whitesmoke;
 	padding-top:1vw;
 }
