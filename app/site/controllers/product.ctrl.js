@@ -96,7 +96,11 @@
     		alert('There are too many items!')
     	}else{
       		productSrv.addtoCart(productVm.product,productVm.quantity);
-      		toastr.success(productVm.product.name +' was added to your cart!')
+          if(productVm.quantity > 1){
+      		  toastr.success(productVm.quantity+ ' ' + productVm.product.name +'s was added to your cart!')
+          } else{
+            toastr.success('1 ' +productVm.product.name +' was added to your cart!')
+          }
     	}
     }
 
