@@ -1,9 +1,13 @@
 <shop-navbar></shop-navbar>
+
+<button type="submit" class="btn btn-warning" id="backbutt" ng-click='ctrl.goBack()'>Back</button>
+
 <div class="container-fluid" id="top">
-  <button type="submit" class="btn btn-default" ng-click='ctrl.goBack()'>Back</button>
+
   <div class="row">
-    <div class="productImg col-xs-5" id="products">
-      <img class="movie-poster" src="{{ctrl.product.image}}">
+
+    <div class="col-xs-5">
+      <img class="movie-poster" src="{{ctrl.product.image}}" id="products">
     </div>
 
     <div class="col-xs-7" id="info">
@@ -14,64 +18,53 @@
 
       <h3>{{ctrl.product.price | currency}}</h3>
 
-    <h4>Remaining in Stock: {{ctrl.product.quantity}}</h4>
+      <h5>Remaining in Stock: {{ctrl.product.quantity}}</h5>
 
-    <form name='quantForm' class="form-inline">
+      <form name='quantForm' class="form-inline" id="formmargin">
 
-<!--       <div class="btnmargin">
-        <select class="form-control input-lg" placeholder="Quantity">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-      </div> -->
+        Quantity: <input type="number" class="form-control" ng-model='ctrl.quantity' max={{ctrl.product.quantity}}></input>
 
-      Quantity: <input type="number" class="form-control" ng-model='ctrl.quantity' max={{ctrl.product.quantity}}></input>
-
-      <!-- <div data-toggle="modal" data-target="#myModal" class="btnmargin"> -->
-      <div class="btnmargin">
-        <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart(quantForm.$valid)'>Add to Cart</button>
-      </div>
-      <!-- </div> -->
+        <!-- <div data-toggle="modal" data-target="#myModal" class="btnmargin"> -->
+        <div class="btnmargin">
+          <button type="submit" class="btn btn-default btn-lg" ng-click='ctrl.addtoCart(quantForm.$valid)'>Add to Cart</button>
+        </div>
+        <!-- </div> -->
 
       </form>
 
+    </div>
+
+</div>
 <!-- Make a modal window to pop up saying the order has been added to the cart -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
 
-      <div class="modal-body" style="font-size: 18px">
-        <h3>This items have been added to your order:</h3>
-        <p>
-          <br>
-          <b>Name:</b> {{ctrl.product.name}}
-          <br>
-          <b>Quantity:</b> {{ctrl.quantity}}
-        </p>
-          <br>
+            <div class="modal-body" style="font-size: 18px">
+              <h3>This items have been added to your order:</h3>
+              <p>
+                <br>
+                <b>Name:</b> {{ctrl.product.name}}
+                <br>
+                <b>Quantity:</b> {{ctrl.quantity}}
+              </p>
+                <br>
 
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="ctrl.openCart_v2()">See your order</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="ctrl.openCart_v2()">See your order</button>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-    </div>
-  </div>
-</div>
+      <div>
+        {{productVm.product.name}}
+      </div>
 
-
-
-
-
-
-    <div>
-      {{productVm.product.name}}
-    </div>
-
-    </div>
+    <!-- </div>
 
   </div>
 
 </div>
+ -->
