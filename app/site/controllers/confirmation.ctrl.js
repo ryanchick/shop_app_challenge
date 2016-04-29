@@ -29,7 +29,6 @@
 		function backHome() {
 			$location.path('/categories/accessories');
 		}
-		
 	}
 
 })();
