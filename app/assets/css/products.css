@@ -42,7 +42,8 @@
 }*/
 
 #top {
-  margin-top: 100px;
+  margin-top: 3vw;
+  margin-bottom: 13vw;
 }
 
 #top .movie-poster{
@@ -197,4 +198,8 @@ Product view
   color:#ff6d37;
   font-weight:500;
   margin:10px 0px;
+}
+
+#product-card .product-cost .sold-out{
+  color: #C43943;
 }

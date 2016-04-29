@@ -19,10 +19,12 @@
 					<ul>
 						<li ng-repeat='item in ctrl.order.cart'>
 							<p>{{item.product.name}}, Qty: {{item.quantity}}</p>
-						</li>
+						</li
 					</ul>
 					<h3><strong>Cart Total: </strong>{{ctrl.order.final_total|currency}}</h3>
-					<p>Shipping: {{ctrl.order.customer.shipping.cost | currency}}</p>
+					<p>Shipping Method: {{ctrl.order.customer.shipping.method}}</p>
+					<p>Shipping Cost: {{ctrl.order.customer.shipping.cost | currency}}</p>
+					<p>Estimated time to deliver: {{ctrl.order.customer.shipping.time}}</p>
 					<div>
 						<h2>Order Total: {{ctrl.order.final_total + ctrl.order.customer.shipping.cost | currency}}</h2>	
 					</div>
@@ -40,4 +42,7 @@
 	</button>
 </div>
 
+<!-- <div><img src="../assets/img/orangescute.png"><img src="../assets/img/orangescute.png"><img src="../assets/img/orangescute.png"><img src="../assets/img/orangescute.png"><img src="../assets/img/orangescute.png"></div> -->
+
 <footer></footer>
+

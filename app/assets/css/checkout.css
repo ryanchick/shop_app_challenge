@@ -121,13 +121,19 @@
     background-color: lightgrey;
 }*/
 
-#checkout .checkout-btn {
+/*#checkout .checkout-btn {
 	background-color: #9ACC60;
 	border-color: white;
 }
 
 #checkout .checkout-btn:hover { 
 	background-color: lightgrey;
+}*/
+
+#checkout .btn-next, #checkout .btn-checkout{
+	/*float:center;*/
+	float:right;
+	/*margin: 0 auto;*/
 }
 
 #AnimateOrange2 {
