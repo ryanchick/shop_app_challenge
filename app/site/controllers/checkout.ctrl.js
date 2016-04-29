@@ -54,7 +54,8 @@
 
 		function processOrder(isValid){
 			if(!isValid){
-				toastr.error('Information not valid!')
+				toastr.error('Some information is missing or invalid!')
+				checkVm.selected = 2;
 				checkVm.submit = true;
 			}else{
 				console.log(checkVm.name)
