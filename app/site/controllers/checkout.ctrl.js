@@ -16,9 +16,10 @@
 		checkVm.selected = 1;
 
 		checkVm.shipOptions = [
-		{label:'Standard Shipping - $10.00',cost:10.00},
-		{label:'Express Shipping - $25.00',cost:25.00},
-		{label:'Magical Teleportation - $25,000.00',cost:25000.00}
+		{label:'Standard Shipping (2-4 weeks) - $10.00',cost:10.00, time:'2-4 weeks', method:'Standard Shipping'},
+		{label:'Express Shipping (3-5 days) - $25.00',cost:25.00, time:'3-5 days', method:'Express Shipping'},
+		{label:'Express Priority (Next day) - $100.00',cost:100.00, time:'Next day', method:'Express Priority'},
+		{label:'Magical Teleportation (Instant once invented) - $250,000.00',cost:250000.00, time:'As soon as someone invents it', method:'Magical Teleportation'}
 		]
 		checkVm.ship = checkVm.shipOptions[0]
 
