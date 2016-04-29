@@ -151,12 +151,12 @@ Nav
 	position: relative;
     top: -1px;
     right: 15px;
-	border-color: rgb(214,122,77);
+	/*border-color: rgb(214,122,77);*/
 }
 
-.btn-default {
+/*.btn-default {
 	color: #FF6D37
-}
+}*/
 
 /*
 Top-content
@@ -353,6 +353,11 @@ Top-content
 .btn-white:hover { 
 	background-color: lightgrey;
 	color:#ff6d37;
+}
+
+.warning-text{
+	color:#ff6d37;
+	font-weight:bold;
 }
 
 #product .back-btn {
