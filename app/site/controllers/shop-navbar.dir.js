@@ -57,11 +57,11 @@
 
 	  	function cartTotal(){
 	  		navVm.cartCount = 0;
-	  		console.log(navVm.cart);
+	  		// console.log(navVm.cart);
 	  		for(var i in navVm.cart){
-	  			console.log(navVm.cart[i].quantity)
+	  			// console.log(navVm.cart[i].quantity)
 	  			navVm.cartCount += navVm.cart[i].quantity;
-	  			console.log(navVm.cartCount)
+	  			// console.log(navVm.cartCount)
 	  		}
 	  	}
 

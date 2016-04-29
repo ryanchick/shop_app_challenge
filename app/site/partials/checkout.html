@@ -2,9 +2,9 @@
 
 
 <div id="checkout" class="container">
-  <div class="checkoutMargin">
-  <button id="nextbutton" type="submit" class="btn btn-default back-btn backCss nextbutton" ng-click='ctrl.goBack()'>Back</button>
-  <h3 class="check-title checkuotCss">Checkout</h3>
+  <button type="submit" class="btn btn-white back-btn" ng-click='ctrl.goBack()'>Back</button>
+  <div class="checkout-header">
+    <h3 class="check-title">Checkout</h3>
   </div>
   <div class="cart-list panel panel-default">
     <div class="panel-heading"ng-click='ctrl.selected = 1'>
@@ -48,7 +48,7 @@
         <h4>Tax:{{ctrl.total * 0.13 |currency}}</h4>
         <h4>Total:{{ctrl.total * 1.13|currency}}</h4>
       </div>
-      <button id="nextbutton" class="btn btn-success nextbutton" ng-click='ctrl.selected = 2'>Next Step</button>
+      <button class="btn btn-white btn-next" ng-click='ctrl.selected = 2'>Next Step</button>
       </form>
     </ul>
 
@@ -150,7 +150,7 @@
         </div>
 
       </form>
-      <button id="nextbutton" class="btn btn-success nextbutton" ng-disabled= '!addressForm.$valid'
+      <button class="btn btn-white btn-next" ng-disabled= '!addressForm.$valid'
       ng-click='ctrl.selected = 3'>Next Step</button>
     </div>
   </div>
@@ -215,10 +215,11 @@
       </form>
       <!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
       ng-click='ctrl.selected = 1'>Confirm</button> -->
-      <button id="checkoutbtn" class="btn btn-warning"
+      <button  class="btn btn-success btn-green btn-checkout"
         ng-click='ctrl.processOrder(true)'>
         Process Order
       </button>
     </div>
   </div>
 </div>
+<footer></footer>
