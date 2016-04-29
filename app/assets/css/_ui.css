@@ -344,6 +344,26 @@ Top-content
 	/*background-color: lightgrey;*/
 }
 
+.btn-white{
+	background-color: white;
+	border-color:#ff6d37;
+	color:#ff6d37;
+}
+
+.btn-white:hover { 
+	background-color: lightgrey;
+	color:#ff6d37;
+}
+
+#product .back-btn {
+  margin-left:50px;
+  margin-top:50px;
+}
+
+
+
+
+
 /*.main-categories h2{
 	position: absolute;
 	bottom:20px;
