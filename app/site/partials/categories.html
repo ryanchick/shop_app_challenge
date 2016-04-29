@@ -78,7 +78,7 @@
                 <div class="product-cost">
                 <!-- SET PRODUCT PRICE WITH FILTER -->
                   <span ng-hide='product.quantity <= 0'>{{product.price | currency}}</span>
-                  <span ng-show='product.quantity <= 0'>SOLD OUT</span>
+                  <span class="sold-out" ng-show='product.quantity <= 0'>SOLD OUT</span>
                 </div>
               </div>
             </div>
