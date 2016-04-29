@@ -3,7 +3,7 @@
 <h1>
 	Edit Product
 </h1>
-		<div class="input-group margin">
+		<div class="input-group margin marginTop">
   			<span class="input-group-addon newProduct" id="basic-addon1">Product Name</span>
 			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.product.name" aria-describedby="basic-addon1" required>
 		</div>
@@ -29,8 +29,10 @@
   			<input id="newProduct2" type="number" name="quantity" class="form-control" placeholder="ProductName"
   			aria-describedby="basic-addon1" ng-model="ctrl.product.quantity" required>
 		</div>
-		<div class="input-group margin updateBu">
+
+		<div class="input-group margin updateBu marginTop">
 			<button class="btn btn-green" type="submit" ng-click='ctrl.updateProduct()'>{{ctrl.product_update_btn}}</button>
+
 			<button class="btn btn-danger deleteBu" type="submit" ng-click='ctrl.deleteProduct()'>{{ctrl.product_delete_btn}}</button>
 		</div>
 </article>

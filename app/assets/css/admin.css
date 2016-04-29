@@ -114,11 +114,16 @@
 
 .newSubmit {
 	margin-left: 335px;
+	margin-top: 15px;
 }
 
 .margin {
 	margin-bottom: 5px;
 	margin-left: 20px;
+}
+
+.marginTop {
+	margin-top: 15px;
 }
 
 .updateBu {
