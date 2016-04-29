@@ -20,6 +20,7 @@
 .cart-table {
   text-align: center;
   font-size: 14px;
+  border-bottom: 1px solid #ddd;
 }
 
 .cart-th {
@@ -43,13 +44,15 @@ body {
   min-height: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 0 0 200px;
+  padding: 0 0 0px;
 }
 
 #footer {
+  /*position:absolute;*/
+  /*bottom:0px;*/
+  margin-top:50px;
   height: 200px!important;
   background-color: #3B3B40;
-
 }
 
 #footer p{

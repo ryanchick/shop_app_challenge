@@ -1,41 +1,132 @@
-.checkuotCss {
-	position: absolute;
-	top: 70px;
-	left: 650px;
+#checkout .back-btn{
+  position:absolute;
+  left:50px;
+  top:70px;
+  border-color:  #EF6A33;
+  background-color: white;
+  color: #EF6A33;
+  /*float:left;*/
 }
 
-.backCss {
-	position: absolute;
-/*	top: 50px;
-	left: 50px;*/
-}
-
-.checkoutMargin {
+#checkout .checkout-header {
 	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	vertical-align: middle;
+	text-align: center;
 }
 
-.panel-default>.panel-heading {
+#checkout .check-title{
+  margin:0 auto;
+  display:inline-block;
+  /*text-align: center;*/
+
+}
+
+#checkout .cart-list{
+  margin-top:0px;
+}
+
+#checkout .panel-heading{
+  z-index:50;
+  padding:5px 10px;
+}
+
+#checkout img{
+  height:100%;
+  border:1px solid lightgray;
+}
+
+#checkout td{
+  height:60px;
+  vertical-align: middle;
+}
+
+#checkout table{
+  font-size:14px;
+  text-align: center;
+  table-layout: fixed;
+  word-wrap:break-word;
+  border-bottom: 1px solid #ddd;
+}
+
+#checkout th{
+  text-align:center;
+  /*border:1px solid blue;*/
+}
+
+#checkout .panel-heading-right{
+  display:inline-block;
+  float:right;
+  margin-top:-30px;
+}
+
+#checkout .totals{
+  /*width:250px;*/
+  display:block;
+  /*float:right;*/
+  /*border:1px solid blue;*/
+  text-align: right;
+}
+
+#checkout .qty-input{
+  width:50px;
+  /*border:1px solid red;*/
+  text-align: center;
+}
+
+#checkout .cart-list .error-msg{
+  position:absolute;
+  padding:5px;
+}
+
+#checkout .alert{
+  font-size:14px;
+  padding:5px;
+}
+
+#checkout .th-img{
+  width:20%;
+}
+#checkout .th-name{
+  width:40%;
+}
+#checkout .th-prc{
+  width:10%;
+}
+#checkout .th-qty{
+  width:15%;
+}
+#checkout .th-tot{
+  width:10%;
+}
+#checkout .th-del{
+  width:5%;
+}
+#checkout .valid-form{
+  border:2px solid green;
+}
+
+#checkout .panel-heading {
 	background-color: #EF6A33;
 	color: white;
 }
 
-#nextbutton {
+#checkout .nextbutton {
 	border-color:  #EF6A33;
 	background-color: white;
 	color: #EF6A33;
 }
 
-#nextbutton:hover { 
+#checkout .nextbutton:hover { 
     background-color: lightgrey;
 }
 
-#checkoutbtn {
+#checkout .checkout-btn {
 	background-color: #9ACC60;
 	border-color: white;
 }
 
-#checkoutbtn:hover { 
+#checkout .checkout-btn:hover { 
 	background-color: lightgrey;
 }
 

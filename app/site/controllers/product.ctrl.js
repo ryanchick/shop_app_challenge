@@ -4,7 +4,7 @@
   .module('shopApp')
   .controller('ProductCtrl',ProductCtrl);
 
-  function ProductCtrl($stateParams, $uibModal,$state,api,productSrv,toastr,product){
+  function ProductCtrl($scope,$stateParams, $uibModal,$state,api,productSrv,toastr,product){
     var productVm = this;
 
     productVm.categories = productSrv.categories;
@@ -14,41 +14,62 @@
     {
       productVm.product = product;
     }
+    productVm.cartIndex = -1;
+    productVm.cartCount = 0;
     
     productVm.category;
     productVm.curCate = productVm.categories[0];
-    console.log(productVm.product);
-    console.log(productVm.category);
+    // console.log(productVm.product);
+    // console.log(productVm.category);
 
     productVm.product_add_btn = 'Add Product'
     productVm.product_update_btn = 'Update Product';
     productVm.product_delete_btn = 'Remove Product';
 
-    if($stateParams.productId != undefined){
-      productSrv.getProduct($stateParams.productId)
-      .then(function(res){
-        console.log(res);
-        productVm.product = res.data.product;
-        //TODO #2 set category based on edit form based on
-        //product category
-     //   for(var index in productVm.categories){
-     //     if(productVm.product.category == productVm.categories[index].value){
-     //       productVm.set_category = productVm.categories[index].value;
-     //     }
-     //   }
-        for (var i=0; i < productVm.categories.length; i++){
-        if (productVm.product.category == productVm.categories[i].category){
+    // if($stateParams.productId != undefined){
+    //   productSrv.getProduct($stateParams.productId)
+    //   .then(function(res){
+    //     console.log(res);
+    //     productVm.product = res.data.product;
+    //     //TODO #2 set category based on edit form based on
+    //     //product category
+    //     for (var i=0; i < productVm.categories.length; i++){
+    //       if (productVm.product.category == productVm.categories[i].category){
+    //         productVm.curCate = productVm.categories[i]
+    //       }
+    //     }
+    //   })
+    // }
+
+    //for edit product, set option to current category
+    for (var i=0; i < productVm.categories.length; i++){
+      if (productVm.product.category == productVm.categories[i].category){
         productVm.curCate = productVm.categories[i]
       }
-      }
-      })
     }
+
+    //check if product already in cart
+    checkCart();
+
+    //keep watching cart and update if product is added
+    $scope.$watch(function(){
+      return productSrv.cart;
+    },checkCart,true);
+    // function(){
+    //   for(var i = 0; i < productSrv.cart.length;i++){
+    //     if(productVm.product.id == productSrv.cart[i].product.id){
+    //       productVm.cartIndex = i;
+    //       productVm.cartCount = productSrv.cart[i].quantity;
+    //     }
+    //   }
+    // },true);
 
     //public functions
     productVm.addProduct = addProduct;
     productVm.updateProduct = updateProduct;
     productVm.deleteProduct = deleteProduct;
     productVm.addtoCart = addtoCart;
+    productVm.checkCart = checkCart;
     productVm.openCart_v2 = openCart_v2;
     productVm.goBack = goBack;
 
@@ -106,21 +127,35 @@
       //remove product, pass to product service
       //update text in button
       productSrv.deleteProduct($stateParams.productId)
-      alert('Product Deleted')
+      toastr.success('Product Deleted')
     }
 
     function addtoCart(isValid){
     	if(!isValid){
-    		alert('There are too many items!')
-    	}else{
-      		productSrv.addtoCart(productVm.product,productVm.quantity);
-          if(productVm.quantity > 1){
-      		  toastr.success(productVm.quantity+ ' ' + productVm.product.name +'s was added to your cart!')
-          } else{
-            toastr.success('1 ' +productVm.product.name +' was added to your cart!')
-            
-          }
+    		toastr.warning('There are not enough items in stock!')
+        return;
     	}
+      if(productVm.cartIndex > -1){
+        if(productSrv.cart[productVm.cartIndex].quantity + productVm.quantity > productVm.product.quantity){
+        toastr.warning('You already have some of these items in your cart! Adding '+productVm.quantity+ ' more would exceed our stock quantity!','Over the limit!')
+        return;
+        }
+      }
+  
+      console.log(productVm.quantity)
+  		productVm.cartIndex = productSrv.addtoCart(productVm.product,productVm.quantity);
+    }
+
+    function checkCart(){
+      // console.log('checkCart')
+      productVm.cartIndex = -1;
+      productVm.cartCount = 0;
+      for(var i = 0; i < productSrv.cart.length;i++){
+        if(productVm.product.id == productSrv.cart[i].product.id){
+          productVm.cartIndex = i;
+          productVm.cartCount = productSrv.cart[i].quantity;
+        }
+      }
     }
 
     function goBack(){

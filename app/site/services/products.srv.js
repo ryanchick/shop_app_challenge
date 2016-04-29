@@ -4,7 +4,7 @@
     .module('shopApp')
     .service('productSrv',ProductService);
 
-  function ProductService($state,api){
+  function ProductService($state,api,toastr){
     var self = this;
     //public variables
     self.products = [];
@@ -124,18 +124,36 @@
         quantity:quantity
       }
       var found = false;
+      var added = false;
+      var index = -1;
       for(var i = 0;i<self.cart.length;i++){
         if(product.id === self.cart[i].product.id)
         {
-          self.cart[i].quantity += quantity;
+          if(self.cart[i].quantity + quantity > product.quantity){
+            toastr.warning('You already have some of these items in your cart! Adding '+quantity+ ' more would exceed our stock quantity!','Over the limit!')
+          }else{
+            self.cart[i].quantity += quantity;
+            added = true;
+            index = i;
+          }
           found = true;
         }
       }
       if(found === false){
         self.cart.push(newProduct)
+        added = true;
+        index = i;
       }
       console.log(self.cart)
+      if(added == true){
+        if(quantity > 1){
+          toastr.success(quantity+ ' ' + product.name +'s was added to your cart!');
+        }else{
+          toastr.success('1 ' + product.name +' was added to your cart!');  
+        }
+      }
       self.saveCart();
+      return index;
     }
 
     function removeCart(index)
