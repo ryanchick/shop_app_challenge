@@ -94,6 +94,11 @@ Nav
 	font-size:1.6rem;
 }
 
+#shop-navbar .cart:hover{
+	font-weight:bold;
+	color:#FF6D37;
+}
+
 #shop-navbar .badge{
     color:#ff6d37 ;
     background: white;
@@ -101,9 +106,15 @@ Nav
 }
 
 #shop-navbar .cart:hover .badge{
-    color:black;
-    border-color:black;
+    /*color:black;
+    border-color:black;*/
+    font-weight:bold;
+    border-width: 2px;
+}
 
+#shop-navbar .btn-white:hover{
+	font-weight:bold;
+	background-color: white;
 }
 
 #logo {
@@ -116,6 +127,11 @@ Nav
 	position: absolute;
 	top: 0.333vw;
     left: 3.5vw;
+}
+
+#spartan:hover{
+	font-weight: bold;
+	color:#ff6d37!important;
 }
 
 #shop-navbar .navbar-brand:hover{
@@ -338,15 +354,18 @@ Top-content
 .btn-green{
 	background-color: #9ACC60;
 	border-color:#bAeC80;
+	color:white;
 }
 
 .btn-green:active, .btn-green:focus,.btn-green:visited{
 	background-color: #9ACC60;
 	border-color:#bAeC80;
+	color:white;
 }
 
 .btn-green:hover { 
 	background-color: #A7DE68;
+	color:white;
 }
 
 .btn-white{

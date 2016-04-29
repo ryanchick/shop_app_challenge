@@ -1,7 +1,7 @@
 	<article class="product-frm">
 	<form name="add-product" ng-submit="ctrl.addProduct()">
 	<h1>Add New Product</h1>
-		<div class="input-group margin">
+		<div class="input-group margin marginTop">
   			<span class="input-group-addon newProduct" id="basic-addon1">Product Name</span>
   			<input id="newProduct2" type="text" name="name" class="form-control" placeholder="ProductName" ng-model="ctrl.name"
   			aria-describedby="basic-addon1" required>
@@ -30,7 +30,7 @@
 		</div>
 
 		<div>
-			<button class="btn btn-success newSubmit btn-green" type="submit">{{ctrl.product_add_btn}}</button>
+			<button class="btn newSubmit btn-green" type="submit">{{ctrl.product_add_btn}}</button>
 		</div>
 	</form>
 </article>
