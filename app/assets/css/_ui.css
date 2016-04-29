@@ -274,7 +274,7 @@ Top-content
 	color: white;
 	text-align: center;
     position: relative;
-    /*top: 10vw;*/
+    top: -1vw;
 }
 
 #main-card .main-img:hover{
