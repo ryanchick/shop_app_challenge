@@ -21,7 +21,7 @@
 
         <h5 ng-hide='ctrl.product.quantity <= 0'>Remaining in Stock: {{ctrl.product.quantity - ctrl.cartCount}}</h5>
 
-        <h3 ng-show='ctrl.product.quantity <= 0'>SOLD OUT</h3>
+        <h3 ng-show='ctrl.product.quantity <= 0' class='warning-text'>SOLD OUT</h3>
 
         <form name='quantForm' class="form-inline" id="formmargin" ng-hide='ctrl.product.quantity <= 0'>
 
@@ -29,7 +29,7 @@
           <!-- <div data-toggle="modal" data-target="#myModal" class="btnmargin"> -->
           <div class="btnmargin">
             <button type="submit" 
-              class="btn btn-default btn-lg" 
+              class="btn btn-success btn-green btn-lg" 
               ng-click='ctrl.addtoCart(quantForm.$valid)'
               ng-disabled='(ctrl.product.quantity - ctrl.cartCount) <= 0'>Add to Cart</button>
           </div>
