@@ -66,7 +66,7 @@
 
 		function addtoCart(product){
 			productSrv.addtoCart(product,1);
-			toastr.success('1 ' + product.name + ' has been added to the cart!');
+			// toastr.success('1 ' + product.name + ' has been added to the cart!');
 		}
 	}
 })();

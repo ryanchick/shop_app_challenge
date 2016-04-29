@@ -17,7 +17,7 @@
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct" id="basic-addon1">Category</span>
-  			<select id="newProduct2" ng-options="options as options.category for options in ctrl.categories" class="form-control" ng-model="ctrl.category" name="category" required></select>
+  			<select id="newProduct2" ng-options="options as options.category for options in ctrl.categories" class="form-control" ng-model="ctrl.curCate" name="category" required></select>
 		</div>
 		<div class="input-group margin">
   			<span class="input-group-addon newProduct">$ Price</span>
@@ -30,7 +30,7 @@
 		</div>
 
 		<div>
-			<button class="btn btn-default newSubmit" type="submit">{{ctrl.product_add_btn}}</button>
+			<button class="btn btn-success newSubmit btn-green" type="submit">{{ctrl.product_add_btn}}</button>
 		</div>
 	</form>
 </article>

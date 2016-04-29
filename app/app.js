@@ -58,13 +58,27 @@
 			.state('admin.add_product',{
 				url:'/add_product',
 				controller:'ProductCtrl as ctrl',
-				templateUrl:'site/partials/admin-add-product.html'
+				templateUrl:'site/partials/admin-add-product.html',
+				resolve:{
+					product:function(productSrv){
+						return {};
+					}
+				}
 			})
 
 			.state('admin.edit_product',{
 				url:'/edit_product/:productId',
 				controller:'ProductCtrl as ctrl',
 				templateUrl:'site/partials/admin-edit-product.html',
+				resolve:{
+					product:function($stateParams,productSrv){
+						console.log($stateParams.productId)
+						return productSrv.getProduct($stateParams.productId)
+							.then(function(res){
+								return res.data.product;
+							})
+					}
+				}
 			})
 
 			.state('auth',{
@@ -88,6 +102,15 @@
 				url:'/products/:productId',
 				controller: 'ProductCtrl as ctrl',
 				templateUrl: 'site/partials/product.html',
+				resolve:{
+					product:function($stateParams,productSrv){
+						console.log($stateParams.productId)
+						return productSrv.getProduct($stateParams.productId)
+							.then(function(res){
+								return res.data.product;
+							})
+					}
+				}
 
 			})
 
