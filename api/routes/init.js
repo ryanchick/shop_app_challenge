@@ -4,7 +4,7 @@ var router = express.Router();
 
 router.get('/',function(req,res){
 	//check if admin user exists
-	var where = {where:{email:'admin@shop.com'}};
+	var where = {where:{email:'admin@spartan.com'}};
 	models.Users.findAll(where).then(function(users){
 		if('0' in users){
 			res.send('Admin Account Already Exists');
@@ -12,7 +12,7 @@ router.get('/',function(req,res){
 		else{
 			//admin user obj
 			var user_obj = {
-				email:'admin@shop.com',
+				email:'admin@spartan.com',
 				password:'brainstation'
 			}
 			//add to database model and respond with object
@@ -21,7 +21,7 @@ router.get('/',function(req,res){
 					users:users
 				});
 			});
-			res.send('<h1>Admin Account Created</h1><p>Log In:admin@shop.com<br>Password:brainstation</p>');
+			res.send('<h1>Admin Account Created</h1><p>Log In:admin@spartan.com<br>Password:brainstation</p>');
 		}
 		
 	});
