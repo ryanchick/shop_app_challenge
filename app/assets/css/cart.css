@@ -83,3 +83,10 @@ body {
 .glyphicon-footer {
   color: #9ACC60;
 }
+
+
+/*Checkout page*/
+#checkout {
+  width: 50%;
+  margin:auto;
+}
