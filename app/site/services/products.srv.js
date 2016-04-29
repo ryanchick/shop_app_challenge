@@ -125,14 +125,16 @@
       }
       var found = false;
       var added = false;
+      var index = -1;
       for(var i = 0;i<self.cart.length;i++){
         if(product.id === self.cart[i].product.id)
         {
           if(self.cart[i].quantity + quantity > product.quantity){
-            toastr.warning('There is not enough stock remaining for this item!')
+            toastr.warning('You already have some of these items in your cart! Adding '+quantity+ ' more would exceed our stock quantity!','Over the limit!')
           }else{
             self.cart[i].quantity += quantity;
             added = true;
+            index = i;
           }
           found = true;
         }
@@ -140,6 +142,7 @@
       if(found === false){
         self.cart.push(newProduct)
         added = true;
+        index = i;
       }
       console.log(self.cart)
       if(added == true){
@@ -150,6 +153,7 @@
         }
       }
       self.saveCart();
+      return index;
     }
 
     function removeCart(index)
