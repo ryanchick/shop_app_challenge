@@ -199,3 +199,7 @@ Product view
   font-weight:500;
   margin:10px 0px;
 }
+
+#product-card .product-cost .sold-out{
+  color: #C43943;
+}
