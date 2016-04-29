@@ -48,7 +48,7 @@
         <h4>Tax:{{ctrl.total * 0.13 |currency}}</h4>
         <h4>Total:{{ctrl.total * 1.13|currency}}</h4>
       </div>
-      <button class="btn btn-white" ng-click='ctrl.selected = 2'>Next Step</button>
+      <button class="btn btn-white btn-next" ng-click='ctrl.selected = 2'>Next Step</button>
       </form>
     </ul>
 
@@ -150,7 +150,7 @@
         </div>
 
       </form>
-      <button class="btn btn-white" ng-disabled= '!addressForm.$valid'
+      <button class="btn btn-white btn-next" ng-disabled= '!addressForm.$valid'
       ng-click='ctrl.selected = 3'>Next Step</button>
     </div>
   </div>
@@ -215,7 +215,7 @@
       </form>
       <!-- <button class="btn btn-success" ng-disabled= '!cardForm.$valid'
       ng-click='ctrl.selected = 1'>Confirm</button> -->
-      <button  class="btn btn-success btn-green"
+      <button  class="btn btn-success btn-green btn-checkout"
         ng-click='ctrl.processOrder(true)'>
         Process Order
       </button>

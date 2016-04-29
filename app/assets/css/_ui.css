@@ -340,8 +340,13 @@ Top-content
 	border-color:#bAeC80;
 }
 
+.btn-green:active, .btn-green:focus,.btn-green:visited{
+	background-color: #9ACC60;
+	border-color:#bAeC80;
+}
+
 .btn-green:hover { 
-	/*background-color: lightgrey;*/
+	background-color: #A7DE68;
 }
 
 .btn-white{
