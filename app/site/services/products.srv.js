@@ -294,7 +294,7 @@ var CATEGORY_DATA = [{
   description:'Tents - Sleeping Bags - Beds',
   image:'/assets/img/4.jpg'
 },{
-   category:'food',
+  category:'food',
   description:'Protein Bars - Pudding - Power Shakes',
   image:'/assets/img/bu3.jpg'
 },{
