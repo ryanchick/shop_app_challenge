@@ -38,3 +38,9 @@
 #checkoutbtn:hover { 
 	background-color: lightgrey;
 }
+
+#AnimateOrange2 {
+	position: absolute;
+	top:355px;
+	right: 0px;
+}
