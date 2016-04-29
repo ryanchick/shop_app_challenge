@@ -26,14 +26,12 @@
               <th scope="col" class="col-md-1 cart-th">Remove</th>
             </tr>
 
-
-
             <tr ng-repeat='item in ctrl.cart track by $index'>
               <td><img ng-src='{{item.product.image}}'></td>
               <td>{{item.product.name}}</td>
               <td>{{item.product.price|currency}}</td>
               <td>{{item.quantity}}</td>
-              <td>{{item.quantity * item.product.price||currency}}</td>
+              <td>{{item.quantity * item.product.price|currency}}</td>
               <td><button class="btn btn-danger btn-xs" id="deletebtn" ng-click='ctrl.removeCart($index)'><i class="fa fa-times"></i></button></td>
             </tr>
         </table>
