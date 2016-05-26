@@ -180,7 +180,7 @@
 	text-decoration: underline;
 }*/
 
-#shop-navbar{
+/*#shop-navbar{
 	margin-bottom:0px;
 	background:#FFF;
 	color:#ff6d37;
@@ -204,14 +204,14 @@
 }
 #shop-navbar .search-btn img{
 	width:17px;
-/*	margin-left:5px;
-	margin-top:-19px;*/
+	margin-left:5px;
+	margin-top:-19px;
 }
 
 #shop-navbar ul li{
 	display:inline-block;
 	margin-right:20px;
-}
+}*/
 
 .cart-list{
 	margin-top:50px;

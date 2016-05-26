@@ -36,9 +36,9 @@
 
 /*Navbar related*/
 
-body {
+/*body {
   height: 100%;
-}
+}*/
 
 #wrap {
   min-height: 100%;
@@ -88,7 +88,7 @@ body {
 
 /*Checkout page*/
 #checkout {
-  width: 50%;
+  width: 75%;
   margin:auto;
 }
 

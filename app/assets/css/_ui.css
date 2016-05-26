@@ -52,7 +52,7 @@ a{
 Nav
 */
 
-#shop-navbar {
+/*#shop-navbar {
 	height:55px;
 	line-height:55px;
 	color:#ff6d37;
@@ -65,13 +65,6 @@ Nav
 	margin:0px 0px 0px 70px;
 	vertical-align: top;
 }
-
-/*nav img .logo{
-	max-width: 17px;
-	max-height: 19px;
-	margin-top: 7px;
-	margin-left: 20px;
-}*/
 
 #shop-navbar .right-nav{
 	float:right;
@@ -107,8 +100,6 @@ Nav
 #shop-navbar .cart:hover .badge{
     color:#FF8237;
     border-color:#FF8237;
-  /*  font-weight:bold;
-    border-width: 2px;*/
 }
 
 #shop-navbar .btn-white:hover{
@@ -137,7 +128,7 @@ Nav
 	color:#333;
   	cursor: pointer;
   	cursor:hand;
-}
+}*/
 
 /*
 #look {
@@ -354,7 +345,7 @@ Top-content
   border: 2px solid red;
 }
 
-.btn-green{
+/*.btn-green{
 	background-color: #9ACC60;
 	border-color:#bAeC80;
 	color:white;
@@ -382,7 +373,7 @@ Top-content
 	color: #FF8237;
     border: 1px solid #FF8237;
 }
-
+*/
 .warning-text{
 	color:#C43943!important;
 	font-weight:bold;

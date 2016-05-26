@@ -4,7 +4,7 @@
 	.module('shopApp')
 	.controller('CheckoutCtrl',CheckoutCtrl);
 
-	function CheckoutCtrl ($state,$scope,productSrv,checkoutSrv,toastr){
+	function CheckoutCtrl ($state,$scope,productSrv,toastr){
 		var checkVm = this;
 
 		checkVm.cart = [];
@@ -32,11 +32,11 @@
 		checkVm.goBack = goBack;
 		checkVm.updateTotal = updateTotal;
 
-		$scope.$watchCollection(function(){
+		$scope.$watch(function(){
         	return checkVm.cart;
     	}, function (newValue) {
           		updateTotal();
-    	});
+    	},true);
 
 		// checkVm.product = productSrv.getProduct(1);
 

@@ -54,11 +54,7 @@
   /*border:1px solid blue;*/
 }
 
-#checkout .panel-heading-right{
-  display:inline-block;
-  float:right;
-  margin-top:-30px;
-}
+
 
 #checkout .totals{
   /*width:250px;*/
@@ -110,6 +106,12 @@
 #checkout .panel-heading {
   background-color: #EF6A33;
   color: white;
+}
+
+#checkout .panel-heading-right{
+  display:inline-block;
+  float:right;
+  margin-top:-30px;
 }
 
 /*#checkout .nextbutton {

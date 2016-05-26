@@ -3,7 +3,7 @@
 		.module('shopApp')
 		.directive('shopNavbar', function(){
 			return{
-				scope:true,
+				scope:{},
 				controller:'shopNavbarCtrl',
 				controllerAs:'ctrl',
 				templateUrl:'/site/partials/shop-navbar.html'
